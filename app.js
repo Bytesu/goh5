@@ -45,7 +45,7 @@ app.get('/', function(req, res, next) {
         res.clearCookie('user_name');
     }
     res.sendFile(pwd + '/Back_Stage/index.html',{});
-})
+});
 
 app.engine('.html', require('ejs').__express);
 app.set('view engine', 'html');
@@ -66,5 +66,6 @@ routers.forEach(function(Router) {
 })
 
 app.listen(port);
+console.log('server is listening on port:'+port);
 
 module.exports = app;

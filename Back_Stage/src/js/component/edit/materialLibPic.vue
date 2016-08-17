@@ -128,7 +128,7 @@ var MaterialLibPic = Vue.extend({
 					show: true,
 					msg: '一次最多上传6张！超出图片本次不会上传',
 					type: 'warning'
-				})
+				});
 				for(var i = 0;i < 6;i++){
 					files[i] = ev.target.files[i];
 				}

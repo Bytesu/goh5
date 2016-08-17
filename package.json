@@ -4,6 +4,8 @@
     "description": "免费H5可视化编辑器",
     "main": "index.js",
     "scripts": {
+        "start":"pm2 start server.json",
+        "stop":"pm2 delete all",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": ["h5", "免费H5页面微场景应用制作", "可视化编辑器"],

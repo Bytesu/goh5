@@ -190,6 +190,6 @@ module.exports = function(Router) {
         if (req.params.act == 'release') {
             release(req, res);
         }
-    })
+    });
     return Router;
 };

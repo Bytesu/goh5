@@ -38,7 +38,7 @@ var state = {
         msg: '音乐库',
         type: 'bgMusic'
     }
-}
+};
 
 var actions = require('./action/index.js');
 var mutations = require('./mutation/index.js');

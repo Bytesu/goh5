@@ -24,7 +24,7 @@ actions.initData = function(store, id, cb) {
             cb && cb(data);
         }
     })
-}
+};
 
 utils.mixin(actions, item);
 utils.mixin(actions, page);

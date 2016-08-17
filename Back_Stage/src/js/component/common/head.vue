@@ -49,8 +49,8 @@
 .head_con .item.center .create_group li .icon6{background-position: 0 -120px;}
 .head_con .item.right{}
 .btn_group{margin-right: 17px}
-.btn_group li{background: #76838e;height: 28px;line-height: 28px;margin: 16px 3px 0;padding: 0 10px;border-radius: 6px;cursor: pointer;transition: all ease 0.3s;-webkit-transition: all ease 0.3s;position: relative;}
-.btn_group li:hover{background: #01d7b2!important;}
+.btn_group li{background: #76838e;height: 28px;line-height: 28px;margin: 16px 3px 0;padding: 0 10px;border-radius: 0px;cursor: pointer;transition: all ease 0.3s;-webkit-transition: all ease 0.3s;position: relative;}
+.btn_group li:hover{background: #4d5a65!important;}
 .btn_group li .qrcode{display: block;position: absolute;left: 50%;transform: translateX(-50%);-webkit-transform: translateX(-50%);background: #fff;padding: 10px;top: 45px;display: none;border-radius: 6px;}
 .btn_group li .qrcode .triangle{position: absolute;width: 0;height: 0;border-bottom: 10px solid #fff;border-left: 10px solid transparent;border-right: 10px solid transparent;border-top: 10px solid transparent;top: -20px;left: 50%;margin-left: -10px;}
 .btn_group li .qrcode a{display: block;width: 198px;height: 198px;}

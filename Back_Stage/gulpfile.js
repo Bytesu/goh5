@@ -26,7 +26,7 @@ var aliasFile = function(name) {
     } else {
         return name + '.js';
     }
-}
+};
 
 var vendorPlugin = new webpack.optimize.CommonsChunkPlugin({
     name: 'vendor',
@@ -106,7 +106,7 @@ gulp.task('css', function() {
         .pipe(gulpIf(argv.env == 'pro', header(banner, { config: config })))
         .pipe(rename('goh5.min.css'))
         .pipe(gulp.dest('./dist/css/'))
-})
+});
 
 gulp.task('img', function() {
     return gulp
@@ -117,7 +117,7 @@ gulp.task('fonts', function() {
     return gulp
         .src('./src/fonts/*')
         .pipe(gulp.dest('./dist/fonts/'))
-})
+});
 
 gulp.task('rev', function() {
     return gulp
@@ -126,7 +126,7 @@ gulp.task('rev', function() {
         .pipe(gulpIf(argv.env == 'pro', replace(/goh5.min.js[\s\S]*?"/, 'goh5.min.js?ver=' + config.version + '"')))
         .pipe(gulpIf(argv.env == 'pro', replace(/vendor.min.js[\s\S]*?"/, 'vendor.min.js?ver=' + config.version + '"')))
         .pipe(gulp.dest('./'))
-})
+});
 
 gulp.task('watch', function() {
     webpackConfig.watch = argv.env != 'pro';
@@ -134,7 +134,7 @@ gulp.task('watch', function() {
     gulp.watch('./src/css/*', ['css']);
     gulp.watch('./src/img/*', ['img']);
     gulp.watch('./src/fonts/*', ['fonts']);
-})
+});
 
 gulp.task('default', ['clean'], function() {
     gulp.start(['js', 'css', 'img', 'fonts', 'rev']);

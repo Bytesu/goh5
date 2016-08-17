@@ -1,4 +1,99 @@
 /* reset */
+@font-face {
+    font-family: 'icon-pc';
+    src:url('/back/dist/fonts/icon-pc.eot');
+    src:url('/back/dist/fonts/icon-pc.eot?iefix') format('embedded-opentype'),
+    url('/back/dist/fonts/icon-pc.woff') format('woff'),
+    url('/back/dist/fonts/icon-pc.ttf') format('truetype'),
+    url('/back/dist/fonts/icon-pc.svggu') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'FZHei-B01S';
+    src:url('/back/dist/fonts/FZHei-B01S.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'FZKai-Z03S';
+    src:url('/back/dist/fonts/FZKai-Z03S.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'FZShuSong-Z01S';
+    src:url('/back/dist/fonts/FZShuSong-Z01S.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FZFangSong-Z02S';
+    src:url('/back/dist/fonts/FZFangSong-Z02S.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NotoSansSC-Thin';
+    src:url('/back/dist/fonts/NotoSansSC-Thin.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NotoSansSC-Light';
+    src:url('/back/dist/fonts/NotoSansSC-Light.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NotoSansSC-DemiLight';
+    src:url('/back/dist/fonts/NotoSansSC-DemiLight.woff') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NotoSansSC-Regular';
+    src:url('/back/dist/fonts/NotoSansSC-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NotoSansSC-Medium';
+    src:url('/back/dist/fonts/NotoSansSC-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NotoSansSC-Bold';
+    src:url('/back/dist/fonts/NotoSansSC-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NotoSansSC-Black';
+    src:url('/back/dist/fonts/NotoSansSC-Black.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'zcool-gdh';
+    src:url('/back/dist/fonts/zcool-gdh.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HappyZcool';
+    src:url('/back/dist/fonts/HappyZcool.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {margin: 0;padding: 0;border: 0;outline: 0}
 div {-webkit-tap-highlight-color: rgba(0, 0, 0, 0)}
 input {outline: 0;font-size: 14px;margin: 0;padding: 0;box-sizing: border-box;}
@@ -47,7 +142,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {padding: 0;border: 0}
 .side_con.left{left: 0;}
 .side_con.right{right: 0;}
 .side_con .item{display: flex;flex-direction: column;}
-.side_con .head{height: 40px;line-height: 40px;text-align: center;color: #fff;background: #0fcebd;font-size: 16px;width: 100%;}
+.side_con .head{height: 40px;line-height: 40px;text-align: center;color: #666;background: #F7F7F7;font-size: 16px;width: 100%;}
 .side_con .item.pages_list{}
 .side_con .item.pages_list ul{position: relative;width: 280px;padding: 0 20px;box-sizing: border-box;overflow-y: auto;flex:1;}
 .side_con .item.pages_list ul li{display: block;height: 36px;line-height: 36px;margin-top: 10px;color: #666;text-align: center;background: #dcdcdc;cursor: pointer;width: 100%;border-radius: 4px;font-weight: bold;}

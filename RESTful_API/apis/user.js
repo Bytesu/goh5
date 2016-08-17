@@ -113,6 +113,6 @@ module.exports = function(Router) {
             logout(req, res);
             return;
         }
-    })
+    });
     return Router;
-}
+};

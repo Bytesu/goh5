@@ -32,7 +32,7 @@ actions.selectItem = function(store, index, multi) {
 }
 
 actions.clearCheckedItems = function(store) {
-    store.dispatch('CLEARCHECKEDITEMS');
+    store.dispatch('ccc');
 }
 
 actions.delItem = function(store) {
