@@ -11,13 +11,8 @@ Vue.directive('dragItem', function() {
     var _this = this;
     var target = this.el;
     var draging = false;
-    console.log('A')
-    $('body').on('mousedown','.j_screen',function (e) {
-        console.log(e.target);
-    });
     // 拖动元素'.j_screen>div .content',
     $('body').on('mousedown','.j_screen',function(ev) {
-        console.log(ev.target);
         if($(ev.target).hasClass('edit_mode')){
         // return;
         // if($('.j_screen>div').eq(store.state.checkedItems[0]).find('.content>div').attr('contenteditable') === 'true'){

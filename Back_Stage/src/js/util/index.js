@@ -49,24 +49,32 @@ utils.getAllItemsLen = function() {
 };
 
 utils.getStyle = function(index, cssStyle, isIn) {
-    var str = isIn ? store.state.currentPageData.items[index].content.match(/style=\"([\s\S]+?)\"/)[1] : store.state.currentPageData.items[index].style;
-    var result = {};
-    var _arr1 = str.split(';');
-    for (var i = 0; i < _arr1.length; i++) {
-        var _arr2 = _arr1[i].split(':');
-        if (_arr2[0] !== '') {
-            _arr2[0] = _arr2[0].replace(/(^\s+)|(\s+$)/g, '');
-            _arr2[1] = _arr2[1].replace(/(^\s+)|(\s+$)/g, '');
-            result[_arr2[0]] = _arr2[1];
+    if(typeof store.state.currentPageData.items[index].styleObj=='object'){
+        return store.state.currentPageData.items[index].styleObj;
+    }else{
+        var str = isIn ? store.state.currentPageData.items[index].content.match(/style=\"([\s\S]+?)\"/)[1] : store.state.currentPageData.items[index].style;
+        var result = {};
+        var _arr1 = str.split(';');
+        for (var i = 0; i < _arr1.length; i++) {
+            var _arr2 = _arr1[i].split(':');
+            if (_arr2[0] !== '') {
+                _arr2[0] = _arr2[0].replace(/(^\s+)|(\s+$)/g, '');
+                _arr2[1] = _arr2[1].replace(/(^\s+)|(\s+$)/g, '');
+                result[_arr2[0]] = _arr2[1];
+            }
+            if (cssStyle == _arr2[0] && cssStyle !== 'all') {
+                return _arr2[1];
+            }
         }
-        if (cssStyle == _arr2[0] && cssStyle !== 'all') {
-            return _arr2[1];
+
+
+
+        if (cssStyle === 'all') {
+            return result;
         }
+        return null;
     }
-    if (cssStyle === 'all') {
-        return result;
-    }
-    return null;
+
 }
 
 utils.checkIsColor = function(strColor) {

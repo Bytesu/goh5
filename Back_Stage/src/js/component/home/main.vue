@@ -39,7 +39,7 @@ var Home = Vue.extend({
 			showSignup: false,
 		}
 	}
-})
+});
 module.exports = Home;
 
 </script>

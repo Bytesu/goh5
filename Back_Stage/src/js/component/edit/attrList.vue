@@ -62,6 +62,7 @@
 		<div class="item attrList">
 			<div class="head">元素属性</div>
 			<div class="item_id">元素ID为 : <span>{{checkedItemDataOnlyOne.id}}</span></div>
+
 			<div class="main">
 				<ul class="nav_top_btn">
 					<li :class="{'active':nav_top_btn == 0}" @click="this.nav_top_btn=0">编辑</li>
@@ -77,20 +78,25 @@
 							</div>
 							<div class="group_main" >
 								<ul>
-									<li style-attr="background-color">
+									<li style-attr="fontFamily">
 										<span>字体</span>
 										<span class="sui-dropdown dropdown-bordered" style="padding:0;border:0;padding: 0;flex: 1;height: 29px;line-height: 22px;">
 											<span class="dropdown-inner " style="border-radius:0;">
-												<a role="button" data-toggle="dropdown" href="javascript:void(0);" class="dropdown-toggle"><i class="caret"></i>默认字体</a>
+												<a role="button" data-toggle="dropdown" href="javascript:void(0);" class="dropdown-toggle"><i class="caret"></i><span>默认字体</span></a>
 						  						<ul role="menu" aria-labelledby="drop1" class="sui-dropdown-menu">
-													<li role="presentation" ><a role="menuitem" tabindex="-1" href="javascript:void(0);" >默认字体</a></li>
-													<li role="presentation" v-for="fontFace in FontFace"><a role="menuitem" tabindex="-1" href="javascript:void(0);" style="font-family:{{fontFace.faceFamily}}">{{fontFace.label}}</a></li>
+													<li role="presentation" ><a role="menuitem" tabindex="-1"  @click="setStyleDirect($event,'string','','\'Helvetica Neue\', Helvetica, STHeiTi, sans-serif')" href="javascript:void(0);" style="font-family: 'Helvetica Neue', Helvetica, STHeiTi, sans-serif;" >默认字体</a></li>
+													<li role="presentation" v-for="fontFace in FontFace"><a role="menuitem" tabindex="-1"  @click="setStyleDirect($event,'string','','{{fontFace.faceFamily}}')" href="javascript:void(0);" style="font-family:{{fontFace.faceFamily}}">{{fontFace.label}}</a></li>
 						  						</ul>
 											</span>
 										</span>
 									</li>
-									<li style-attr="color" >
-										<span>字体大小</span><select class="font-size-select form-control sm ng-pristine ng-valid ng-touched" style="width: 166px" ng-model="ui.fontSize" ng-change="setFontSize(ui.fontSize)" ng-options="font.value as font.size  group by groupFontSize for font  in fontSizeList"><optgroup label="请选择字号"><option label="12" value="number:12">12</option><option label="13" value="number:13">13</option><option label="14" value="number:14">14</option><option label="15" value="number:15">15</option><option label="16" value="number:16" selected="selected">16</option><option label="17" value="number:17">17</option><option label="18" value="number:18">18</option><option label="19" value="number:19">19</option><option label="20" value="number:20">20</option><option label="21" value="number:21">21</option><option label="22" value="number:22">22</option><option label="23" value="number:23">23</option><option label="24" value="number:24" selected="selected">24</option><option label="25" value="number:25">25</option><option label="26" value="number:26">26</option><option label="27" value="number:27">27</option><option label="28" value="number:28">28</option><option label="29" value="number:29">29</option><option label="30" value="number:30">30</option><option label="31" value="number:31">31</option><option label="32" value="number:32">32</option><option label="33" value="number:33">33</option><option label="34" value="number:34">34</option><option label="35" value="number:35">35</option><option label="36" value="number:36">36</option><option label="37" value="number:37">37</option><option label="38" value="number:38">38</option><option label="39" value="number:39">39</option><option label="40" value="number:40">40</option><option label="41" value="number:41">41</option><option label="42" value="number:42">42</option><option label="43" value="number:43">43</option><option label="44" value="number:44">44</option><option label="45" value="number:45">45</option><option label="46" value="number:46">46</option><option label="47" value="number:47">47</option><option label="48" value="number:48">48</option><option label="49" value="number:49">49</option><option label="50" value="number:50">50</option><option label="51" value="number:51">51</option><option label="52" value="number:52">52</option><option label="53" value="number:53">53</option><option label="54" value="number:54">54</option><option label="55" value="number:55">55</option><option label="56" value="number:56">56</option><option label="57" value="number:57">57</option><option label="58" value="number:58">58</option><option label="59" value="number:59">59</option><option label="60" value="number:60">60</option><option label="61" value="number:61">61</option><option label="62" value="number:62">62</option><option label="63" value="number:63">63</option><option label="64" value="number:64">64</option><option label="65" value="number:65">65</option><option label="66" value="number:66">66</option><option label="67" value="number:67">67</option><option label="68" value="number:68">68</option><option label="69" value="number:69">69</option><option label="70" value="number:70">70</option><option label="71" value="number:71">71</option><option label="72" value="number:72">72</option><option label="73" value="number:73">73</option><option label="74" value="number:74">74</option><option label="75" value="number:75">75</option><option label="76" value="number:76">76</option><option label="77" value="number:77">77</option><option label="78" value="number:78">78</option><option label="79" value="number:79">79</option><option label="80" value="number:80">80</option><option label="81" value="number:81">81</option><option label="82" value="number:82">82</option><option label="83" value="number:83">83</option><option label="84" value="number:84">84</option><option label="85" value="number:85">85</option><option label="86" value="number:86">86</option><option label="87" value="number:87">87</option><option label="88" value="number:88">88</option><option label="89" value="number:89">89</option><option label="90" value="number:90">90</option><option label="91" value="number:91">91</option><option label="92" value="number:92">92</option><option label="93" value="number:93">93</option><option label="94" value="number:94">94</option><option label="95" value="number:95">95</option><option label="96" value="number:96">96</option><option label="97" value="number:97">97</option><option label="98" value="number:98">98</option><option label="99" value="number:99">99</option><option label="100" value="number:100">100</option><option label="101" value="number:101">101</option><option label="102" value="number:102">102</option><option label="103" value="number:103">103</option><option label="104" value="number:104">104</option><option label="105" value="number:105">105</option><option label="106" value="number:106">106</option><option label="107" value="number:107">107</option><option label="108" value="number:108">108</option><option label="109" value="number:109">109</option><option label="110" value="number:110">110</option><option label="111" value="number:111">111</option><option label="112" value="number:112">112</option><option label="113" value="number:113">113</option><option label="114" value="number:114">114</option><option label="115" value="number:115">115</option><option label="116" value="number:116">116</option><option label="117" value="number:117">117</option><option label="118" value="number:118">118</option><option label="119" value="number:119">119</option><option label="120" value="number:120">120</option></optgroup></select>
+									<li style-attr="fontSize" >
+										<span>字体大小</span>
+										<select style="width: 166px" @change="setStyleDirect($event,'number','px')" >
+											<optgroup label="请选择字号">
+												<option label="{{n+12}}" value="{{n+12}}"  v-for="n in 109"></option>
+											</optgroup>
+										</select>
 									</li>
 									<li style-attr="color" >
 										<span>字体颜色</span><span class="ctner-range"><input type="color" value="#ff0080" /></span>
@@ -454,6 +460,7 @@ var AttrList = Vue.extend({
 				return store.state.currentPageData;
 			},
 			checkedItemDataOnlyOne: function(){
+				console.log(store.state.checkedItemDataOnlyOne);
 				return store.state.checkedItemDataOnlyOne;
 			}
 	  	},
@@ -468,17 +475,26 @@ var AttrList = Vue.extend({
 		setFontFace:function () {
 
 		},
-		setStyleDirect: function(ev, type, px){ // px 单位
+		setStyleDirect: function(ev, type, px,val){ // px 单位
 			var styleAttr = $(ev.target).parents('li[style-attr]').attr('style-attr');
-			var value = $(ev.target).val();
-			if(type === 'color'){
+			var value = null;
+			if(type=='string'){
+				value = val;
+				$(ev).closest('ul').siblings('a').find('span').html($(ev).text());
+			}else{
+				value = $(ev.target).val();
+			}
+
+			/*if(type === 'color'){
 				if(value.indexOf('#') > -1 && value.length !== 7){
 					return;
 				}
 				if(!utils.checkIsColor(value)){
 					return;
 				}
-			}
+			}*/
+
+
 			if(px){
 				value = value + px;
 			}
@@ -486,7 +502,7 @@ var AttrList = Vue.extend({
 			params[styleAttr] = value;
 			actions.setStyle(store,this.checkedItems[0], params,true)
 			this.style = utils.getStyle(this.checkedItems[0],'all',true);
-		},
+		},/*
 		setBoxShadow: function(ev,type,px){
 			var styleAttr = $(ev.target).parents('li[style-attr]').attr('style-attr');
 			var value;
@@ -611,19 +627,19 @@ var AttrList = Vue.extend({
 					'-webkit-animation': _AniStr
 				},true);
 			}, 1);
-		}
+		}*/
 	},
 	watch: {
 		'checkedItems': {
 			handler: function(value){
 				var _this = this;
-				if(this.checkedItems[0] !== undefined){
+				/*if(this.checkedItems[0] !== undefined){
 					this.itemType = $('.j_screen>div').eq(this.checkedItems[0]).attr('type');
 					this.style = utils.getStyle(this.checkedItems[0],'all',true);
 					this.boxShadowStyle = this.formatBoxShadow(utils.getStyle(this.checkedItems[0],'box-shadow',true));
 					var aniStr = utils.getStyle(this.checkedItems[0],'-webkit-animation',true) || utils.getStyle(this.checkedItems[0],'animation',true);
 					this.aniStyleAttr = aniStr === null ? [] : this.formatAni(aniStr);
-				}
+				}*/
 			},
 			deep: true,
 			immediate: true

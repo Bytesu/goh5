@@ -7,17 +7,17 @@ var Vuex = require('Vuex');
 Vue.use(Vuex);
 
 var state = {
-    workData: '',
-    mainCode: '',
-    pagesData: '',
-    wholeAttr: '',
-    currentPage: 1,
-    currentPageData: '',
-    currentPageMain: '',
-    checkedItems: [],
-    checkedItemDataOnlyOne: '',
-    about: '',
-    setConfig: '',
+    workData: '', //
+    mainCode: '', //
+    pagesData: '', //
+    wholeAttr: '', //
+    currentPage: 1, //
+    currentPageData: '', //
+    currentPageMain: '', //
+    checkedItems: [], //
+    checkedItemDataOnlyOne: '', //
+    about: '', //
+    setConfig: '', //设置配置
     alertObj:{
         show: false,
         msg: '提示信息',

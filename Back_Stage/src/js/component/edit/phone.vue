@@ -191,7 +191,9 @@
                      :style="item.style" :title="'ID : '+item.id" :attr="item.attr | json" :type="item.type"
                      :index="$index" @mousedown="selectItemOp($index, $event);" v-change-size v-edit-text-item
                      v-context-menu="'#item_context_menu'">
-                    <div class="content">{{{item.content}}}</div>
+                    <div class="content">
+                        <div v-if="item.type=='TXT'" :style="item.styleObj">{{item.content}}</div>
+                    </div>
                     <div class="edit_mode_cont" v-show="checkedItems.indexOf($index) != -1">
                         <div class="edit_mode_layer">
                             <div class="edit_mode edit_mode_radius_t_l"></div>
@@ -218,7 +220,7 @@
 
     var Vue = require('Vue');
     var $ = require('jQuery');
-    window.jQuery = $;
+    window.jQuery = $
     require('../../library/dropdown');
     var store = require('../../store/store.js');
     var actions = require('../../store/action/index.js');
@@ -279,7 +281,7 @@
             },
                 delItem: actions.delItem
         }
-    })
+    });
 
     module.exports = Phone;
 

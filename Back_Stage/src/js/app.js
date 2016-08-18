@@ -9,11 +9,11 @@ Vue.use(Router);
 var router = new Router();
 
 var APP = Vue.extend({});
-
+Vue.config.debug = true;
 // vue component
-var Home = require('./component/home/main.vue');
-var List = require('./component/list/main.vue');
-var Edit = require('./component/edit/main.vue');
+let Home = require('./component/home/main.vue');
+let List = require('./component/list/main.vue');
+let Edit = require('./component/edit/main.vue');
 
 router.map({
     '/': {

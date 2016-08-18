@@ -9,6 +9,7 @@ mutations.ADDTEXT = function(state) {
     var index = state.currentPageData.items.length + 1;
     var num = utils.getAllItemsLen() + 1;
     var model = tpl.txt(index, num, {});
+
     state.currentPageData.items.push(model);
     mutations.SELECTITEM(state, index - 1);
 };
@@ -34,17 +35,17 @@ mutations.ADDPICORBG = function(state, src, type) {
 
 mutations.DELBG = function(state) {
     state.currentPageMain.background = '#fff';
-}
+};
 
 mutations.ADDBGMUSIC = function(state, src, name) {
     state.mainCode.wholeAttr.bgmusic = src;
     state.mainCode.wholeAttr.bgmusicName = name;
-}
+};
 
 mutations.DElBGMUSIC = function(state) {
     state.mainCode.wholeAttr.bgmusic = '';
     state.mainCode.wholeAttr.bgmusicName = '';
-}
+};
 
 mutations.SELECTITEM = function(state, index, multi) {
     if (multi) {

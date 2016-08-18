@@ -36,7 +36,7 @@ Vue.directive('changeSize', function() {
                 var styleParams = {};
                 switch (btnIndex) {
                     case 0:
-                        // if ((itemWidth - difX) > 0 && (itemHeight - difY) > 0) {
+                        if ((itemWidth - difX) > 0 && (itemHeight - difY) > 0) {
                             if (ev.shiftKey) {
                                 styleParams = {
                                     width: Math.abs(itemWidth - difX) + 'px',
@@ -52,18 +52,18 @@ Vue.directive('changeSize', function() {
                                     top: (itemTop + difY) + 'px'
                                 }
                             }
-                        // }
+                        }
                         break;
                     case 1:
-                        // if ((itemHeight - difY) > 0) {
+                        if ((itemHeight - difY) > 0) {
                             styleParams = {
                                 height: Math.abs(itemHeight - difY) + 'px',
                                 top: (itemTop + difY) + 'px'
                             }
-                        // }
+                        }
                         break;
                     case 2:
-                        // if ((itemWidth - difX) > 0 && (itemHeight - difY) > 0) {
+                        if ((itemWidth - difX) > 0 && (itemHeight - difY) > 0) {
                             if (ev.shiftKey) {
                                 styleParams = {
                                     width: Math.abs(itemWidth + difX) + 'px',
@@ -77,17 +77,17 @@ Vue.directive('changeSize', function() {
                                     top: (itemTop + difY) + 'px'
                                 }
                             }
-                        // }
+                        }
                         break;
                     case 3:
-                        // if ((itemWidth - difX) > 0) {
+                        if ((itemWidth - difX) > 0) {
                             styleParams = {
                                 width: Math.abs(itemWidth + difX) + 'px'
                             }
-                        // }
+                        }
                         break;
                     case 4:
-                        // if ((itemWidth - difX) > 0 && (itemHeight - difY) > 0) {
+                        if ((itemWidth - difX) > 0 && (itemHeight - difY) > 0) {
                             if (ev.shiftKey) {
                                 styleParams = {
                                     width: Math.abs(itemWidth + difX) + 'px',
@@ -99,17 +99,17 @@ Vue.directive('changeSize', function() {
                                     height: Math.abs(itemHeight + difY) + 'px'
                                 }
                             }
-                        // }
+                        }
                         break;
                     case 5:
-                        // if ((itemHeight - difY) > 0) {
+                        if ((itemHeight - difY) > 0) {
                             styleParams = {
                                 height: Math.abs(itemHeight + difY) + 'px'
                             }
-                        // }
+                        }
                         break;
                     case 6:
-                        // if ((itemWidth - difX) > 0 && (itemHeight - difY) > 0) {
+                        if ((itemWidth - difX) > 0 && (itemHeight - difY) > 0) {
                             if (ev.shiftKey) {
                                 styleParams = {
                                     width: Math.abs(itemWidth - difX) + 'px',
@@ -123,16 +123,16 @@ Vue.directive('changeSize', function() {
                                     left: (itemLeft + difX) + 'px'
                                 }
                             }
-                        // }
+                        }
                         break;
                     case 7:
-                        // if ((itemWidth - difX) > 0) {
+                        if ((itemWidth - difX) > 0) {
                         // if ((itemWidth - difX) ) {
                             styleParams = {
                                 width: Math.abs(itemWidth - difX) + 'px',
                                 left: (itemLeft + difX) + 'px'
                             }
-                        // }
+                        }
                         break;
                 }
                 actions.setStyle(store, store.state.checkedItems[0], styleParams);
@@ -143,7 +143,6 @@ Vue.directive('changeSize', function() {
             });
         })
     };
-
 
     for (var i = 0; i < $(target).find('.edit_mode').length; i++) {
         bindEvent($(target).find('.edit_mode').eq(i), i);
