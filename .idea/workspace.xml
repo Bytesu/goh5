@@ -2,26 +2,223 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1749ae44-62d4-4d64-9776-10a9261bd74d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/apis/h5.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/api.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/zip.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Back_Stage/dist/js/goh5.min.js" afterPath="$PROJECT_DIR$/Back_Stage/dist/js/goh5.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Back_Stage/src/js/app.js" afterPath="$PROJECT_DIR$/Back_Stage/src/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/common/head.vue" afterPath="$PROJECT_DIR$/Back_Stage/src/js/component/common/head.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/edit/attrList.vue" afterPath="$PROJECT_DIR$/Back_Stage/src/js/component/edit/attrList.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/edit/pageList.vue" afterPath="$PROJECT_DIR$/Back_Stage/src/js/component/edit/pageList.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/edit/phone.vue" afterPath="$PROJECT_DIR$/Back_Stage/src/js/component/edit/phone.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/home/main.vue" afterPath="$PROJECT_DIR$/Back_Stage/src/js/component/home/main.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/list/main.vue" afterPath="$PROJECT_DIR$/Back_Stage/src/js/component/list/main.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Back_Stage/src/js/directive/changeSize.js" afterPath="$PROJECT_DIR$/Back_Stage/src/js/directive/changeSize.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Back_Stage/src/js/directive/dragItem.js" afterPath="$PROJECT_DIR$/Back_Stage/src/js/directive/dragItem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Back_Stage/src/js/store/action/item.js" afterPath="$PROJECT_DIR$/Back_Stage/src/js/store/action/item.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Back_Stage/src/js/store/mutation/dom.js" afterPath="$PROJECT_DIR$/Back_Stage/src/js/store/mutation/dom.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Back_Stage/src/js/store/mutation/item.js" afterPath="$PROJECT_DIR$/Back_Stage/src/js/store/mutation/item.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Back_Stage/src/js/store/store.js" afterPath="$PROJECT_DIR$/Back_Stage/src/js/store/store.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Back_Stage/src/js/template/tpl.js" afterPath="$PROJECT_DIR$/Back_Stage/src/js/template/tpl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Back_Stage/src/js/util/index.js" afterPath="$PROJECT_DIR$/Back_Stage/src/js/util/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/config.json" afterPath="$PROJECT_DIR$/h5editor/config.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/css/goh5.min.css" afterPath="$PROJECT_DIR$/h5editor/dist/css/goh5.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/fonts/FZFangSong-Z02S.woff" afterPath="$PROJECT_DIR$/h5editor/dist/fonts/FZFangSong-Z02S.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/fonts/FZHei-B01S.woff" afterPath="$PROJECT_DIR$/h5editor/dist/fonts/FZHei-B01S.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/fonts/FZKai-Z03S.woff" afterPath="$PROJECT_DIR$/h5editor/dist/fonts/FZKai-Z03S.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/fonts/FZShuSong-Z01S.woff" afterPath="$PROJECT_DIR$/h5editor/dist/fonts/FZShuSong-Z01S.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/h5editor/dist/fonts/FontAwesome.otf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/fonts/HappyZcool.woff" afterPath="$PROJECT_DIR$/h5editor/dist/fonts/HappyZcool.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/fonts/NotoSansSC-Black.woff2" afterPath="$PROJECT_DIR$/h5editor/dist/fonts/NotoSansSC-Black.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/fonts/NotoSansSC-Bold.woff2" afterPath="$PROJECT_DIR$/h5editor/dist/fonts/NotoSansSC-Bold.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/fonts/NotoSansSC-DemiLight.woff" afterPath="$PROJECT_DIR$/h5editor/dist/fonts/NotoSansSC-DemiLight.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/fonts/NotoSansSC-Light.woff2" afterPath="$PROJECT_DIR$/h5editor/dist/fonts/NotoSansSC-Light.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/fonts/NotoSansSC-Medium.woff2" afterPath="$PROJECT_DIR$/h5editor/dist/fonts/NotoSansSC-Medium.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/fonts/NotoSansSC-Regular.woff2" afterPath="$PROJECT_DIR$/h5editor/dist/fonts/NotoSansSC-Regular.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/fonts/NotoSansSC-Thin.woff2" afterPath="$PROJECT_DIR$/h5editor/dist/fonts/NotoSansSC-Thin.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/h5editor/dist/fonts/fontawesome-webfont.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/h5editor/dist/fonts/fontawesome-webfont.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/h5editor/dist/fonts/fontawesome-webfont.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/h5editor/dist/fonts/fontawesome-webfont.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/fonts/icon-pc.eot" afterPath="$PROJECT_DIR$/h5editor/dist/fonts/icon-pc.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/fonts/icon-pc.svg" afterPath="$PROJECT_DIR$/h5editor/dist/fonts/icon-pc.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/fonts/icon-pc.ttf" afterPath="$PROJECT_DIR$/h5editor/dist/fonts/icon-pc.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/fonts/icon-pc.woff" afterPath="$PROJECT_DIR$/h5editor/dist/fonts/icon-pc.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/fonts/zcool-gdh.woff" afterPath="$PROJECT_DIR$/h5editor/dist/fonts/zcool-gdh.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/img/add_page.png" afterPath="$PROJECT_DIR$/h5editor/dist/img/add_page.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/img/basic_info_title.png" afterPath="$PROJECT_DIR$/h5editor/dist/img/basic_info_title.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/img/bg.png" afterPath="$PROJECT_DIR$/h5editor/dist/img/bg.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/img/eg.jpg" afterPath="$PROJECT_DIR$/h5editor/dist/img/eg.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/img/grid_bg.png" afterPath="$PROJECT_DIR$/h5editor/dist/img/grid_bg.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/img/home_bg.jpg" afterPath="$PROJECT_DIR$/h5editor/dist/img/home_bg.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/img/icon.png" afterPath="$PROJECT_DIR$/h5editor/dist/img/icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/img/loading.png" afterPath="$PROJECT_DIR$/h5editor/dist/img/loading.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/img/phone.svg" afterPath="$PROJECT_DIR$/h5editor/dist/img/phone.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/img/phone_bottom.png" afterPath="$PROJECT_DIR$/h5editor/dist/img/phone_bottom.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/img/phone_top.png" afterPath="$PROJECT_DIR$/h5editor/dist/img/phone_top.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/js/goh5.min.js" afterPath="$PROJECT_DIR$/h5editor/dist/js/goh5.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/dist/js/vendor.min.js" afterPath="$PROJECT_DIR$/h5editor/dist/js/vendor.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/gulpfile.js" afterPath="$PROJECT_DIR$/h5editor/gulpfile.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/index.html" afterPath="$PROJECT_DIR$/h5editor/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/css/animate.css" afterPath="$PROJECT_DIR$/h5editor/src/css/animate.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/css/common.css" afterPath="$PROJECT_DIR$/h5editor/src/css/common.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/css/dropdown.css" afterPath="$PROJECT_DIR$/h5editor/src/css/dropdown.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/css/popline.css" afterPath="$PROJECT_DIR$/h5editor/src/css/popline.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/FZFangSong-Z02S.woff" afterPath="$PROJECT_DIR$/h5editor/src/fonts/FZFangSong-Z02S.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/FZHei-B01S.woff" afterPath="$PROJECT_DIR$/h5editor/src/fonts/FZHei-B01S.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/FZKai-Z03S.woff" afterPath="$PROJECT_DIR$/h5editor/src/fonts/FZKai-Z03S.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/FZShuSong-Z01S.woff" afterPath="$PROJECT_DIR$/h5editor/src/fonts/FZShuSong-Z01S.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/h5editor/src/fonts/FontAwesome.otf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/HappyZcool.woff" afterPath="$PROJECT_DIR$/h5editor/src/fonts/HappyZcool.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/NotoSansSC-Black.woff2" afterPath="$PROJECT_DIR$/h5editor/src/fonts/NotoSansSC-Black.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/NotoSansSC-Bold.woff2" afterPath="$PROJECT_DIR$/h5editor/src/fonts/NotoSansSC-Bold.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/NotoSansSC-DemiLight.woff" afterPath="$PROJECT_DIR$/h5editor/src/fonts/NotoSansSC-DemiLight.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/NotoSansSC-Light.woff2" afterPath="$PROJECT_DIR$/h5editor/src/fonts/NotoSansSC-Light.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/NotoSansSC-Medium.woff2" afterPath="$PROJECT_DIR$/h5editor/src/fonts/NotoSansSC-Medium.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/NotoSansSC-Regular.woff2" afterPath="$PROJECT_DIR$/h5editor/src/fonts/NotoSansSC-Regular.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/NotoSansSC-Thin.woff2" afterPath="$PROJECT_DIR$/h5editor/src/fonts/NotoSansSC-Thin.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/HELP-US-OUT.txt" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/HELP-US-OUT.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/css/font-awesome.css" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/css/font-awesome.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/css/font-awesome.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/fonts/FontAwesome.otf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/fonts/fontawesome-webfont.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/fonts/fontawesome-webfont.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/fonts/fontawesome-webfont.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/fonts/fontawesome-webfont.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/fonts/fontawesome-webfont.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/less/animated.less" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/less/animated.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/less/bordered-pulled.less" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/less/bordered-pulled.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/less/core.less" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/less/core.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/less/fixed-width.less" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/less/fixed-width.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/less/font-awesome.less" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/less/font-awesome.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/less/icons.less" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/less/icons.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/less/larger.less" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/less/larger.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/less/list.less" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/less/list.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/less/mixins.less" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/less/mixins.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/less/path.less" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/less/path.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/less/rotated-flipped.less" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/less/rotated-flipped.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/less/screen-reader.less" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/less/screen-reader.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/less/stacked.less" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/less/stacked.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/less/variables.less" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/less/variables.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/scss/_animated.scss" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/scss/_animated.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/scss/_bordered-pulled.scss" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/scss/_bordered-pulled.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/scss/_core.scss" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/scss/_core.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/scss/_fixed-width.scss" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/scss/_fixed-width.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/scss/_icons.scss" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/scss/_icons.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/scss/_larger.scss" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/scss/_larger.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/scss/_list.scss" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/scss/_list.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/scss/_mixins.scss" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/scss/_mixins.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/scss/_path.scss" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/scss/_path.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/scss/_rotated-flipped.scss" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/scss/_rotated-flipped.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/scss/_screen-reader.scss" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/scss/_screen-reader.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/scss/_stacked.scss" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/scss/_stacked.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/scss/_variables.scss" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/scss/_variables.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/scss/font-awesome.scss" afterPath="$PROJECT_DIR$/h5editor/src/fonts/font-awesome-4.6.3/scss/font-awesome.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/h5editor/src/fonts/fontawesome-webfont.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/h5editor/src/fonts/fontawesome-webfont.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/h5editor/src/fonts/fontawesome-webfont.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/h5editor/src/fonts/fontawesome-webfont.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/icon-pc.eot" afterPath="$PROJECT_DIR$/h5editor/src/fonts/icon-pc.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/icon-pc.svg" afterPath="$PROJECT_DIR$/h5editor/src/fonts/icon-pc.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/icon-pc.ttf" afterPath="$PROJECT_DIR$/h5editor/src/fonts/icon-pc.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/icon-pc.woff" afterPath="$PROJECT_DIR$/h5editor/src/fonts/icon-pc.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/fonts/zcool-gdh.woff" afterPath="$PROJECT_DIR$/h5editor/src/fonts/zcool-gdh.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/img/add_page.png" afterPath="$PROJECT_DIR$/h5editor/src/img/add_page.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/img/basic_info_title.png" afterPath="$PROJECT_DIR$/h5editor/src/img/basic_info_title.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/img/bg.png" afterPath="$PROJECT_DIR$/h5editor/src/img/bg.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/img/eg.jpg" afterPath="$PROJECT_DIR$/h5editor/src/img/eg.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/img/grid_bg.png" afterPath="$PROJECT_DIR$/h5editor/src/img/grid_bg.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/img/home_bg.jpg" afterPath="$PROJECT_DIR$/h5editor/src/img/home_bg.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/img/icon.png" afterPath="$PROJECT_DIR$/h5editor/src/img/icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/img/loading.png" afterPath="$PROJECT_DIR$/h5editor/src/img/loading.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/img/phone.svg" afterPath="$PROJECT_DIR$/h5editor/src/img/phone.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/img/phone_bottom.png" afterPath="$PROJECT_DIR$/h5editor/src/img/phone_bottom.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/img/phone_top.png" afterPath="$PROJECT_DIR$/h5editor/src/img/phone_top.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/app.js" afterPath="$PROJECT_DIR$/h5editor/src/js/app.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/common/alert.vue" afterPath="$PROJECT_DIR$/h5editor/src/js/component/common/alert.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/common/confirm.vue" afterPath="$PROJECT_DIR$/h5editor/src/js/component/common/confirm.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/common/head.vue" afterPath="$PROJECT_DIR$/h5editor/src/js/component/common/head.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/common/loading.vue" afterPath="$PROJECT_DIR$/h5editor/src/js/component/common/loading.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/common/login.vue" afterPath="$PROJECT_DIR$/h5editor/src/js/component/common/login.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/common/pagination.vue" afterPath="$PROJECT_DIR$/h5editor/src/js/component/common/pagination.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/common/signup.vue" afterPath="$PROJECT_DIR$/h5editor/src/js/component/common/signup.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/edit/attrList.vue" afterPath="$PROJECT_DIR$/h5editor/src/js/component/edit/attrList.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/edit/main.vue" afterPath="$PROJECT_DIR$/h5editor/src/js/component/edit/main.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/edit/materialLibMusic.vue" afterPath="$PROJECT_DIR$/h5editor/src/js/component/edit/materialLibMusic.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/edit/materialLibPic.vue" afterPath="$PROJECT_DIR$/h5editor/src/js/component/edit/materialLibPic.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/edit/pageList.vue" afterPath="$PROJECT_DIR$/h5editor/src/js/component/edit/pageList.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/edit/phone.vue" afterPath="$PROJECT_DIR$/h5editor/src/js/component/edit/phone.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/edit/set.vue" afterPath="$PROJECT_DIR$/h5editor/src/js/component/edit/set.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/edit/toolbar.vue" afterPath="$PROJECT_DIR$/h5editor/src/js/component/edit/toolbar.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/home/main.vue" afterPath="$PROJECT_DIR$/h5editor/src/js/component/home/main.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/list/create.vue" afterPath="$PROJECT_DIR$/h5editor/src/js/component/list/create.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/component/list/main.vue" afterPath="$PROJECT_DIR$/h5editor/src/js/component/list/main.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/directive/changeSize.js" afterPath="$PROJECT_DIR$/h5editor/src/js/directive/changeSize.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/directive/contextMenu.js" afterPath="$PROJECT_DIR$/h5editor/src/js/directive/contextMenu.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/directive/dragItem.js" afterPath="$PROJECT_DIR$/h5editor/src/js/directive/dragItem.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/directive/editTextItem.js" afterPath="$PROJECT_DIR$/h5editor/src/js/directive/editTextItem.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/directive/keyboard.js" afterPath="$PROJECT_DIR$/h5editor/src/js/directive/keyboard.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/directive/qrcode.js" afterPath="$PROJECT_DIR$/h5editor/src/js/directive/qrcode.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/directive/tips.js" afterPath="$PROJECT_DIR$/h5editor/src/js/directive/tips.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/filter/index.js" afterPath="$PROJECT_DIR$/h5editor/src/js/filter/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/library/dropdown.js" afterPath="$PROJECT_DIR$/h5editor/src/js/library/dropdown.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/library/jquery-popline.js" afterPath="$PROJECT_DIR$/h5editor/src/js/library/jquery-popline.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/library/jquery-popline.min.js" afterPath="$PROJECT_DIR$/h5editor/src/js/library/jquery-popline.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/library/jquery-qrcode.js" afterPath="$PROJECT_DIR$/h5editor/src/js/library/jquery-qrcode.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/library/jquery-qrcode.min.js" afterPath="$PROJECT_DIR$/h5editor/src/js/library/jquery-qrcode.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/library/jquery.js" afterPath="$PROJECT_DIR$/h5editor/src/js/library/jquery.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/library/jquery.min.js" afterPath="$PROJECT_DIR$/h5editor/src/js/library/jquery.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/library/lodash.js" afterPath="$PROJECT_DIR$/h5editor/src/js/library/lodash.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/library/lodash.min.js" afterPath="$PROJECT_DIR$/h5editor/src/js/library/lodash.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/library/vue-router.js" afterPath="$PROJECT_DIR$/h5editor/src/js/library/vue-router.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/library/vue-router.min.js" afterPath="$PROJECT_DIR$/h5editor/src/js/library/vue-router.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/library/vue.js" afterPath="$PROJECT_DIR$/h5editor/src/js/library/vue.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/library/vue.min.js" afterPath="$PROJECT_DIR$/h5editor/src/js/library/vue.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/library/vuex.js" afterPath="$PROJECT_DIR$/h5editor/src/js/library/vuex.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/library/vuex.min.js" afterPath="$PROJECT_DIR$/h5editor/src/js/library/vuex.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/store/action/common.js" afterPath="$PROJECT_DIR$/h5editor/src/js/store/action/common.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/store/action/dom.js" afterPath="$PROJECT_DIR$/h5editor/src/js/store/action/dom.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/store/action/index.js" afterPath="$PROJECT_DIR$/h5editor/src/js/store/action/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/store/action/item.js" afterPath="$PROJECT_DIR$/h5editor/src/js/store/action/item.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/store/action/page.js" afterPath="$PROJECT_DIR$/h5editor/src/js/store/action/page.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/store/mutation/common.js" afterPath="$PROJECT_DIR$/h5editor/src/js/store/mutation/common.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/store/mutation/dom.js" afterPath="$PROJECT_DIR$/h5editor/src/js/store/mutation/dom.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/store/mutation/index.js" afterPath="$PROJECT_DIR$/h5editor/src/js/store/mutation/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/store/mutation/item.js" afterPath="$PROJECT_DIR$/h5editor/src/js/store/mutation/item.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/store/mutation/page.js" afterPath="$PROJECT_DIR$/h5editor/src/js/store/mutation/page.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/store/store.js" afterPath="$PROJECT_DIR$/h5editor/src/js/store/store.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/template/tpl.js" afterPath="$PROJECT_DIR$/h5editor/src/js/template/tpl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Back_Stage/src/js/util/index.js" afterPath="$PROJECT_DIR$/h5editor/src/js/util/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Documents/dataModel.md" afterPath="$PROJECT_DIR$/docs/dataModel.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Documents/mongodb.md" afterPath="$PROJECT_DIR$/docs/mongodb.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Documents/static/example1.png" afterPath="$PROJECT_DIR$/docs/static/example1.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Documents/static/example2.png" afterPath="$PROJECT_DIR$/docs/static/example2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Documents/static/example3.png" afterPath="$PROJECT_DIR$/docs/static/example3.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Documents/static/qrcode.png" afterPath="$PROJECT_DIR$/docs/static/qrcode.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Documents/todo.md" afterPath="$PROJECT_DIR$/docs/todo.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/config.json" afterPath="$PROJECT_DIR$/views/config.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/dist/css/goh5.min.css" afterPath="$PROJECT_DIR$/views/dist/css/goh5.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/dist/img/arrow.png" afterPath="$PROJECT_DIR$/views/dist/img/arrow.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/dist/img/music.png" afterPath="$PROJECT_DIR$/views/dist/img/music.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/dist/js/goh5.min.js" afterPath="$PROJECT_DIR$/views/dist/js/goh5.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/dist/js/vendor.min.js" afterPath="$PROJECT_DIR$/views/dist/js/vendor.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/gulpfile.js" afterPath="$PROJECT_DIR$/views/gulpfile.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/index.html" afterPath="$PROJECT_DIR$/views/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/src/css/animate.css" afterPath="$PROJECT_DIR$/views/src/css/animate.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/src/css/common.css" afterPath="$PROJECT_DIR$/views/src/css/common.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/src/css/loading.css" afterPath="$PROJECT_DIR$/views/src/css/loading.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/src/css/swiper.css" afterPath="$PROJECT_DIR$/views/src/css/swiper.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/src/img/arrow.png" afterPath="$PROJECT_DIR$/views/src/img/arrow.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/src/img/music.png" afterPath="$PROJECT_DIR$/views/src/img/music.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/src/js/animate.js" afterPath="$PROJECT_DIR$/views/src/js/animate.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/src/js/app.js" afterPath="$PROJECT_DIR$/views/src/js/app.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/src/js/event.js" afterPath="$PROJECT_DIR$/views/src/js/event.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/src/js/fastclick.min.js" afterPath="$PROJECT_DIR$/views/src/js/fastclick.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/src/js/goh5.js" afterPath="$PROJECT_DIR$/views/src/js/goh5.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/src/js/load.js" afterPath="$PROJECT_DIR$/views/src/js/load.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/src/js/music.js" afterPath="$PROJECT_DIR$/views/src/js/music.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/src/js/swiper.js" afterPath="$PROJECT_DIR$/views/src/js/swiper.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Front_Stage/src/js/utils.js" afterPath="$PROJECT_DIR$/views/src/js/utils.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/RESTful_API/apis/audio.js" afterPath="$PROJECT_DIR$/api/apis/audio.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/RESTful_API/apis/delete.js" afterPath="$PROJECT_DIR$/api/apis/delete.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/RESTful_API/apis/img.js" afterPath="$PROJECT_DIR$/api/apis/img.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/RESTful_API/apis/index.js" afterPath="$PROJECT_DIR$/api/apis/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/RESTful_API/apis/list.js" afterPath="$PROJECT_DIR$/api/apis/list.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/RESTful_API/apis/root.js" afterPath="$PROJECT_DIR$/api/apis/root.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/RESTful_API/apis/user.js" afterPath="$PROJECT_DIR$/api/apis/user.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/RESTful_API/apis/work.js" afterPath="$PROJECT_DIR$/api/apis/work.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/RESTful_API/db/dbHandel.js" afterPath="$PROJECT_DIR$/api/db/dbHandel.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/RESTful_API/db/models.js" afterPath="$PROJECT_DIR$/api/db/models.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/RESTful_API/db/notice.md" afterPath="$PROJECT_DIR$/api/db/notice.md" />
     </list>
     <ignored path="goh5.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,104 +241,103 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="tpl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/template/tpl.js">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
-              <folding>
-                <marker date="1471492582720" expanded="true" signature="1691:1824" ph="..." />
-                <marker date="1471492582720" expanded="true" signature="2236:2355" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="item.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/store/action/item.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+            <state relative-caret-position="170">
+              <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/app.js">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="15" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="audio.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/apis/audio.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1054">
+              <caret line="62" column="6" selection-start-line="62" selection-start-column="6" selection-end-line="62" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="delete.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/apis/delete.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
-              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="store.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/store/store.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="changeSize.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/directive/changeSize.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+              <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/util/index.js">
+        <entry file="file://$PROJECT_DIR$/api/apis/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="68">
+              <caret line="4" column="114" selection-start-line="4" selection-start-column="114" selection-end-line="4" selection-end-column="114" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dom.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/store/mutation/dom.js">
+      <file leaf-file-name="h5.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/apis/h5.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+            <state relative-caret-position="408">
+              <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="attrList.vue" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/component/edit/attrList.vue">
+      <file leaf-file-name="api.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="87" column="203" selection-start-line="87" selection-start-column="203" selection-end-line="87" selection-end-column="203" />
-              <folding />
+            <state relative-caret-position="289">
+              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+              <folding>
+                <element signature="e#1#43#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dom.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/store/action/dom.js">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="phone.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/component/edit/phone.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2499">
-              <caret line="180" column="32" selection-start-line="180" selection-start-column="32" selection-end-line="180" selection-end-column="32" />
+            <state relative-caret-position="102">
+              <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -164,7 +360,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/RESTful_API/apis/user.js" />
         <option value="$PROJECT_DIR$/RESTful_API/apis/work.js" />
         <option value="$PROJECT_DIR$/Back_Stage/src/js/store/action/index.js" />
@@ -172,30 +367,41 @@
         <option value="$PROJECT_DIR$/Back_Stage/src/js/component/edit/main.vue" />
         <option value="$PROJECT_DIR$/Back_Stage/src/img/phone.svg" />
         <option value="$PROJECT_DIR$/Back_Stage/src/js/component/edit/materialLibPic.vue" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/Back_Stage/src/js/store/mutation/index.js" />
         <option value="$PROJECT_DIR$/test/index.html" />
         <option value="$PROJECT_DIR$/Back_Stage/src/js/library/dropdown.js" />
-        <option value="$PROJECT_DIR$/Back_Stage/index.html" />
         <option value="$PROJECT_DIR$/Back_Stage/src/css/common.css" />
-        <option value="$PROJECT_DIR$/Back_Stage/src/css/dropdown.css" />
         <option value="$PROJECT_DIR$/Back_Stage/src/js/store/store.js" />
         <option value="$PROJECT_DIR$/Back_Stage/src/js/component/edit/pageList.vue" />
         <option value="$PROJECT_DIR$/Back_Stage/src/js/component/list/main.vue" />
         <option value="$PROJECT_DIR$/Back_Stage/src/js/directive/changeSize.js" />
-        <option value="$PROJECT_DIR$/Back_Stage/src/js/store/mutation/item.js" />
         <option value="$PROJECT_DIR$/Back_Stage/src/js/template/tets.js" />
-        <option value="$PROJECT_DIR$/Back_Stage/src/js/component/home/main.vue" />
         <option value="$PROJECT_DIR$/Back_Stage/src/js/component/common/head.vue" />
         <option value="$PROJECT_DIR$/Back_Stage/src/js/component/edit/phone.vue" />
         <option value="$PROJECT_DIR$/Back_Stage/src/js/util/index.js" />
         <option value="$PROJECT_DIR$/Back_Stage/src/js/directive/dragItem.js" />
         <option value="$PROJECT_DIR$/Back_Stage/src/js/store/action/item.js" />
-        <option value="$PROJECT_DIR$/Back_Stage/src/js/template/tpl.js" />
         <option value="$PROJECT_DIR$/Back_Stage/src/js/app.js" />
-        <option value="$PROJECT_DIR$/Back_Stage/src/js/store/mutation/dom.js" />
+        <option value="$PROJECT_DIR$/Back_Stage/index.html" />
+        <option value="$PROJECT_DIR$/Back_Stage/src/css/dropdown.css" />
         <option value="$PROJECT_DIR$/Back_Stage/src/js/component/edit/attrList.vue" />
+        <option value="$PROJECT_DIR$/Back_Stage/src/js/component/home/main.vue" />
+        <option value="$PROJECT_DIR$/Back_Stage/src/js/component/list/create.vue" />
+        <option value="$PROJECT_DIR$/Back_Stage/src/js/template/tpl.js" />
+        <option value="$PROJECT_DIR$/Back_Stage/src/js/store/mutation/dom.js" />
+        <option value="$PROJECT_DIR$/Back_Stage/src/js/directive/editTextItem.js" />
+        <option value="$PROJECT_DIR$/Back_Stage/src/js/store/mutation/item.js" />
+        <option value="$PROJECT_DIR$/Front_Stage/index.html" />
+        <option value="$PROJECT_DIR$/Front_Stage/gulpfile.js" />
+        <option value="$PROJECT_DIR$/Front_Stage/src/js/goh5.js" />
+        <option value="$PROJECT_DIR$/test/index.js" />
+        <option value="$PROJECT_DIR$/test/api.js" />
+        <option value="$PROJECT_DIR$/router/h5.js" />
+        <option value="$PROJECT_DIR$/router/index.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/RESTful_API/apis/index.js" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -249,265 +455,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="goh5">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="goh5">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Back_Stage">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="goh5">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Back_Stage">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="js">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="goh5">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Back_Stage">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="js">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="util">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="goh5">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Back_Stage">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="js">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="template">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="goh5">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Back_Stage">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="js">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="store">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="goh5">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Back_Stage">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="js">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="store">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="action">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="goh5">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Back_Stage">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="js">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="filter">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="goh5">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Back_Stage">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="js">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="directive">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="goh5">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Back_Stage">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="js">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="component">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="goh5">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Back_Stage">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="goh5">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Back_Stage">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dist">
+            <PATH_ELEMENT USER_OBJECT="h5editor">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -517,7 +465,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="H:/code/invoice" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
@@ -530,13 +478,15 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="H:\archive\goh5\Back_Stage" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\archive\goh5\Front_Stage" />
       <recent name="H:\archive\goh5\Back_Stage\src\fonts" />
       <recent name="H:\archive\goh5\Back_Stage\src\img" />
       <recent name="H:\archive\goh5\User\UploadImg" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\archive\goh5\RESTful_API\apis" />
+      <recent name="H:\archive\goh5\Back_Stage" />
     </key>
   </component>
   <component name="RunManager">
@@ -613,47 +563,49 @@
       <workItem from="1470991367338" duration="1535000" />
       <workItem from="1470992926400" duration="3914000" />
       <workItem from="1471225909214" duration="27211000" />
-      <workItem from="1471398041403" duration="41164000" />
+      <workItem from="1471398041403" duration="62879000" />
+      <workItem from="1471578733106" duration="939000" />
+      <workItem from="1471585556045" duration="41000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73824000" />
+    <option name="totallyTimeSpent" value="96519000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21651785" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28196722" sideWeight="0.5029762" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46885246" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22131148" sideWeight="0.5029762" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1852459" sideWeight="0.49702382" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24918033" sideWeight="0.49702382" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46885246" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28196722" sideWeight="0.5029762" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22131148" sideWeight="0.5029762" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1852459" sideWeight="0.49702382" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.036065575" sideWeight="0.49702382" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46885246" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -674,128 +626,316 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Back_Stage/config.json">
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/component/edit/toolbar.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="187">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Front_Stage/config.json">
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/component/edit/materialLibPic.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="28" />
-          <folding />
+        <state relative-caret-position="-357">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Front_Stage/gulpfile.js">
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/store/action/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="103" column="2" selection-start-line="103" selection-start-column="2" selection-end-line="103" selection-end-column="2" />
-          <folding />
+        <state relative-caret-position="119">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/fonts/font-awesome-4.6.3/css/font-awesome.css">
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/component/edit/materialLibMusic.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="-459">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/store/mutation/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="24" column="26" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="26" />
-          <folding />
+        <state relative-caret-position="113">
+          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/library/dropdown.js">
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/store/action/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/store/mutation/page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/component/edit/pageList.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/component/edit/set.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
+          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/css/common.css">
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/directive/tips.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-          <folding />
+        <state relative-caret-position="340">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/css/dropdown.css">
+    <entry file="file://$PROJECT_DIR$/h5editor/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="288" column="44" selection-start-line="288" selection-start-column="44" selection-end-line="288" selection-end-column="44" />
-          <folding />
+        <state relative-caret-position="323">
+          <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/vue-style-loader/addStyles.js">
+    <entry file="file://$PROJECT_DIR$/views/src/js/utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="96" column="19" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
-          <folding />
+        <state relative-caret-position="360">
+          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/store/mutation/common.js">
+    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/template/tets.js" />
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/component/common/head.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="94" column="28" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/filter/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+          <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/directive/dragItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/store/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5editor/src/css/dropdown.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/component/home/main.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="34" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/util/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/component/list/main.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/directive/changeSize.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="137" column="29" selection-start-line="137" selection-start-column="29" selection-end-line="137" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/store/action/dom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/template/tpl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/component/edit/attrList.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/store/mutation/dom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/component/edit/phone.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="191" column="96" selection-start-line="191" selection-start-column="96" selection-end-line="191" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/component/list/create.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="63" column="3" selection-start-line="63" selection-start-column="3" selection-end-line="63" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/directive/editTextItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/store/action/item.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/store/mutation/item.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5editor/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5editor/src/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-379">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/src/js/goh5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/zip.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/apis/audio.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" column="6" selection-start-line="62" selection-start-column="6" selection-end-line="62" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/store/action/page.js">
+    <entry file="file://$PROJECT_DIR$/api/apis/h5.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="18" />
+        <state relative-caret-position="408">
+          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/component/common/login.vue">
+    <entry file="file://$PROJECT_DIR$/api/apis/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="126" column="36" selection-start-line="126" selection-start-column="32" selection-end-line="126" selection-end-column="36" />
+        <state relative-caret-position="68">
+          <caret line="4" column="114" selection-start-line="4" selection-start-column="114" selection-end-line="4" selection-end-column="114" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/library/vue.min.js">
+    <entry file="file://$PROJECT_DIR$/router/index.js" />
+    <entry file="file://$PROJECT_DIR$/api/apis/delete.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3710">
-          <caret line="5" column="26066" selection-start-line="5" selection-start-column="26066" selection-end-line="5" selection-end-column="26066" />
+        <state relative-caret-position="374">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/library/vue.js">
+    <entry file="file://$PROJECT_DIR$/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="7561" column="33" selection-start-line="7561" selection-start-column="33" selection-end-line="7561" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/component/list/main.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1149">
-          <caret line="208" column="13" selection-start-line="208" selection-start-column="13" selection-end-line="208" selection-end-column="13" />
+        <state relative-caret-position="170">
+          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -808,287 +948,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/dist/css/goh5.min.css">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        <state relative-caret-position="391">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/message.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+          <folding>
+            <element signature="e#1#43#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        <state relative-caret-position="102">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/util/util.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/util/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/directive/editTextItem.js">
+    <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/component/edit/main.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/component/edit/toolbar.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/component/edit/materialLibPic.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-357">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/store/action/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/component/edit/materialLibMusic.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-459">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/store/mutation/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/store/action/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/store/mutation/page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/component/edit/pageList.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/component/edit/set.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/directive/tips.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Front_Stage/src/js/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/store/mutation/item.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/template/tets.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/component/common/head.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="94" column="28" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/component/home/main.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="36" column="16" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/filter/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/directive/dragItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/store/store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/template/tpl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
-          <folding>
-            <marker date="1471492582720" expanded="true" signature="1691:1824" ph="..." />
-            <marker date="1471492582720" expanded="true" signature="2236:2355" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/store/action/item.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/util/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/store/action/dom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/store/mutation/dom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/directive/changeSize.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/component/edit/phone.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2499">
-          <caret line="180" column="32" selection-start-line="180" selection-start-column="32" selection-end-line="180" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Back_Stage/src/js/component/edit/attrList.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="87" column="203" selection-start-line="87" selection-start-column="203" selection-end-line="87" selection-end-column="203" />
+          <caret line="12" column="15" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="15" />
           <folding />
         </state>
       </provider>

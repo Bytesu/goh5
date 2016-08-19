@@ -6,15 +6,16 @@ var cookieParser = require('cookie-parser');
 var lactate = require('lactate');
 var mongoose = require('mongoose');
 var pwd = __dirname;
+var routes = require('./router');
 
 var app = express();
 var router = express.Router();
 var port = 3030;
 
-var routers = require('./RESTful_API/apis/index.js');
+var routers = require('./api/apis/index.js');
 
 global.userPath = './User';
-global.dbHandel = require('./RESTful_API/db/dbHandel.js');
+global.dbHandel = require('./api/db/dbHandel.js');
 global.db = mongoose.connect("mongodb://localhost:27017/goh5");
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -49,9 +50,10 @@ app.get('/', function(req, res, next) {
 
 app.engine('.html', require('ejs').__express);
 app.set('view engine', 'html');
+app.use('/', routes);
 
 // 前台页面
-app.get('/show/:id', function(req, res, next) {
+app.get('/h5/:id', function(req, res, next) {
     var id = req.params.id;
     var Work = global.dbHandel.getModel('work');
     Work.find({ '_id': id }).exec(function(err, docs) {
@@ -59,11 +61,11 @@ app.get('/show/:id', function(req, res, next) {
             workData: docs[0]
         });
     })
-})
+});
 
 routers.forEach(function(Router) {
     app.use('/api', Router);
-})
+});
 
 app.listen(port);
 console.log('server is listening on port:'+port);
