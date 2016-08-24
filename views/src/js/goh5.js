@@ -55,31 +55,39 @@ Layout.prototype ={
             window.event.returnValue = false;
             return false;
         });
+        self.initLayout();
         $(window).resize(function () {
-            self.$container.width(1080/1920 * self.$container.height());
+            self.initLayout();
         });
+    },
+    initLayout:function () {
+        var self = this;
+        self.$container.width(1080/1920 * self.$container.height());
     }
 };
 
 $(function () {
     new Layout();
 
-    var GoH5 = new Swiper('.swiper-container', setConfig);
-    GoH5.on('slideChangeEnd', function(swiper) {
-        if(defaultConfig.autoBackPrePage){
-            utils.setCookie('initialSlide', swiper.activeIndex, 2);
-        }
-    });
 });
 
+
+var H5Editor = new Swiper('.swiper-container', setConfig);
+H5Editor.on('slideChangeEnd', function(swiper) {
+    if(defaultConfig.autoBackPrePage){
+        utils.setCookie('initialSlide', swiper.activeIndex, 2);
+    }
+});
+
+window.H5Editor = H5Editor;
+window.utils = utils;
+// window.$ = utils.$;
 
 
 
 // for debug
-window.GoH5 = GoH5;
-window.utils = utils;
-window.$ = utils.$;
 
 
 
-module.exports = GoH5;
+
+module.exports = H5Editor;

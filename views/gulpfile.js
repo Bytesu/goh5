@@ -35,7 +35,7 @@ var vendorPlugin = new webpack.optimize.CommonsChunkPlugin({
 });
 var webpackConfig = {
     entry: {
-        goh5: './src/js/app.js',
+        H5Editor: './src/js/app.js',
         vendor: [
             pwd + '/src/js/fastclick.min.js',
             pwd + '/src/js/swiper.js'
@@ -85,7 +85,7 @@ gulp.task('js', function() {
         .pipe(gulpIf(argv.env == 'pro', uglify()))
         .pipe(gulpIf(argv.env == 'pro', header(banner, { config: config })))
         .pipe(gulp.dest('./dist/js/'))
-})
+});
 
 gulp.task('css', function() {
     return gulp
@@ -93,30 +93,30 @@ gulp.task('css', function() {
         .pipe(concat('all.css'))
         .pipe(gulpIf(argv.env == 'pro', minifyCss()))
         .pipe(gulpIf(argv.env == 'pro', header(banner, { config: config })))
-        .pipe(rename('goh5.min.css'))
+        .pipe(rename('H5Editor.min.css'))
         .pipe(gulp.dest('./dist/css/'))
-})
+});
 
 gulp.task('img', function() {
     return gulp
         .src('./src/img/*')
         .pipe(gulp.dest('./dist/img/'))
-})
+});
 
 gulp.task('fonts', function() {
     return gulp
         .src('./src/fonts/*')
         .pipe(gulp.dest('./dist/fonts/'))
-})
+});
 
 gulp.task('rev', function() {
     return gulp
         .src('./index.html')
-        .pipe(gulpIf(argv.env == 'pro', replace(/goh5.min.css[\s\S]*?"/, 'goh5.min.css?ver=' + config.version + '"')))
-        .pipe(gulpIf(argv.env == 'pro', replace(/goh5.min.js[\s\S]*?"/, 'goh5.min.js?ver=' + config.version + '"')))
+        .pipe(gulpIf(argv.env == 'pro', replace(/H5Editor.min.css[\s\S]*?"/, 'H5Editor.min.css?ver=' + config.version + '"')))
+        .pipe(gulpIf(argv.env == 'pro', replace(/H5Editor.min.js[\s\S]*?"/, 'H5Editor.min.js?ver=' + config.version + '"')))
         .pipe(gulpIf(argv.env == 'pro', replace(/vendor.min.js[\s\S]*?"/, 'vendor.min.js?ver=' + config.version + '"')))
         .pipe(gulp.dest('./'))
-})
+});
 
 gulp.task('watch', function() {
     webpackConfig.watch = argv.env != 'pro';
@@ -124,7 +124,7 @@ gulp.task('watch', function() {
     gulp.watch('./src/css/*', ['css']);
     gulp.watch('./src/img/*', ['img']);
     gulp.watch('./src/fonts/*', ['fonts']);
-})
+});
 
 gulp.task('default', ['clean'], function() {
     gulp.start(['js', 'css', 'img', 'fonts', 'rev']);

@@ -10,15 +10,15 @@
 				<div class="user">
 					<div class="item">
 						<label for="user_name">用户名：</label>
-						<input id="user_name" type="text" placeholder="请输入用户名" v-bind:class="{'erro_input':erro.target == 'user_name'}" v-model="user_name" @blur="bl" @focus="fo"></input>					
+						<input id="user_name" type="text" placeholder="请输入用户名" v-bind:class="{'erro_input':erro.target == 'user_name'}" v-model="user_name" @blur="bl" @focus="fo"/>
 					</div>
 					<div class="item">
 						<label for="password">密码：</label>
-						<input id="password" type="password" placeholder="请输入密码" v-bind:class="{'erro_input':erro.target == 'password'}" v-model="password" @blur="bl" @focus="fo"></input>	
+						<input id="password" type="password" placeholder="请输入密码" v-bind:class="{'erro_input':erro.target == 'password'}" v-model="password" @blur="bl" @focus="fo"/>
 					</div>
 					<div class="item">
 						<label for="password">确认密码：</label>
-						<input id="password" type="password" placeholder="请再次输入密码" v-bind:class="{'erro_input':erro.target == 'passwordAgain'}" v-model="passwordAgain" @blur="bl" @focus="fo"></input>	
+						<input id="password" type="password" placeholder="请再次输入密码" v-bind:class="{'erro_input':erro.target == 'passwordAgain'}" v-model="passwordAgain" @blur="bl" @focus="fo"/>
 					</div>
 					<div class="item clearfix">
 						<a @click="funshowLogin()">已有帐号？</a>

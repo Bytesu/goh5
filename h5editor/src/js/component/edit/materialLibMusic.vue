@@ -14,7 +14,7 @@
 					</ul>
 					<div class="upload_btn" v-tips="['top','大小不得超过4M（为了更好的体验，请控制音乐大小）']">
 						<span>上传音乐</span>
-						<input type="file" accept="audio/*" @change="uploadMusic($event)" style="display: block;width: 100%;height: 100%;position: absolute;opacity: 0;left: 0;top: 0;cursor: pointer;"></input>
+						<input type="file" accept="audio/*" @change="uploadMusic($event)" style="display: block;width: 100%;height: 100%;position: absolute;opacity: 0;left: 0;top: 0;cursor: pointer;"/>
 					</div>
 				</div>
 				<div class="lib_main">
@@ -55,7 +55,7 @@
 .lib_con .lib_list{width: 200px;display: flex;flex-direction: column;}
 .lib_con .lib_list .group{flex: 1;margin-top: 15px;}
 .lib_con .lib_list .group li{border-bottom: 1px solid #ccd5db;background: #fff;width: 100%;padding: 0 0 0 20px;box-sizing: border-box;color: #76838f;font-size: 12px;height: 44px;line-height: 44px;cursor: pointer;}
-.lib_con .lib_list .upload_btn{width: 100%;height: 38px;line-height: 38px;font-size: 14px;color: #fff;text-align: center;background: #01d7b2;position: relative;}
+.lib_con .lib_list .upload_btn{width: 100%;height: 38px;line-height: 38px;font-size: 14px;color: #fff;text-align: center;background: #00BCD4;position: relative;}
 .lib_con .lib_main{flex: 1;background: #fff;margin-top: 15px;border-top-left-radius: 6px;padding: 0 15px;}
 .lib_con .lib_main .lib_main_head{width: 100%;height: 44px;border-bottom: 1px solid #ccd5db;display: flex;justify-content: flex-end;}
 .lib_con .lib_main .lib_main_head .lib_main_head_group{font-size: 0;height: 44px;}
