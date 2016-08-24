@@ -96,7 +96,7 @@ var logout = function(req, res) {
         data: ''
     };
     res.send(resData);
-}
+};
 
 // act:login/sinup/logout
 module.exports = function(Router) {

@@ -4,7 +4,14 @@ var Swiper = require('Swiper');
 var utils = require('utils');
 var ani = require('./animate.js');
 
-var defaultConfig = window.defaultConfig;
+new Vue({
+    el:'#app',
+    data:datas,
+});
+
+
+
+var defaultConfig = datas.setConfig;
 
 // arrow位置
 if (defaultConfig.direction == 'horizontal') {
@@ -36,12 +43,36 @@ var setConfig = {
 // 初始页面
 setConfig.initialSlide = defaultConfig.autoBackPrePage ? (utils.getCookie('initialSlide') ? (setConfig.loop ? Number(utils.getCookie('initialSlide')) - 1 : Number(utils.getCookie('initialSlide'))) : 0) : 0;
 
-var GoH5 = new Swiper('.swiper-container', setConfig);
-GoH5.on('slideChangeEnd', function(swiper) {
-	if(defaultConfig.autoBackPrePage){
-	    utils.setCookie('initialSlide', swiper.activeIndex, 2);
-	}
+function Layout(){
+    this.$container = $('#wrapAll');
+    this.init();
+}
+
+Layout.prototype ={
+    init:function () {
+        var self = this;
+        $('body').on('contextmenu', function () {
+            window.event.returnValue = false;
+            return false;
+        });
+        $(window).resize(function () {
+            self.$container.width(1080/1920 * self.$container.height());
+        });
+    }
+};
+
+$(function () {
+    new Layout();
+
+    var GoH5 = new Swiper('.swiper-container', setConfig);
+    GoH5.on('slideChangeEnd', function(swiper) {
+        if(defaultConfig.autoBackPrePage){
+            utils.setCookie('initialSlide', swiper.activeIndex, 2);
+        }
+    });
 });
+
+
 
 
 // for debug

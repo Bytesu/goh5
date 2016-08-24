@@ -8,6 +8,7 @@ module.exports = {
     txt: function(index, num, params) {
         return {
             type: 'TXT',
+
             style:{
                 zIndex:index*10,
                 width:'100px',
@@ -16,6 +17,7 @@ module.exports = {
                 fontSize:'1em',
                 boxSizing:'border-box',
                 position:'absolute',
+                opacity:1,
             },
             styleObj:{
                 width:'100%',
@@ -24,21 +26,21 @@ module.exports = {
                 fontStyle:'normal',
                 textDecoration:'none',
                 textAlign:'left',
+                overflow:'hidden',
                 fontSize:'14px',
                 fontFamily:"'Helvetica Neue', Helvetica, STHeiTi, sans-serif",
                 boxSizing:'border-box',
+                textShadow:'none',
                 display:'block',
-                backgroundColor:'rgba(0,0,0,0)',
+                animation:'none 1s',
+                backgroundColor:'transparent',
                 boxShadow:'0px 0px 0px 0px rgba(0,0,0,0)',
                 color:'#010101',
                 lineHeight:'1.5',
                 padding:'5px',
             },
-            // style: 'z-index:' + index * 10 + ';width:100px;top:0px;left:0px;font-size:1em;box-sizing:border-box;position: absolute;',
-            //display:block;width:100%;height:100%;box-sizing:border-box;background-color: rgba(0,0,0,0);box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
-            // color:#1a1a1a;line-height:1.5;padding:5px;
             class: params.className ? params.className : '',
-            id: 'GOH5.TEXT.NO.' + num,
+            id: 'EDITOR.TEXT.NO.' + num,
             attr: {},
             content: '文本文本文本'
         };

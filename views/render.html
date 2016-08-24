@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html id="app">
+<head>
+    <meta charset="utf-8">
+    <meta id="h5editor" name="viewport" content="width=320, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <title>
+        {{title}}
+    </title>
+    <meta name="keywords" content="{{about.keyWords }}">
+    <meta name="description" content="{{about.desc }}">
+    <link rel="stylesheet" type="text/css" href="/front/dist/css/goh5.min.css?ver=1.0.2">
+</head>
+<body >
+
+    <!--  缩略图 -->
+    <div class="shareImgWrap">
+    </div>
+    <div class="swiper-container" id="wrapAll" style="border: 1px solid gray;">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="" v-for="page in mainCode.pages">
+                <div class="items_con all_center" style="">
+    				<div v-for="item in page.items" class="item" type="{{item.type}}" :style="item.sty"  >
+                        {{{item.content}}}
+    				</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="arrow"><img data-src="/front/dist/img/arrow.png"></div>
+    <div class="loading_con">
+        <div class="all_center loading_center">
+            <div class="all_center">
+                <img src="/back/dist/img/loading.png">
+                <span>加载中</span>
+                <em>0%</em>
+            </div>
+        </div>
+    </div>
+    <img class="audio_btn play" style="display: none;" src="/front/dist/img/music.png">
+    <script type="text/javascript" src="/front/dist/js/jquery.min.js?ver=1.0.2"></script>
+    <script type="text/javascript" src="/front/dist/js/data.js?ver=1.0.2"></script>
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="/front/dist/js/vendor.min.js?ver=1.0.2"></script>
+    <script type="text/javascript" src="/front/dist/js/goh5.min.js?ver=1.0.2"></script>
+</body>
+
+</html>

@@ -25,7 +25,7 @@ var ctrlMusic = {
     play: function(){
     	this.el[0].play();
     }
-}
+};
 
 ctrlMusic._init();
 module.exports = ctrlMusic;

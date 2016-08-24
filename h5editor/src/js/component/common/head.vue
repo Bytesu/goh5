@@ -16,17 +16,23 @@
 	.head_con .item.center .create_group li .icon5{background-position: 0 -90px;}
 	.head_con .item.center .create_group li .icon6{background-position: 0 -120px;}
 	.head_con .item.right{}
-	.btn_group{margin-right: 17px}
-	.btn_group li{background: #76838e;height: 28px;line-height: 28px;margin: 16px 3px 0;padding: 0 10px;border-radius: 0px;cursor: pointer;transition: all ease 0.3s;-webkit-transition: all ease 0.3s;position: relative;}
+	.btn_group{margin-right: 10px}
+	.btn_group li{background: #76838e;height: 28px;line-height: 28px;margin: 16px 0px 0;padding: 0 15px;border-radius: 0px;cursor: pointer;transition: all ease 0.3s;-webkit-transition: all ease 0.3s;position: relative;}
 	.btn_group li:hover{background: #4d5a65!important;}
-	.btn_group li .qrcode{display: block;position: absolute;left: 50%;transform: translateX(-50%);-webkit-transform: translateX(-50%);background: #fff;padding: 10px;top: 45px;display: none;border-radius: 6px;}
+	.btn_group li .qrcode{display: block;position: absolute;left: 50%;transform: translateX(-50%);-webkit-transform: translateX(-50%);background: #fff;padding: 10px;top: 45px;display: none;    border-radius: 0;
+		box-shadow: 0 5px 10px rgba(0,0,0,.2);
+		border: solid 1px #e9e9e9;
+		-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.4);
+		box-shadow: 0 0 10px rgba(0,0,0,0.4);}
 	.btn_group li .qrcode .triangle{position: absolute;width: 0;height: 0;border-bottom: 10px solid #fff;border-left: 10px solid transparent;border-right: 10px solid transparent;border-top: 10px solid transparent;top: -20px;left: 50%;margin-left: -10px;}
 	.btn_group li .qrcode a{display: block;width: 198px;height: 198px;}
 	.btn_group li .qrcode .tips{color: #76838e;text-align: center;font-size: 12px;line-height: 12px;margin-top: 5px;}
+	a[target="_blank"]{
+		color: #FFFFFF;}
 </style>
 <template>
 	<div class="head_con">
-		<a href="javascript:void(0)" v-link="{path: '/list'}" class="item left">Go H5</a>
+		<a href="javascript:void(0)" v-link="{path: '/list'}" class="item left">H5Editor</a>
 		<div class="item center" v-show="page == 'edit'">
 			<ul class="create_group">
 				<li @click="addText()"><div class="icon icon1"></div><span>文本</span></li>
@@ -39,6 +45,9 @@
 		</div>
 		<div class="item right">
 			<ul class="btn_group">
+				<li v-show="page == 'edit'" >
+					<a target="_blank" :href="'http://'+ host + '/api/h5/' + this.$route.params.id">新标签页预览</a>
+				</li>
 				<li v-show="page == 'edit'" @click="save()">保存</li>
 				<!-- <li v-show="page == 'edit'">记录</li> -->
 				<li v-show="page == 'edit'" @click.stop="preview($event)">

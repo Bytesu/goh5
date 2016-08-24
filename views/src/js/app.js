@@ -5,9 +5,7 @@
 // meta缩放
 var clientW = document.body.clientWidth;
 var percent = clientW / 320;
-document.getElementById('GoH5ViewPort').setAttribute('content', 'width=320, initial-scale=' + percent + ', maximum-scale=' + percent + ', user-scalable=no');
-
-
+document.getElementById('h5editor').setAttribute('content', 'width=320, initial-scale=' + percent + ', maximum-scale=' + percent + ', user-scalable=no');
 
 var load = require('./load.js');
 var music = require('./music.js');

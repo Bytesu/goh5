@@ -20,7 +20,7 @@ var argv = require('minimist')(process.argv.slice(2));
 var config = require('./config.json');
 
 // 根据不同环境使用不同的第三方库
-var aliasFile = function(name) {
+var aliasFile = function (name) {
     if (argv.env == 'pro') {
         return name + '.min.js';
     } else {
@@ -56,7 +56,16 @@ var webpackConfig = {
         }, {
             test: /.vue$/,
             loader: 'vue-loader'
-        }]
+        },
+            {
+                test: /\.woff(2)?(\?[0-9a-z]+)?$/,
+                loader: "url-loader?limit=10000&minetype=application/font-woff"
+            },
+            {
+                test: /\.(ttf|eot|svg)(\?[0-9a-z]+)?$/,
+                loader: "file-loader"
+            }
+        ]
     },
     plugins: [vendorPlugin],
     resolve: {
@@ -83,43 +92,43 @@ var banner = ['/**',
     ''
 ].join('\n');
 
-gulp.task('clean', function() {
+gulp.task('clean', function () {
     return gulp
-        .src(['./dist/*'], { read: false })
-        .pipe(clean({ force: true }))
+        .src(['./dist/*'], {read: false})
+        .pipe(clean({force: true}))
 });
 
-gulp.task('js', function() {
+gulp.task('js', function () {
     return gulp
         .src('./src/js/app.js')
         .pipe(gulpWebpack(webpackConfig))
         .pipe(gulpIf(argv.env == 'pro', uglify()))
-        .pipe(gulpIf(argv.env == 'pro', header(banner, { config: config })))
+        .pipe(gulpIf(argv.env == 'pro', header(banner, {config: config})))
         .pipe(gulp.dest('./dist/js/'))
 })
 
-gulp.task('css', function() {
+gulp.task('css', function () {
     return gulp
         .src('./src/css/*.css')
         .pipe(concat('all.css'))
         .pipe(gulpIf(argv.env == 'pro', minifyCss()))
-        .pipe(gulpIf(argv.env == 'pro', header(banner, { config: config })))
+        .pipe(gulpIf(argv.env == 'pro', header(banner, {config: config})))
         .pipe(rename('goh5.min.css'))
         .pipe(gulp.dest('./dist/css/'))
 });
 
-gulp.task('img', function() {
+gulp.task('img', function () {
     return gulp
         .src('./src/img/*')
         .pipe(gulp.dest('./dist/img/'))
 })
-gulp.task('fonts', function() {
+gulp.task('fonts', function () {
     return gulp
         .src('./src/fonts/*')
         .pipe(gulp.dest('./dist/fonts/'))
 });
 
-gulp.task('rev', function() {
+gulp.task('rev', function () {
     return gulp
         .src('./index.html')
         .pipe(gulpIf(argv.env == 'pro', replace(/goh5.min.css[\s\S]*?"/, 'goh5.min.css?ver=' + config.version + '"')))
@@ -128,7 +137,7 @@ gulp.task('rev', function() {
         .pipe(gulp.dest('./'))
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', function () {
     webpackConfig.watch = argv.env != 'pro';
     gulp.watch('./src/js/*', ['js']);
     gulp.watch('./src/css/*', ['css']);
@@ -136,6 +145,6 @@ gulp.task('watch', function() {
     gulp.watch('./src/fonts/*', ['fonts']);
 });
 
-gulp.task('default', ['clean'], function() {
+gulp.task('default', ['clean'], function () {
     gulp.start(['js', 'css', 'img', 'fonts', 'rev']);
 });

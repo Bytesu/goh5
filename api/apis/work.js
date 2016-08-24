@@ -1,11 +1,11 @@
 'use strict';
-
+var _ = require('underscore');
 var setConfigDefault = {
     loop: true,
     direction: 'vertical',
     autoBackPrePage: true,
     effect: 'slide'
-}
+};
 
 var mainCodeDefault = {
     wholeAttr: {
@@ -21,7 +21,7 @@ var mainCodeDefault = {
         },
         items: []
     }]
-}
+};
 
 var create = function(req, res) {
     var obj = req.query;
@@ -50,11 +50,11 @@ var create = function(req, res) {
                 data: {
                     _id: doc._id
                 }
-            }
+            };
             res.send(resData);
         }
     })
-}
+};
 
 var getWork = function(req, res) {
     var obj = req.query;
@@ -76,17 +76,24 @@ var getWork = function(req, res) {
             res.send(resData);
         }
     })
-}
+};
 
 var save = function(req, res) {
     var obj = req.query;
     var Work = global.dbHandel.getModel('work');
+    obj.mainCode = JSON.parse(obj.mainCode);
+    obj.mainCode.pages.forEach(function(page,$pageIndex){
+        page.items.forEach(function (item,$itemIndex) {
+            obj.mainCode.pages[$pageIndex].items[$itemIndex]['sty'] = _.extend({},item.styleObj||{},item.style||{});
+        })
+    });
+
     Work.update({
         '_id': obj._id,
         'user_name': req.session.user_name
     }, {
         '$set': {
-            'mainCode': JSON.parse(obj.mainCode),
+            'mainCode': obj.mainCode,
             'lastSaveTime': Date.now()
         }
     }).exec(function(err, docs) {

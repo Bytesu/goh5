@@ -1,8 +1,7 @@
 <template>
 	<div class="home_bg"></div>
-	<div class="all_center" style="top: 26%;text-align: center;z-index: 9;left: 22%;">
-		<h1 style="color: #fff;">欢迎来到 Go H5!</h1>
-		<h2 style="color: #fff;">请先登录</h2>
+	<div class="all_center1">
+		<h1 style="color: #fff;">欢迎来到 H5Editor!</h1>
 		<div class="home_btn">
 			<a href="javascript:void(0)" @click="showLogin = !showLogin">登录</a>
 			<a href="javascript:void(0)" @click="showSignup = !showSignup">注册</a>
@@ -13,11 +12,23 @@
 </template>
 
 <style>
-.home_bg{position: fixed;top: 0;left: 0;background: #333 no-repeat;width: 100%;height: 100%;background-size: cover;}
-.home_btn{width: 100%;font-size: 0;text-align: center;}
-.home_btn a{display: inline-block;vertical-align: middle;font-size: 12px;color: #fff;padding: 10px 25px;margin: 0 8px;cursor: pointer;border-radius: 6px;transition: all ease 0.2s;-webkit-transition: all ease 0.2s;}
-.home_btn a:first-child{background: rgba(1,215,178,1);}
-.home_btn a:first-child:hover{background: rgba(1,215,178,0.8);}
+.home_bg{position: fixed;top: 0;left: 0;
+    background:#2373e2 url('/back/dist/img/login_bg.png') no-repeat scroll top;
+    width: 100%;height: 100%;background-size: cover;}
+.home_btn{font-size: 0;
+	text-align: left;
+	margin: 50px 0;}
+.all_center1 {    display: block;
+	position: relative;
+	width: 500px;
+	height: 300px;
+	margin: 60px auto;
+	padding:15px;
+	left: auto;
+	top: auto;border-radius: 10px;}
+.home_btn a{display: inline-block;vertical-align: middle;font-size: 12px;color: #fff;padding: 5px 15px;margin: 0 8px 0 0;cursor: pointer;border-radius: 1px;transition: all ease 0.2s;-webkit-transition: all ease 0.2s;}
+.home_btn a:first-child{background: #00BCD4;}
+.home_btn a:first-child:hover{background: #00BCD4;}
 .home_btn a:last-child{background: rgba(255,81,81,1);}
 .home_btn a:last-child:hover{background: rgba(255,81,81,0.8);}
 </style>

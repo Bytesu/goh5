@@ -10,17 +10,14 @@ var domain = 'http://localhost:3030';
 //show/57b672e8f07878ac2bd11b2d
 describe('Show', function() {
     describe('#zip()', function() {
-        it('should save without error', function(done) {
-            request.get(domain+'/zip/57b672e8f07878ac2bd11b2d')
-            // request.get('http://www.baidu.com')
-            //     .send(JSON.stringify({username:'15029351330',password:'211064'}))
+        it('should download without error', function(done) {
+            request.get(domain+'/api/zip/57b672e8f07878ac2bd11b2d')
                 .end(function(err, res){
-                    // console.log('---------')
                     if(err){
-                        return console.log(err);
+                        done(err);
+                    }else{
+                        done();
                     }
-                    console.log(res+'---------')
-
                 });
         });
     });

@@ -33,13 +33,15 @@ router.beforeEach(function() {
         return;
     }
     if(router.app.$route.path === '/' && utils.getCookie('isLogin') === '1'){
-        router.go('/list');
-        return;
+        return router.go('/list');
     }
 });
 
 router.redirect({
     '*': '/'
 });
-
+$('body').on('contextmenu', function () {
+    window.event.returnValue = false;
+    return false;
+});
 router.start(APP, '#app');

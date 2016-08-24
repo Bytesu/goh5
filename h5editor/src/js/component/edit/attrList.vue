@@ -1,9 +1,9 @@
 <style>
 	.attrList{height: 100%;display: flex;flex-direction: column;}
 	.attrList .main{display: flex;flex-direction: column;flex: 1;}
-	.attrList .main .nav_top_btn{font-size: 0;box-sizing: border-box;background: #f7f7f7;    border-bottom: 1px solid #ddd;}
+	.attrList .main .nav_top_btn{box-sizing: border-box;background: #f7f7f7;    border-bottom: 1px solid #ddd;}
 	/*transition: all ease 0.2s;-webkit-transition: all ease 0.2s;*/
-	.attrList .main .nav_top_btn li{display: inline-block;vertical-align: top;background: #F7F7F7;text-align: center;line-height: 30px;color: #76838f;font-size: 12px;width: 50px;border-top-right-radius: 2px;border-top-left-radius: 2px;cursor: pointer;margin: 0 1px;margin-bottom: -2px;}
+	.attrList .main .nav_top_btn li{display: inline-block;vertical-align: top;background: #F7F7F7;text-align: center;line-height: 28px;color: #76838f;font-size: 12px;min-width: 50px;border-top-right-radius: 2px;border-top-left-radius: 2px;cursor: pointer;margin: 0 1px;margin-bottom: -2px;float:left;}
 	.attrList .main .nav_top_btn li:hover{background: #ddd;color: #666;}
 	.attrList .main .nav_top_btn li.active{background: #FFF;color: #666;    border: 1px solid #ddd;border-bottom-color: transparent;}
 	.attrList .main .nav_top_btn li.active:hover{background: #FFF;color: #666;    border: 1px solid #ddd;border-bottom-color: transparent;}
@@ -21,7 +21,7 @@
 	.attrList .main .attr_main .group>li .deleteAni.close:hover{opacity: 1;}
 	.attrList .main .attr_main .group>li .group_main{background: #fff;position: relative;}
 	.attrList .main .attr_main .group>li .group_main>ul{padding: 0 20px 10px;}
-	.attrList .main .attr_main .group>li .group_main>ul>li{height: 30px;font-size: 0;display: flex;flex: none;justify-content: space-between;align-items: center;margin-bottom: 5px;background: #f9f9f9;}
+	.attrList .main .attr_main .group>li .group_main>ul>li{height: 30px;display: flex;flex: none;justify-content: space-between;align-items: center;margin-bottom: 5px;background: #f9f9f9;}
 	.attrList .main .attr_main .group>li .group_main>ul>li >span{padding: 5px 8px;border: 1px solid #ccd5db;border-right: 0;font-size: 12px;color: #76838f;display: inline-block;vertical-align: middle;text-align: left;}
 	.attrList .main .attr_main .group>li .group_main>ul>li select{height: 28px;border:1px solid #ccd5db;flex: 1;    background: #fafafa;}
 	.attrList .main .attr_main .group>li .group_main>ul>li select:focus{border-color:#4cc0c1;}
@@ -46,8 +46,8 @@
 /*	input[type=range]::-webkit-slider-thumb{margin-top: -3.6px;}
 	input[type=range]::-webkit-slider-runnable-track{width: 100%;height: 8.4px;cursor: pointer;box-shadow: 0 0 3px rgba(0,0,0,0.7);background: #f7f7f7;border-radius: 1px;border: none;outline: none;}*/
 	input[type=range]:focus{outline: none;}
-	.attrList .main .attr_main .ani_btn{font-size: 0;padding: 20px 0;text-align: center;}
-	.attrList .main .attr_main .ani_btn li{display: inline-block;vertical-align: middle;font-size: 12px;color: #fff;padding: 10px 25px;margin: 0 8px;cursor: pointer;border-radius: 6px;transition: all ease 0.2s;-webkit-transition: all ease 0.2s;}
+	.attrList .main .attr_main .ani_btn{font-size: 0;}
+	.attrList .main .attr_main .ani_btn li{display: inline-block;vertical-align: middle;font-size: 12px;color: #fff;padding: 5px 15px;margin: 0 0px 0 10px;cursor: pointer;border-radius: 1px;transition: all ease 0.2s;-webkit-transition: all ease 0.2s;}
 	.attrList .main .attr_main .ani_btn li:first-child{background: rgba(1,215,178,1);}
 	.attrList .main .attr_main .ani_btn li:first-child:hover{background: rgba(1,215,178,0.7);}
 	.attrList .main .attr_main .ani_btn li:last-child{background: rgba(8,161,239,1);}
@@ -60,9 +60,7 @@
 	<!--v-show="checkedItems.length == 0"-->
 	<div class="side_con right" transition="fromRight" style="display:block;">
 		<div class="item attrList">
-			<div class="head">元素属性</div>
-			<div class="item_id">元素ID为 : <span>{{checkedItemDataOnlyOne.id}}</span></div>
-
+			<div class="head">元素属性{{checkedItemDataOnlyOne.id}}</div>
 			<div class="main">
 				<ul class="nav_top_btn">
 					<li :class="{'active':nav_top_btn == 0}" @click="this.nav_top_btn=0">编辑</li>
@@ -74,7 +72,7 @@
 					<ul class="group">
 						<li>
 							<div class="group_head" :class="{'active':group_index === 0}" @click="group_index == 0 ? group_index = null : group_index = 0">
-								<h4>格式{{style.fontSize}}{{style['opacity']}}</h4>
+								<h4>格式</h4>
 							</div>
 							<div class="group_main" >
 								<ul>
@@ -85,7 +83,20 @@
 												<a role="button" data-toggle="dropdown" href="javascript:void(0);" class="dropdown-toggle"><i class="caret"></i><span>默认字体</span></a>
 						  						<ul role="menu" aria-labelledby="drop1" class="sui-dropdown-menu">
 													<li role="presentation" ><a role="menuitem" tabindex="-1"  @click="setStyleDirect($event,'string','','\'Helvetica Neue\', Helvetica, STHeiTi, sans-serif')" href="javascript:void(0);" style="font-family: 'Helvetica Neue', Helvetica, STHeiTi, sans-serif;" >默认字体</a></li>
-													<li role="presentation" v-for="fontFace in FontFace"><a role="menuitem" tabindex="-1"  @click="setStyleDirect($event,'string','','{{fontFace.faceFamily}}')" href="javascript:void(0);" style="font-family:{{fontFace.faceFamily}}">{{fontFace.label}}</a></li>
+													<li role="presentation" ><a role="menuitem" tabindex="-1"  @click="setStyleDirect($event,'string','','FZHei-B01S')" href="javascript:void(0);" style="font-family: 'FZHei-B01S';" >方正黑体简体</a></li>
+													<li role="presentation" ><a role="menuitem" tabindex="-1"  @click="setStyleDirect($event,'string','','FZKai-Z03S')" href="javascript:void(0);" style="font-family: 'FZKai-Z03S';" >方正楷体简体</a></li>
+													<li role="presentation" ><a role="menuitem" tabindex="-1"  @click="setStyleDirect($event,'string','','FZShuSong-Z01S')" href="javascript:void(0);" style="font-family: 'FZShuSong-Z01S';" >方正书宋简体</a></li>
+													<li role="presentation" ><a role="menuitem" tabindex="-1"  @click="setStyleDirect($event,'string','','FZFangSong-Z02S')" href="javascript:void(0);" style="font-family: 'FZFangSong-Z02S';" >方正仿宋简体</a></li>
+													<li role="presentation" ><a role="menuitem" tabindex="-1"  @click="setStyleDirect($event,'string','','NotoSansSC-Thin')" href="javascript:void(0);" style="font-family: 'NotoSansSC-Thin';" >思源极细体</a></li>
+													<li role="presentation" ><a role="menuitem" tabindex="-1"  @click="setStyleDirect($event,'string','','NotoSansSC-Light')" href="javascript:void(0);" style="font-family: 'NotoSansSC-Light';" >思源细体</a></li>
+													<li role="presentation" ><a role="menuitem" tabindex="-1"  @click="setStyleDirect($event,'string','','NotoSansSC-DemiLight')" href="javascript:void(0);" style="font-family: 'NotoSansSC-DemiLight';" >思源正常</a></li>
+													<li role="presentation" ><a role="menuitem" tabindex="-1"  @click="setStyleDirect($event,'string','','NotoSansSC-Regular')" href="javascript:void(0);" style="font-family: 'NotoSansSC-Regular';" >思源常规</a></li>
+													<li role="presentation" ><a role="menuitem" tabindex="-1"  @click="setStyleDirect($event,'string','','NotoSansSC-Medium')" href="javascript:void(0);" style="font-family: 'NotoSansSC-Medium';" >思源中等粗体</a></li>
+													<li role="presentation" ><a role="menuitem" tabindex="-1"  @click="setStyleDirect($event,'string','','NotoSansSC-Bold')" href="javascript:void(0);" style="font-family: 'NotoSansSC-Bold';" >思源粗体</a></li>
+													<li role="presentation" ><a role="menuitem" tabindex="-1"  @click="setStyleDirect($event,'string','','NotoSansSC-Black')" href="javascript:void(0);" style="font-family: 'NotoSansSC-Black';" >思源特粗</a></li>
+													<li role="presentation" ><a role="menuitem" tabindex="-1"  @click="setStyleDirect($event,'string','','zcool-gdh')" href="javascript:void(0);" style="font-family: 'zcool-gdh';" >站酷高端黑</a></li>
+													<li role="presentation" ><a role="menuitem" tabindex="-1"  @click="setStyleDirect($event,'string','','HappyZcool')" href="javascript:void(0);" style="font-family: 'HappyZcool';" >站酷快乐体</a></li>
+													<!--<li role="presentation" v-for="fontFace in FontFace"><a role="menuitem" tabindex="-1"  click="alert($event,'string','','{{fontFace.faceFamily}}')" href="javascript:void(0);" style="font-family:{{fontFace.faceFamily}}">{{fontFace.label}}</a></li>-->
 						  						</ul>
 											</span>
 										</span>
@@ -106,18 +117,14 @@
 									</li>
 									<li>
 										<div class="sui-btn-group">
-											<button class="sui-btn "  :class="{'actived':style.fontWeight!='normal'}" @click="setStyleDirect($event,'string','','bold','fontWeight',style.fontWeight!='normal')" >加粗</button>
-											<button class="sui-btn"   :class="{'actived':style.fontStyle!='normal'}" @click="setStyleDirect($event,'string','','italic','fontStyle',style.fontStyle!='normal')"  >斜体</button>
-											<button class="sui-btn"   :class="{'actived':style.textDecoration!='none'}" @click="setStyleDirect($event,'string','','underline','textDecoration',style.textDecoration!='normal')" >划线</button>
+											<button class="sui-btn " title="加粗"  data-toggle="tooltip"
+											        :class="{'actived':style.fontWeight=='bold'}" @click="setStyleDirect($event,'string','','bold','fontWeight',style.fontWeight==='bold')"   ><i class="fa fa-bold" aria-hidden="true"></i></button>
+											<button style="margin-left: -1px;" class="sui-btn" title="斜体"  data-toggle="tooltip"
+                                                    :class="{'actived':style.fontStyle==='italic'}" @click="setStyleDirect($event,'string','','italic','fontStyle',style.fontStyle==='italic')"  ><i class="fa fa-italic" aria-hidden="true"></i></button>
+											<button style="margin-left: -1px;" class="sui-btn" title="下划线" data-toggle="tooltip"
+                                                    :class="{'actived':style.textDecoration==='underline'}" @click="setStyleDirect($event,'string','','underline','textDecoration',style.textDecoration==='underline')" ><i class="fa fa-underline" aria-hidden="true"></i></button>
 										</div>
 									</li>
-									<!--<li style-attr="opacity">
-										<span>透明度</span>
-										<span class="ctner-range">
-											<input type="range" min="0" max="1" step="0.01" :value="style['opacity'] | Number '1'" @input="setStyleDirect($event,'number')"/>
-										</span>
-										<input class="range-value" type="number" min="0" max="1" step="0.1" :value="style['opacity'] | Number '1'" @input="setStyleDirect($event,'number')"/>
-									</li>-->
 								</ul>
 							</div>
 						</li>
@@ -129,9 +136,9 @@
 								<ul>
 									<li style-attr="border-style">
 										<div class="sui-btn-group">
-											<button class="sui-btn "  :class="{'actived':style.fontWeight!='normal'}" @click="setStyleDirect($event,'string','','bold','fontWeight',style.fontWeight!='normal')" >居左</button>
-											<button class="sui-btn"   :class="{'actived':style.fontStyle!='normal'}" @click="setStyleDirect($event,'string','','italic','fontStyle',style.fontStyle!='normal')"  >居中</button>
-											<button class="sui-btn"   :class="{'actived':style.textDecoration!='none'}" @click="setStyleDirect($event,'string','','underline','textDecoration',style.textDecoration!='normal')" >居右</button>
+											<button style="margin-left: -1px;" class="sui-btn " title="居左"  data-toggle="tooltip"  :class="{'actived':style.textAlign==='left'}" @click="setStyleDirect($event,'string','','left','textAlign',style.textAlign==='left')" ><i class="fa fa-align-left" aria-hidden="true"></i></button>
+											<button style="margin-left: -1px;" class="sui-btn"  title="居中"  data-toggle="tooltip"  :class="{'actived':style.textAlign==='center'}" @click="setStyleDirect($event,'string','','center','textAlign',style.textAlign==='center')"  ><i class="fa fa-align-center" aria-hidden="true"></i></button>
+											<button style="margin-left: -1px;" class="sui-btn"  title="居右"  data-toggle="tooltip"  :class="{'actived':style.textAlign==='right'}" @click="setStyleDirect($event,'string','','right','textAlign',style.textAlign==='right')" ><i class="fa fa-align-right" aria-hidden="true"></i></button>
 										</div>
 									</li>
 								</ul>
@@ -144,7 +151,7 @@
 							<div class="group_main" >
 								<ul>
 									<li style-attr="lineHeight">
-										<span>行高：0</span>
+										<span>行高：{{style.lineHeight}}</span>
 										<span class="ctner-range"><input min="0" max="6" step="0.1"  :vlaue="style.lineHeight" type="range" @input="setStyleDirect($event,'num','')"  ></span>
 									</li>
 								</ul>
@@ -156,39 +163,40 @@
 							</div>
 							<div class="group_main" >
 								<ul>
-									<li style-attr="box-shadow-place">
+									<li style-attr="textShadow">
 										<span>是否启用</span>
-										<select ng-if="prop.groups" v-model="style.enableTextShadow" >
-											<optgroup label="请选择">
-												<option label="是" value="true">是</option>
-												<option label="否" value="false" selected="selected">否</option>
+										<select @change="setStyleDirect($event,'')">
+											<optgroup label="请选择" >
+												<option label="是" value="1px 2px 2px #000000">是</option>
+												<option label="否" value="none" selected="selected">否</option>
 											</optgroup>
 										</select>
 									</li>
-									<li style-attr="box-shadow-place" v-if="style.enableTextShadow" >
+
+									<li style-attr="textShadow"  v-show="isTextShadow">
 										<span>颜色</span>
-										<span class="ctner-range"><input type="color" value="#ff0080" /></span>
+										<span class="ctner-range"><input type="color" value="#000000"  @input="setStyleDirect($event,'partial','',4)"/></span>
 									</li>
-									<li style-attr="box-shadow-place">
+									<li style-attr="textShadow" v-show="isTextShadow">
 										<span>X-偏移</span>
 										<span class="ctner-range">
-											<input type="range" min="0" max="1" step="0.1" :value="style['opacity'] | Number '1'" @input="setStyleDirect($event,'number')"/>
+											<input type="range" min="0" max="100" step="1"  @input="setStyleDirect($event,'partial','',1)"/>
 										</span>
-										<input class="range-value" type="number" min="0" max="1" step="0.1" :value="style['opacity'] | Number '1'" @input="setStyleDirect($event,'number')"/>
+										<input class="range-value" type="number" min="0" max="100gu" step="1" />
 									</li>
-									<li style-attr="box-shadow-place">
+									<li style-attr="textShadow" v-show="isTextShadow">
 										<span>Y-偏移</span>
 										<span class="ctner-range">
-											<input type="range" min="0" max="1" step="0.1" :value="style['opacity'] | Number '1'" @input="setStyleDirect($event,'number')"/>
+											<input type="range" min="0" max="100" step="1" @input="setStyleDirect($event,'partial','',2)"/>
 										</span>
-										<input class="range-value" type="number" min="0" max="1" step="0.1" :value="style['opacity'] | Number '1'" @input="setStyleDirect($event,'number')"/>
+										<input class="range-value" type="number" min="0" max="100" step="1" />
 									</li>
-									<li style-attr="opacity">
+									<li style-attr="textShadow" v-show="isTextShadow">
 										<span>模糊</span>
 										<span class="ctner-range">
-											<input type="range" min="0" max="100" step="1" :value="style['opacity'] | Number '1'" @input="setStyleDirect($event,'number')"/>
+											<input type="range" min="0" max="100" step="1" @input="setStyleDirect($event,'partial','',3)"/>
 										</span>
-										<input class="range-value" type="number" min="0" max="1" step="0.1" :value="style['opacity'] | Number '1'" @input="setStyleDirect($event,'number')"/>
+										<input class="range-value" type="number" min="0" max="100" step="1" />
 									</li>
 								</ul>
 							</div>
@@ -199,47 +207,57 @@
 					<ul class="group">
 						<li>
 							<div class="group_head" :class="{'active':group_index === 0}" @click="group_index == 0 ? group_index = null : group_index = 0">
-								<h4>基础样式</h4>
+								<h4>位置和尺寸</h4>
 								<span class="caret" :class="{'caret_close':group_index !== 0}"></span>
 							</div>
 							<div class="group_main" >
 								<ul>
-									<li style-attr="background-color">
-										<span>背景颜色</span>
-										<input type="color" :value="style['background-color']" @input="setStyleDirect($event,'color')"/>
-										<input type="text" :value="style['background-color']" @input="setStyleDirect($event,'color')"/>
+									<li style-attr="left" v-show="itemType === 'TXT'">
+										<span>X坐标</span><input type="number" @input="setStyleDirect($event,'color','')" :value="style['backgroundColor']" />
 									</li>
-									<li style-attr="color" v-show="itemType === 'txt'">
-										<span>文字颜色</span>
-										<input type="color" :value="style['color']" @input="setStyleDirect($event,'color')"/>
-										<input type="text" :value="style['color']" @input="setStyleDirect($event,'color')"/>
+									<li style-attr="top" v-show="itemType === 'TXT'">
+										<span>Y坐标</span><input type="number" @input="setStyleDirect($event,'color','')" :value="style['backgroundColor']" />
 									</li>
-									<li style-attr="opacity">
-										<span>透明度</span>
-										<input type="range" min="0" max="1" step="0.1" :value="style['opacity'] | Number '1'" @input="setStyleDirect($event,'number')"/>
-										<input type="number" min="0" max="1" step="0.1" :value="style['opacity'] | Number '1'" @input="setStyleDirect($event,'number')"/>
+									<li style-attr="width" v-show="itemType === 'TXT'">
+										<span>宽度</span><input type="number" @input="setStyleDirect($event,'color','')" :value="style['backgroundColor']" />
 									</li>
-									<li style-attr="padding">
-										<span>内边距</span>
-										<input type="range" min="0" max="50" step="1" :value="style['padding'] | Number '0'" @input="setStyleDirect($event,'number','px')"/>
-										<input type="number" min="0" max="50" step="1" :value="style['padding'] | Number '0'" @input="setStyleDirect($event,'number','px')"/>
+									<li style-attr="height" v-show="itemType === 'TXT'">
+										<span>高度</span><input type="number" @input="setStyleDirect($event,'color','')" :value="style['backgroundColor']" />
 									</li>
-									<li style-attr="line-height" v-show="itemType === 'txt'">
-										<span>行高</span>
-										<input type="range" min="0" max="50" step="0.5" :value="style['line-height']" @input="setStyleDirect($event,'number')"/>
-										<input type="number" min="0" max="50" step="0.5" :value="style['line-height']" @input="setStyleDirect($event,'number')"/>
+
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div class="group_head" :class="{'active':group_index === 1}"  @click="group_index == 1 ? group_index = null : group_index = 1">
+								<h4>旋转</h4>
+								<span class="caret" :class="{'caret_close':group_index !== 1}"></span>
+							</div>
+							<div class="group_main" >
+								<ul>
+									<li style-attr="transform">
+										<span>角度：0</span>
+										<span class="ctner-range"><input min="0" max="360" step="0.5"  :vlaue="style.transform" type="range" @input="setStyleDirect($event,'num','')"  ></span>
 									</li>
 								</ul>
 							</div>
 						</li>
 						<li>
 							<div class="group_head" :class="{'active':group_index === 1}"  @click="group_index == 1 ? group_index = null : group_index = 1">
-								<h4>边框样式</h4>
+								<h4>样式</h4>
 								<span class="caret" :class="{'caret_close':group_index !== 1}"></span>
 							</div>
 							<div class="group_main" >
 								<ul>
-									<li style-attr="border-style">
+									<li style-attr="opacity" >
+										<span>不透明度</span>
+										<span class="ctner-range"><input min="0" max="1" step="0.1"  :vlaue="style.opacity" type="range" @input="setStyleDirect($event,'num','')"  ></span>
+									</li>
+									<li style-attr="backgroundColor" >
+										<span>背景透明度</span>
+										<span class="ctner-range"><input min="0" max="1" step="0.1"  :vlaue="style.backgroundColor" type="range" @input="setStyleDirect($event,'num','')"  ></span>
+									</li>
+									<!--<li style-attr="border-style">
 										<span>样式</span>
 										<select :value="style['border-style']" @input="setStyleDirect($event)">
 											<option value="none">无</option>
@@ -267,65 +285,33 @@
 										<span>颜色</span>
 										<input type="color" :value="style['border-color']" @input="setStyleDirect($event,'color')"/>
 										<input type="text" :value="style['border-color']" @input="setStyleDirect($event,'color')"/>
-									</li>
+									</li>-->
 								</ul>
 							</div>
 						</li>
-						<li>
-							<div class="group_head" :class="{'active':group_index === 2}"  @click="group_index == 2 ? group_index = null : group_index = 2">
-								<h4>阴影样式</h4>
-								<span class="caret" :class="{'caret_close':group_index !== 2}"></span>
+						<!--<li>
+							<div class="group_head" :class="{'active':group_index === 1}"  @click="group_index == 1 ? group_index = null : group_index = 1">
+								<h4>效果</h4>
+								<span class="caret" :class="{'caret_close':group_index !== 1}"></span>
 							</div>
-							<div class="group_main" >
-								<ul>
-									<li style-attr="box-shadow-x">
-										<span>X轴位置</span>
-										<input type="range" :value="boxShadowStyle['box-shadow-x'] | Number" @input="setBoxShadow($event,'number','px')"/>
-										<input type="number" :value="boxShadowStyle['box-shadow-x'] | Number" @input="setBoxShadow($event,'number','px')"/>
-									</li>
-									<li style-attr="box-shadow-y">
-										<span>Y轴位置</span>
-										<input type="range" :value="boxShadowStyle['box-shadow-y'] | Number" @input="setBoxShadow($event,'number','px')"/>
-										<input type="number" :value="boxShadowStyle['box-shadow-y'] | Number" @input="setBoxShadow($event,'number','px')"/>
-									</li>
-									<li style-attr="box-shadow-blur">
-										<span>模糊距离</span>
-										<input type="range" :value="boxShadowStyle['box-shadow-blur'] | Number" @input="setBoxShadow($event,'number','px')"/>
-										<input type="number" :value="boxShadowStyle['box-shadow-blur'] | Number" @input="setBoxShadow($event,'number','px')"/>
-									</li>
-									<li style-attr="box-shadow-size">
-										<span>尺寸</span>
-										<input type="range" :value="boxShadowStyle['box-shadow-size'] | Number" @input="setBoxShadow($event,'number','px')"/>
-										<input type="number" :value="boxShadowStyle['box-shadow-size'] | Number" @input="setBoxShadow($event,'number','px')"/>
-									</li>
-									<li style-attr="box-shadow-color">
-										<span>颜色</span>
-										<input type="color" :value="boxShadowStyle['box-shadow-color']" @input="setBoxShadow($event,'color')"/>
-										<input type="text" :value="boxShadowStyle['box-shadow-color']" @input="setBoxShadow($event,'color')"/>
-									</li>
-									<li style-attr="box-shadow-place">
-										<span>内部阴影</span>
-										<label for="inset">设置为内部阴影</label>
-										<input type="checkbox" id="inset" :value="boxShadowStyle['box-shadow-place'] === inset" @change="setBoxShadow($event,'checked')"/>
-									</li>
-								</ul>
-							</div>
-						</li>
+
+						</li>-->
+
 					</ul>
 				</div>
 				<div class="attr_main" v-show="nav_top_btn == 2">
 					<ul class="group">
-						<li v-for="item in aniStyleAttr">
+						<li>
 							<div class="group_head" :class="{'active':group_index === 0}" @click="group_index == $index ? group_index = null : group_index = $index">
-								<h4>动画 {{$index + 1}}</h4>
-								<span class="caret" :class="{'caret_close':group_index !== $index}"></span>
+								<h4>动画</h4>
+								<!--<span class="caret" :class="{'caret_close':group_index !== $index}"></span>-->
 							</div>
-							<span class="deleteAni close" @click="delAni($index)">&times;</span>
-							<div class="group_main" v-show="group_index === $index">
+							<!--<span class="deleteAni close" @click="delAni($index)">&times;</span>-->
+							<div class="group_main" >
 								<ul>
-									<li style-attr="ani-name">
+									<li style-attr="animation">
 										<span>动画名称</span>
-										<select :value="item['ani-name']" @input="setAni($index,$event)">
+										<select  @input="setStyleDirect($event,'partial','',1)" >
 											<option value="none">none | 无效果</option>
                                             <option value="flash">flash | 闪烁</option>
                                             <option value="shake">shake | 摇动</option>
@@ -387,10 +373,10 @@
 									</li>
 									<li style-attr="ani-duration">
 										<span>动画时长</span>
-										<input type="range" min="0" max="10" step="0.1" :value="item['ani-duration'] | Number '0'" @input="setAni($index,$event,'number','s')"/>
-										<input type="number" min="0" max="10" step="0.1" :value="item['ani-duration'] | Number '0'" @input="setAni($index,$event,'number','s')"/>
+										<!--<input type="range" min="0" max="10" step="0.1"  @input="setAni($index,$event,'number','s')"/>
+										<input type="number" min="0" max="10" step="0.1"  @input="setAni($index,$event,'number','s')"/>-->
 									</li>
-									<li style-attr="ani-tween">
+									<!--<li style-attr="ani-tween">
 										<span>动画曲线</span>
 										<select :value="item['ani-tween']" @input="setAni($index,$event)">
 											<option value="ease">ease | 自然</option>
@@ -403,21 +389,21 @@
 										<span>动画延时</span>
 										<input type="range" min="0" max="50" step="0.1" :value="item['ani-delay'] | Number '0'" @input="setAni($index,$event,'number','s')"/>
 										<input type="number" min="0" max="50" step="0.1" :value="item['ani-delay'] | Number '0'" @input="setAni($index,$event,'number','s')"/>
-									</li>
-									<li style-attr="ani-count">
+									</li>-->
+									<!--<li style-attr="ani-count">
 										<span>动画次数</span>
 										<input type="number" min="0" max="10" step="1" :value="item['ani-count'] | Number '0'" @input="setAni($index,$event,'number')" :disabled="item['ani-count'] === 'infinite'"/>
 										<input type="checkbox" id="infinite" :checked="item['ani-count'] === 'infinite'" @change="setAni($index,$event,'checked')" style="margin-left: 15px;"/>
 										<label for="infinite" style="margin-left: 8px;">循环</label>
-									</li>
+									</li>-->
 								</ul>
 							</div>
 						</li>
 					</ul>
-					<ul class="ani_btn">
-						<li @click="addAni()">添加动画</li>
-						<li @click="reloadAni()">预览动画</li>
-					</ul>
+					<!--<ul class="ani_btn">-->
+						<!--<li @click="addAni()">添加动画</li>-->
+						<!--<li @click="reloadAni()">预览动画</li>-->
+					<!--</ul>-->
 				</div>
 				<div class="attr_main" v-show="nav_top_btn == 3">
 					敬请期待～
@@ -458,6 +444,7 @@ var AttrListVm = null;
 var AttrList = Vue.extend({
 	name: 'AttrList',
 	data: function(){
+		console.log(this.style);
 		return {
 			itemType: '',
 			nav_top_btn: 0,
@@ -466,7 +453,7 @@ var AttrList = Vue.extend({
 			boxShadowStyle: {},
 			aniStyleAttr: [],
 			FontFace:FontFace,
-
+			isTextShadow:true
 		};
 	},
 	vuex: {
@@ -489,17 +476,40 @@ var AttrList = Vue.extend({
 	methods: {
 		selectPage: actions.selectPage,
 		addPage: actions.addPage,
-		setFontFace:function () {
-
-		},
 		setStyleDirect: function(ev, type, px,val){ // px 单位
 			var styleAttr = $(ev.target).parents('li[style-attr]').attr('style-attr');
 			var value = null;
-			if(type=='string'){
+			if(type=='partial'){
+				if(styleAttr=='textShadow'){
+					var regexp_textshadow = new RegExp('(\\d+)px (\\d+)px (\\d+)px (\\w+|#\\d{3,6})');
+					var val_ = $(ev.target).val();
+					if(regexp_textshadow.test(this.style.textShadow)){
+						value = this.style.textShadow.replace(regexp_textshadow,""+(val==1?val_:'$1')+"px "+(val==2?val_:'$2')+"px "+(val==3?val_:'$3')+"px "+(val==4?val_:'$4'));
+					}
+				}else if(styleAttr=='animation'){
+					var regexp_animation = new RegExp('(\\w+) (\\d+)s');
+					var val_ = $(ev.target).val();
+					if(regexp_animation.test(this.style.animation)){
+						value = this.style.animation.replace(regexp_animation,""+(val==1?val_:'$1')+" "+(val==2?val_:'$2')+"s ");
+					}else{
+						value = val_+" 1s";
+					}
+				}
+
+			}else if(type=='string'){
 				value = val;
                 if(arguments.length==6&&typeof arguments[5]=='boolean'){
-                    styleAttr = arguments[4];
-                    value = arguments[5]?arguments[3]:'normal';
+                    styleAttr = arguments[4];var defaultVal = '';
+					if(styleAttr=='textAlign'){
+						value = arguments[3];
+					}else{
+						if(styleAttr=='fontWeight'||styleAttr=='fontStyle'){
+							defaultVal = 'normal';
+						}else if(styleAttr=='textDecoration'){
+							defaultVal = 'none';
+						}
+						value = arguments[5]?defaultVal:arguments[3];
+					}
                 }else{
                     $(ev).closest('ul').siblings('a').find('span').html($(ev).text());
                 }
@@ -519,10 +529,15 @@ var AttrList = Vue.extend({
 				value = value + px;
 			}
 			var params = {};
-			params[styleAttr] = value;
+			if(styleAttr=='transform'){
+				params[styleAttr] = 'rotate('+value+'deg)';
+			}else{
+				params[styleAttr] = value;
+			}
 			actions.setStyle(store,this.checkedItems[0], params,true)
-			console.log(utils.getStyle(this.checkedItems[0],'all',true));
+//			console.log(utils.getStyle(this.checkedItems[0],'all',true));
 			this.style = utils.getStyle(this.checkedItems[0],'all',true);
+			this.isTextShadow = this.style.textShadow!='none';
 		},/*
 		setBoxShadow: function(ev,type,px){
 			var styleAttr = $(ev.target).parents('li[style-attr]').attr('style-attr');
@@ -559,8 +574,8 @@ var AttrList = Vue.extend({
 			result['box-shadow-color'] = _arr[4];
 			result['box-shadow-place'] = _arr[5] ? _arr[5] : '';
 			return result;
-		},
-		addAni: function(){
+		},*/
+		/*addAni: function(){
 			actions.addClass(store,this.checkedItems[0],'ani');
 			var model = 'none 0s ease 0s 1 none';
 			var _aniStr = utils.getStyle(this.checkedItems[0],'-webkit-animation',true) || utils.getStyle(this.checkedItems[0],'animation',true);
@@ -614,8 +629,8 @@ var AttrList = Vue.extend({
 				'animation': resultStr.join(','),
 				'-webkit-animation': resultStr.join(',')
 			},true);
-		},
-		formatAni: function(aniStr){
+		},*/
+		/*formatAni: function(aniStr){
 			var result = [];
 			var _arr1 = aniStr.replace(/(^\s+)|(\s+$)/g,'').split(',');
 			for(var i = 0;i < _arr1.length;i++){
@@ -633,7 +648,7 @@ var AttrList = Vue.extend({
 				}
 			}
 			return result;
-		},
+		},*//*
 		reloadAni: function(){
 			var _this = this;
 			var _AniStr = utils.getStyle(this.checkedItems[0],'-webkit-animation',true) || utils.getStyle(this.checkedItems[0],'animation',true);
@@ -667,7 +682,7 @@ var AttrList = Vue.extend({
 		}
 	}
 
-})
+});
 
 module.exports = AttrList;
 

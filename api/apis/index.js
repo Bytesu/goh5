@@ -7,4 +7,4 @@ var routes = ['./root.js', './list.js', './user.js', './delete.js', './work.js',
 module.exports = [];
 routes.forEach(function(item) {
     module.exports.push(require(item)(route))
-})
+});

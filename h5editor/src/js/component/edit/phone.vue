@@ -8,7 +8,7 @@
         position: relative;
         margin: 90px auto 0;
         background-size: 100%;
-        background-image: url(/back/dist/img/phone.svg);
+        /*background-image: url(/back/dist/img/phone.svg);*/
         background-repeat: no-repeat;
         width: 326px;
         height: 620px;
@@ -29,13 +29,15 @@
     }
 
     .phone_con .phone_screen {
-        width: 320px;
-        height: 486px;
+        /*width: 320px;*/
+        width: 319px;
+        /*height: 486px;*/
+        height: 568px;
         position: absolute;
         top: 97px;
         left: 3px;
         background-size: cover;overflow: hidden;;
-        background-repeat: no-repeat;
+        background-repeat: no-repeat;border: 1px solid #2e3e4e;
     }
 
     .phone_con .phone_screen > div {
@@ -54,7 +56,6 @@
         height: 100%;
         content: " ";
         background-image: url(/back/dist/img/grid_bg.png);
-        background-size: 320px 486px;
         opacity: 0.5;
     }
 
@@ -222,6 +223,7 @@
     var $ = require('jQuery');
     window.jQuery = $
     require('../../library/dropdown');
+    require('../../library/tooltip');
     var store = require('../../store/store.js');
     var actions = require('../../store/action/index.js');
 
@@ -235,7 +237,9 @@
     var Phone = Vue.extend({
         name: 'Phone',
         data: function () {
-            return {}
+            return {
+
+            }
         },
         props: ['bgGridStatus'],
         vuex: {
@@ -263,12 +267,12 @@
             $(document).bind('click', function (ev) {
                 var obj = $(ev.target);
                 if (obj.parents('.j_screen').length === 0 && obj.parents('.pages_con').length === 0 && obj.parents('.side_con').length === 0 && obj.parents('.tool_bar').length === 0 && obj.parents('.popline').length === 0 && obj.parents('.head_con').length === 0 && obj.parents('.context_menu').length === 0 && obj.parents('li').find('.group_head').length === 0) {
-//                    actions.clearCheckedItems(store);
+                    actions.clearCheckedItems(store);
                 }
             })
         },
         methods: {
-            selectItemOp: function (index, ev) {
+            selectItemOp: function (index, ev) {console.log('selectItem')
                 // 防止多选移动的时候触发选中元素
                 if (this.checkedItems.length > 1 && !ev.shiftKey && !ev.ctrlKey) {
                     return;

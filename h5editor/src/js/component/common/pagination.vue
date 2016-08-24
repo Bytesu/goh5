@@ -11,19 +11,19 @@
 </template>
 
 <style>
-.page-list {font-size: 0;color: #333;text-align: center;margin-bottom: 20px;margin-top: 10px;}
+.page-list {font-size: 0;color: #333;text-align: center;margin-bottom: 20px;margin-top: 30px;}
 .page-list .pagination {font-size: 0;display: inline-block;vertical-align: middle;*display: inline;*zoom: 1;}
-.page-list .pagination li {display: inline-block;vertical-align: middle;font-size: 14px;text-align: center;border: 1px solid #ddd;margin: 0 5px;cursor: pointer;background: #fff;transition: all ease 0.3s;-webkit-transition: all ease 0.3s;-o-transition: all ease 0.3s;-moz-transition: all ease 0.3s;}
-.page-list .pagination li:hover {background: #01d7b2;color: #fff;border: 1px solid #01d7b2;}
+.page-list .pagination li {display: inline-block;vertical-align: middle;font-size: 14px;text-align: center;border: 1px solid #eee;margin: 0 5px;cursor: pointer;background: #fff;transition: all ease 0.3s;-webkit-transition: all ease 0.3s;-o-transition: all ease 0.3s;-moz-transition: all ease 0.3s;    font-family: "微软雅黑";    font-size: 12px;}
+.page-list .pagination li:hover {background: #00b0d4;color: #fff;border: 1px solid #00b0d4;}
 .page-list .pagination li:active {background: #006b59;color: #fff;border: 1px solid #006b59;}
-.page-list .pagination .active {border: 1px solid #01d7b2;background: #01d7b2;color: #fff;}
+.page-list .pagination .active {border: 1px solid #00b0d4;background: #00b0d4;color: #fff;}
 .page-list .pagination .disabled {color: #aaa;cursor: not-allowed;}
 .page-list .pagination .disabled:hover {border: 1px solid #ddd;background: #fff;color: #aaa;}
 .page-list .pagination span {display: block;padding: 5px 10px;}
 .page-list .page-total {display: inline-block;vertical-align: middle;*display: inline;*zoom: 1;font-size: 14px;}
 .page-list .page-total input {height: 24px;border: 1px solid #ddd;width: 32px;text-align: center;margin-right: 5px;}
 .page-list .page-total span {cursor: pointer;padding: 5px 10px;transition: all ease 0.3s;-webkit-transition: all ease 0.3s;-o-transition: all ease 0.3s;-moz-transition: all ease 0.3s;}
-.page-list .page-total span:hover {color: #01d7b2;}
+.page-list .page-total span:hover {color: #00b0d4;}
 .page-list .page-total strong {font-size: 14px;font-weight: bold;}
 </style>
 

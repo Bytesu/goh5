@@ -55,7 +55,7 @@
 .lib_con .lib_list{width: 200px;display: flex;flex-direction: column;}
 .lib_con .lib_list .group{flex: 1;margin-top: 15px;}
 .lib_con .lib_list .group li{border-bottom: 1px solid #ccd5db;background: #fff;width: 100%;padding: 0 0 0 20px;box-sizing: border-box;color: #76838f;font-size: 12px;height: 44px;line-height: 44px;cursor: pointer;}
-.lib_con .lib_list .upload_btn{width: 100%;height: 44px;line-height: 44px;font-size: 16px;color: #fff;text-align: center;background: #01d7b2;position: relative;}
+.lib_con .lib_list .upload_btn{width: 100%;height: 38px;line-height: 38px;font-size: 14px;color: #fff;text-align: center;background: #01d7b2;position: relative;}
 .lib_con .lib_main{flex: 1;background: #fff;margin-top: 15px;border-top-left-radius: 6px;padding: 0 15px;}
 .lib_con .lib_main .lib_main_head{width: 100%;height: 44px;border-bottom: 1px solid #ccd5db;display: flex;justify-content: flex-end;}
 .lib_con .lib_main .lib_main_head .lib_main_head_group{font-size: 0;height: 44px;}

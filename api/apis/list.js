@@ -20,7 +20,7 @@ module.exports = function(Router) {
                                 listData: docs,
                                 totalItems: allDoc.length
                             }
-                        }
+                        };
                         res.send(resData);
                     })
                 }

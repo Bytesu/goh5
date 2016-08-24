@@ -14,7 +14,6 @@ Vue.directive('dragItem', function() {
     // 拖动元素'.j_screen>div .content',
     $('body').on('mousedown','.j_screen',function(ev) {
         if($(ev.target).hasClass('edit_mode')){
-        // return;
         // if($('.j_screen>div').eq(store.state.checkedItems[0]).find('.content>div').attr('contenteditable') === 'true'){
             return;
         }else{
@@ -30,12 +29,9 @@ Vue.directive('dragItem', function() {
             itemTop = {};
         var k = 0;
         $(window).bind('mousemove', function(ev) {
-            console.log(draging);
             if(draging){
                 for (var i = 0; i < store.state.checkedItems.length; i++) {
-
                     var obj = $('.j_screen').children().eq(store.state.checkedItems[i]);
-
                     itemLeft[i] = itemLeft[i] ? itemLeft[i] : (isNaN(parseFloat(obj.css('left'))) ? 0 :parseFloat(obj.css('left')));
                     itemTop[i] = itemTop[i] ? itemTop[i] : (isNaN(parseFloat(obj.css('top'))) ? 0 :parseFloat(obj.css('top')));
 
@@ -49,16 +45,17 @@ Vue.directive('dragItem', function() {
                         show: true,
                         msg: '超出屏幕外的元素将不可见',
                         type: 'warning'
-                    }
+                    };
 
                     if (x < 0 || y < 0 || parseFloat(obj.outerWidth()) + parseFloat(obj.css('left')) > conWidth || parseFloat(obj.outerHeight()) + parseFloat(obj.css('top')) > conHeight) {
                         if (!store.state.alertObj.show) {
                             actions.alert(store, alertMsg);
                         }
                     }
+                    console.log($('.j_screen').width())
                     actions.setStyle(store, store.state.checkedItems[i], {
-                        left: x + 'px',
-                        top: y + 'px'
+                        left: (x/$('.j_screen').width())*100 + '%',
+                        top: (y/$('.j_screen').height())*100 + '%'
                     })
                 }
             }

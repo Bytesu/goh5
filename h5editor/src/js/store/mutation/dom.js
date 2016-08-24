@@ -54,7 +54,7 @@ mutations.ADDCLASS = function(state, index, className) {
         }
     }
     state.currentPageData.items[index].class = classArray.join(' ').replace(/(^\s+)|(\s+$)/g, '');
-}
+};
 
 mutations.REMOVECALSS = function(state, index, className) {
     var classStr = state.currentPageData.items[index].class;
@@ -65,6 +65,6 @@ mutations.REMOVECALSS = function(state, index, className) {
         }
     }
     state.currentPageData.items[index].class = classArray.join(' ').replace(/(^\s+)|(\s+$)/g, '');
-}
+};
 
 module.exports = mutations;

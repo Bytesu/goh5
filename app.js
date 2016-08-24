@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var lactate = require('lactate');
 var mongoose = require('mongoose');
 var pwd = __dirname;
-var routes = require('./router');
 
 var app = express();
 var router = express.Router();
@@ -34,9 +33,9 @@ app.use('/img', express.static(pwd + '/User/UploadImg/'));
 // 用户上传的音乐
 app.use('/audio', express.static(pwd + '/User/UploadMusic/'));
 // 后台静态资源
-app.use('/back', express.static(pwd + '/Back_Stage/'));
+app.use('/back', express.static(pwd + '/h5editor/'));
 // 前台静态资源
-app.use('/front', express.static(pwd + '/Front_Stage/'));
+app.use('/front', express.static(pwd + '/views/'));
 
 
 // 后台页面
@@ -45,23 +44,13 @@ app.get('/', function(req, res, next) {
         res.clearCookie('isLogin');
         res.clearCookie('user_name');
     }
-    res.sendFile(pwd + '/Back_Stage/index.html',{});
+    res.sendFile(pwd + '/h5editor/index.html',{});
 });
 
 app.engine('.html', require('ejs').__express);
 app.set('view engine', 'html');
-app.use('/', routes);
 
-// 前台页面
-app.get('/h5/:id', function(req, res, next) {
-    var id = req.params.id;
-    var Work = global.dbHandel.getModel('work');
-    Work.find({ '_id': id }).exec(function(err, docs) {
-        res.render(pwd + '/Front_Stage/index.html', {
-            workData: docs[0]
-        });
-    })
-});
+
 
 routers.forEach(function(Router) {
     app.use('/api', Router);

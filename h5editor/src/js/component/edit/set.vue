@@ -16,7 +16,7 @@
 				</div>
 				<div class="item">
 					<h4>预览</h4>
-					<a class="qrcode" v-qrcode="'http://'+ host + '/show/' + this.$route.params.id" :href="'http://'+ host + '/show/' + this.$route.params.id" target="_blank"></a>
+					<a class="qrcode" v-qrcode="'http://'+ host + '/api/h5/' + this.$route.params.id" :href="'http://'+ host + '/show/' + this.$route.params.id" target="_blank"></a>
 					<em class="tips">（点击或扫描预览作品）</em>
 					<em class="tips">（发布后的作品可在全部作品中展示）</em>
 				</div>

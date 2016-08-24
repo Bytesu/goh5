@@ -18,6 +18,7 @@ actions.initData = function(store, id, cb) {
             _id: id
         },
         success: function(data) {
+            console.log(data.data);
             if (!data.iserro) {
                 store.dispatch('INITDATA', data.data);
             }

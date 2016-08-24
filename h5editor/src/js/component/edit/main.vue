@@ -43,6 +43,7 @@ var Edit = Vue.extend({
 	name: 'Edit',
 	store,
 	data: function(){
+
 		return {
 			loading: true,
 			bgGridStatus: true,
@@ -74,7 +75,7 @@ var Edit = Vue.extend({
 		});
 		$(window).bind("beforeunload",function(){
 			if(_this.$route.path.indexOf('edit') !== -1){
-				return "请确认您的场景已保存"
+				return "请确认您的场景已保存";
 			}
 		})
 	},
