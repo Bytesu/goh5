@@ -30,7 +30,24 @@ mutations.ADDPICORBG = function(state, src, type) {
         state.currentPageData.items.push(model);
         mutations.SELECTITEM(state, index - 1);
     } else if (type === 'bg') {
-        state.currentPageMain.background = src;
+        // state.currentPageMain.background = src;
+        state.checkedItems = [];
+        var index = state.currentPageData.items.length + 1;
+        var num = utils.getAllItemsLen() + 1;
+        var model = tpl.pic(0.1, num, {
+            src: src
+        });
+        state.currentPageData.items.push(model);
+        mutations.SELECTITEM(state, index - 1);
+    }else if(type=='GRAPHIC'){
+        state.checkedItems = [];
+        var index = state.currentPageData.items.length + 1;
+        var num = utils.getAllItemsLen() + 1;
+        var model = tpl.graphic(index, num, {
+            src: src
+        });
+        state.currentPageData.items.push(model);
+        mutations.SELECTITEM(state, index - 1);
     }
 };
 

@@ -1,5 +1,5 @@
 <template>
-	<div class="edit_bg" style="position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: #f2f2f9"></div>
+	<div class="edit_bg" style="position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: #f7f7f7"></div>
 	<m-head :show-set.sync="showSet"></m-head>	
 	<m-page-list></m-page-list>
 	<m-phone :bg-grid-status.sync="bgGridStatus"></m-phone>

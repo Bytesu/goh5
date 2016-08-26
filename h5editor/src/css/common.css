@@ -147,7 +147,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {padding: 0;border: 0}
 /* 侧边列表 */
 .side_con{position: fixed;background: #fff;display: flex;flex-direction:column;width: 280px;box-sizing: border-box;height: 100%;padding-bottom: 60px;top: 60px;}
 .side_con.left{left: 0;}
-.side_con.right{right: 0;}
+.side_con.right{right: 0;border-left:1px solid #eee; }
 .side_con .item{display: flex;flex-direction: column;}
 .side_con .head{height: 40px;line-height: 40px;text-align: center;color: #666;background: #F7F7F7;font-size: 14px;width: 100%;}
 .side_con .item.pages_list{}
@@ -161,7 +161,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {padding: 0;border: 0}
 .side_con .item.nav_bottom a span{display: inline-block;vertical-align: middle;}
 
 /* 关闭按钮 */
-.close {font-size: 21px;font-weight: bold;line-height: 1;color: #000;text-shadow: 0 1px 0 #fff;filter: alpha(opacity=20);opacity: 0.2;transition: all ease 0.2s;-webkit-transition: all ease 0.2s;}
+.close {font-size: 21px;font-weight: normal;line-height: 1;color: #000;text-shadow: 0 1px 0 #fff;filter: alpha(opacity=20);opacity: 0.2;transition: all ease 0.2s;-webkit-transition: all ease 0.2s;}
 .close:hover, .close:focus {color: #000;text-decoration: none;cursor: pointer;filter: alpha(opacity=50);opacity: 0.5;}
 
 
@@ -187,6 +187,8 @@ button::-moz-focus-inner, input::-moz-focus-inner {padding: 0;border: 0}
     transition: .3s;
     width: 300px;
     height: 40px;}
+.user .item input[type='text']:focus,.user .item input[type='password']:focus{border: 1px solid #00BCD4;}
+
 .user .item span{font-size: 12px;color: #526069;display: inline-block;vertical-align: middle;}
 .user .item input[type='checkbox']{width: 16px;height: 16px;display: inline-block;vertical-align: middle;margin: 0 3px;}
 .user .item input[type='checkbox']:nth-child(3){margin-left: 20px;}

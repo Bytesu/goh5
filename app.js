@@ -6,6 +6,11 @@ var cookieParser = require('cookie-parser');
 var lactate = require('lactate');
 var mongoose = require('mongoose');
 var pwd = __dirname;
+var morgan = require('morgan');
+var fs = require('fs');
+var path = require('path');
+var moment = require('moment');
+var FileStreamRotator = require('file-stream-rotator');
 
 var app = express();
 var router = express.Router();
@@ -27,6 +32,20 @@ app.use(session({
     resave: true
 }));
 
+var logDirectory = path.join(__dirname, 'logs')
+
+// ensure log directory exists
+fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
+
+// create a rotating write stream
+var accessLogStream = FileStreamRotator.getStream({
+    date_format: 'YYYY-MM-DD',
+    filename: path.join(logDirectory, 'access-%DATE%.log'),
+    frequency: 'daily',
+    verbose: false
+});
+
+app.use(morgan('combined',{stream:accessLogStream}));
 
 // 用户上传的图片
 app.use('/img', express.static(pwd + '/User/UploadImg/'));

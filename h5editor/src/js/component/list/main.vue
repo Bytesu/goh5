@@ -63,12 +63,12 @@
 	.list_con .list_body ul li .middle .desc{font-size: 0;}
 	.list_con .list_body ul li .middle .desc em{font-size: 12px;color: #a0aec4;display: block;vertical-align: top;font-style: normal;line-height: 20px;}
 	.list_con .list_body ul li .middle .desc em:first-child{text-align: left;overflow: hidden;text-overflow: ellipsis;}
-	.list_con .list_body ul li .middle .desc em:last-child{text-align: right;}
+	.list_con .list_body ul li .middle .desc em:last-child{text-align: left;}
 	.list_con .list_body ul li .bottom{    position: absolute;
 		right: 12px;
 		left: 12px;
 		bottom: 0px;}
-	.list_con .list_body ul li .bottom a{display: inline-block;vertical-align: top;color: #00BCD4;font-size: 12px;line-height: 32px;margin: 0 8px 0 0;transition: all ease 0.2s;-webkit-transition: all ease 0.2s;}
+	.list_con .list_body ul li .bottom a{display: block;vertical-align: top;color: #00BCD4;font-size: 12px;line-height: 32px;margin: 0 8px 0 0;transition: all ease 0.2s;-webkit-transition: all ease 0.2s;float: left;}
 	.list_con .list_body ul li .bottom a:hover{text-decoration: underline;}
 </style>
 <template>
@@ -107,7 +107,9 @@
 					</div>
 					<div class="bottom">
 						<a href="javascript:void(0)" v-show="listType === 1" v-link="{path:'/edit/' + item._id}">编辑</a>
+						<a href="javascript:void(0);"  @click="copy(item._id)" >复制</a>
 						<a :href="'http://'+host+'/api/zip/'+item._id">下载</a>
+						<a target="_blank" :href="'http://'+host+'/api/h5/'+item._id">预览</a>
 						<a href="javascript:void(0)" v-show="listType === 1" @click="deleteWork(item._id)">删除</a>
 					</div>
 				</li>
@@ -116,7 +118,7 @@
 	</div>
 	<m-pagination :pagination-conf="paginationConf"></m-pagination>
 	<m-loading :loading.sync="loading"></m-loading>
-	<m-create :show-create.sync="showCreate"></m-create>
+	<m-create :show-create.sync="showCreate" :list-type="listType"></m-create>
 	<m-alert></m-alert>
 	<m-confirm></m-confirm>
 </template>
@@ -209,6 +211,15 @@ var List = Vue.extend({
 		'm-pagination': Pagination,
 	},
 	methods: {
+		copy:function (_id) {
+			$.ajax({
+				url:'/api/copy/'+_id,
+				type:'get',
+				success:function(data){
+					window.location.reload();
+				}
+			})
+		},
 		changeListTab: function(type){
 			this.listType = type;
 			this.paginationConf.currentPage = 1;

@@ -3,3 +3,4 @@ node_modules/
 /User/UploadMusic/*
 !/User/UploadImg/.empty
 !/User/UploadMusic/.empty
+logs/

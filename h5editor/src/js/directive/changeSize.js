@@ -135,6 +135,17 @@ Vue.directive('changeSize', function() {
                         }
                         break;
                 }
+                if(styleParams.left){
+                    styleParams.left = parseInt(styleParams.left.split('px')[0])/conWidth * 100 +'%';
+                }
+                if(styleParams.height){
+                    styleParams.height = parseInt(styleParams.height.split('px')[0])/conHeight * 100 +'%';
+                }
+                if(styleParams.width){
+                    styleParams.width = parseInt(styleParams.width.split('px')[0])/conWidth * 100 +'%';
+                }
+
+
                 actions.setStyle(store, store.state.checkedItems[0], styleParams);
             });
             $(window).bind('mouseup', function() {

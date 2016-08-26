@@ -33,6 +33,7 @@
 		opacity: 0.8;
 	}
 	.set_con .left .item .thumbnail input{display: block;position: absolute;top: 0;left: 0;opacity: 0;font-size: 0;width: 100%;height: 100%;padding: 0;margin: 0;cursor: pointer;}
+	.set_con .left .item .thumbnail input:focus{border: 1px solid #00BCD4;}
 	.set_con .left .item .thumbnail span:hover{background: #088392;color: #FFF;}
 	.set_con .left .item .tips{font-size: 12px;line-height: 24px;color: #76838f;display: block;width: 80%;text-align: center;background-color: #fff;font-style: normal;margin: 0 auto;}
 	.set_con .left .item .qrcode{width: 220px;padding: 10px;background-color: #fff;border: 1px solid #c6cbd4;margin: 10px auto 0;display: block;box-sizing: border-box;}
@@ -63,6 +64,8 @@
 	.set_con .right .item .main .kind label{font-size: 14px;color: #76838f;display: inline-block;width: 100px;position: relative;text-indent: 14px;margin-top: 7px;}
 	.set_con .right .item .main .kind label span{color: #00BCD4;position: absolute;font-size: 20px;left: -14px;top: 1px;}
 	.set_con .right .item .main input{width: 270px;display: inline-block;vertical-align: middle;line-height: 30px;padding: 0 10px;box-sizing: border-box;border: 1px solid #c6cbd4;font-size: 14px;color: #76838f;}
+	.set_con .right .item .main input:focus,.set_con .right .item .main textarea:focus{border: 1px solid #00BCD4;}
+
 	.set_con .right .item .main input[type="checkbox"]{width: auto;}
 	.set_con .right .item .main textarea{width: 270px;display: inline-block;vertical-align: top;padding: 0 10px;font-size: 14px;border: 1px solid #c6cbd4;color: #76838f;box-sizing: border-box;line-height: 26px;resize: none;height: 120px;outline: none;}
 </style>

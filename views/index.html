@@ -2,7 +2,7 @@
 <html id="app">
 <head>
     <meta charset="utf-8">
-    <meta id="h5editor" name="viewport" content="width=320, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta id="h5editor" name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <meta name="renderer" content="webkit">
     <title>
@@ -10,7 +10,7 @@
     </title>
     <meta name="keywords" content="{{about.keyWords }}">
     <meta name="description" content="{{about.desc }}">
-    <link rel="stylesheet" type="text/css" href="./dist/css/goh5.min.css?ver=1.0.2">
+    <link rel="stylesheet" type="text/css" href="./dist/css/H5Editor.min.css?ver=1.0.2">
 </head>
 <body >
 
@@ -21,8 +21,14 @@
         <div class="swiper-wrapper">
             <div class="swiper-slide" style="" v-for="page in mainCode.pages">
                 <div class="items_con all_center" style="">
-    				<div v-for="item in page.items" class="item" type="{{item.type}}" :style="item.sty"  >
-                        {{{item.content}}}
+    				<div v-for="item in page.items" class="item" type="{{item.type}}"   >
+                        <p v-if="item.type=='TXT'" :style="item.sty">
+                            {{{item.content}}}
+                        </p>
+
+                        <p v-if="item.type=='IMG'">
+                            <img :style="item.sty"  :src="'./dist'+item.content" alt="">
+                        </p>
     				</div>
                 </div>
             </div>
@@ -41,9 +47,11 @@
     <img class="audio_btn play" style="display: none;" src="./dist/img/music.png">
 
     <script type="text/javascript" src="./dist/js/data.js?ver=1.0.2"></script>
+    <script type="text/javascript" src="./src/js/jquery.min.js?ver=1.0.2"></script>
+
     <script src="https://npmcdn.com/vue/dist/vue.js"></script>
     <script type="text/javascript" src="./dist/js/vendor.min.js?ver=1.0.2"></script>
-    <script type="text/javascript" src="./dist/js/goh5.min.js?ver=1.0.2"></script>
+    <script type="text/javascript" src="./dist/js/H5Editor.min.js?ver=1.0.2"></script>
 </body>
 
 </html>

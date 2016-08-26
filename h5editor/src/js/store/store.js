@@ -48,4 +48,4 @@ module.exports = new Vuex.Store({
     mutations,
     actions,
     strict: true
-})
+});

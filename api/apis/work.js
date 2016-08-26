@@ -39,7 +39,7 @@ var create = function(req, res) {
         'mainCode': mainCodeDefault,
         'setConfig': setConfigDefault,
         'saveRecord': {},
-        'status': 0
+        'status': 0,
     }, function(err, doc) {
         if (err) {
             res.send(err);

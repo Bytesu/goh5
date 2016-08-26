@@ -10,34 +10,38 @@
         background-size: 100%;
         /*background-image: url(/back/dist/img/phone.svg);*/
         background-repeat: no-repeat;
-        width: 326px;
-        height: 620px;
+        width: 380px;
+        height: 710px;border: 1px solid #ccc;
+        border-radius: 13px;
     }
 
     .phone_con .phone_title {
         position: absolute;
-        top: 65px;
-        width: 80%;
-        left: 10%;
+        top: 20px;
+        width: 100%;
+        left: 0;
         text-align: center;
-        color: #fff;
+        color: #000;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-        height: 20px;
+        height: 30px;
         font-size: 18px;
     }
 
     .phone_con .phone_screen {
-        /*width: 320px;*/
-        width: 319px;
-        /*height: 486px;*/
-        height: 568px;
+        width: 360px;
+        height: 640px;
         position: absolute;
-        top: 97px;
-        left: 3px;
+        top: 49px;
+        left: 10px;
         background-size: cover;overflow: hidden;;
-        background-repeat: no-repeat;border: 1px solid #2e3e4e;
+        background-repeat: no-repeat;
+        /*border: 1px solid #2e3e4e;*/
+        box-shadow:0 0 6px #999;
+        /*background-color:#fff;*/
+        cursor:pointer;
+        background: #fff url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="20…rect><rect x="10" y="10" width="10" height="10" fill="#EEE"></rect></svg>') repeat;
     }
 
     .phone_con .phone_screen > div {
@@ -181,7 +185,6 @@
 <template>
     <div class="editor-section">
 
-
         <div class="phone_con">
             <div class="phone_title">{{workData.title}}</div>
             <!--:style="currentPageMain.background | FormatBg"-->
@@ -192,9 +195,10 @@
                      :style="item.style" :title="'ID : '+item.id" :attr="item.attr | json" :type="item.type"
                      :index="$index" @mousedown="selectItemOp($index, $event);" v-change-size v-edit-text-item
                      v-context-menu="'#item_context_menu'">
-                    <div class="content">
+                    <div class="content" v-if="item.type=='TXT'">
                         <div v-if="item.type=='TXT'" :style="item.styleObj">{{item.content}}</div>
                     </div>
+                    <img class="content" v-if="item.type=='IMG'" :style="item.styleObj" :src="item.content" />
                     <div class="edit_mode_cont" v-show="checkedItems.indexOf($index) != -1">
                         <div class="edit_mode_layer">
                             <div class="edit_mode edit_mode_radius_t_l"></div>

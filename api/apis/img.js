@@ -24,18 +24,18 @@ var upload = function(req, res) {
             'user_name': req.session.user_name,
             'file_name': fileName,
             'upload_time': Date.now()
-        })
+        });
         saveTo.on('finish', function() {
             fs.unlinkSync(item.path);
         });
-    })
+    });
     var resData = {
         iserro: 0,
         msg: '上传成功',
         data: ''
-    }
+    };
     res.send(resData);
-}
+};
 
 var getImgList = function(req, res) {
     var query = req.query;

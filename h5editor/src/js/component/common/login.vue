@@ -10,15 +10,15 @@
 				<div class="user">
 					<div class="item">
 						<label for="user_name">用户名：</label>
-						<input id="user_name" type="text" placeholder="请输入用户名" v-bind:class="{'erro_input':erro.target == 'user_name'}" v-model="user_name" @blur="bl" @focus="fo"/>
+						<input id="user_name" type="text" placeholder="请输入用户名" :class="{'erro_input':erro.target == 'user_name'}" v-model="user_name" @blur="bl" @focus="fo"/>
 					</div>
 					<div class="item">
 						<label for="password">密码：</label>
-						<input id="password" type="password" placeholder="请输入密码" v-bind:class="{'erro_input':erro.target == 'password'}" v-model="password" @blur="bl" @focus="fo"/>
+						<input id="password" type="password" placeholder="请输入密码" :class="{'erro_input':erro.target == 'password'}" v-model="password" @blur="bl" @focus="fo"/>
 					</div>
 					<div class="item clearfix">
-						<input type="checkbox" value="记住账号" v-model="remember"><span>记住账号</span/>
-						<input type="checkbox" value="一周内免登录" v-model="noneedPassword"><span>一周内免登录</span/>
+						<input type="checkbox" value="记住账号" v-model="remember" /><span>记住账号</span>
+						<input type="checkbox" value="一周内免登录" v-model="noneedPassword" /><span>一周内免登录</span>
 						<a @click="funshowSignup()">注册</a>
 					</div>
 					<span class="erro_text" v-show="erro.iserro">{{erro.text}}</span>

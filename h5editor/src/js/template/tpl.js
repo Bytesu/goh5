@@ -11,7 +11,8 @@ module.exports = {
 
             style:{
                 zIndex:index*10,
-                width:'100px',
+                width:'50%',
+                height:'auto',
                 top:'0px',
                 left:'0px',
                 fontSize:'1em',
@@ -47,12 +48,55 @@ module.exports = {
     },
     pic: function(index, num, params) {
         return {
-            type: 'PIC',
-            style: 'z-index:' + index * 10 + ';max-width:320px;top:0px;left:0px;box-sizing:border-box;position: absolute;',
+            type: 'IMG',
+            style: {
+                zIndex:index*10,
+                width:'30%',
+                top:0,
+                left:0,
+                height:'auto',
+                boxSizing:'border-box',
+                position:'absolute'
+            },
+            styleObj:{
+                width:'100%',
+                height:'100%',
+                boxSizing:'border-box',
+                display:'block',
+                backgroundColor:'rgba(0,0,0,0)',
+                boxShadow:'0px 0px 0px 0px rgba(0,0,0,0)'
+            },
             class: params.className ? params.className : '',
             id: 'GOH5.IMG.NO.' + num,
             attr: {},
-            content: '<img style="width:100%;height:100%;box-sizing:border-box;display:block;background-color: rgba(0,0,0,0);box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);" src="' + params.src + '">'
+            content:  params.src
+        };
+    },
+    graphic: function(index, num, params) {
+        return {
+            type: 'GRAPHIC',
+            style: {
+                zIndex:index*10,
+                top:0,
+                left:0,
+                width:'100px',
+                height:'100px',
+                boxSizing:'border-box',
+                position:'absolute'
+            },
+            styleObj:{
+                width:'100px',
+                height:'100px',
+                boxSizing:'border-box',
+                border:'1px solid gray',
+                display:'block',
+                backgroundColor:'rgba(0,0,0,0)',
+                boxShadow:'0px 0px 0px 0px rgba(0,0,0,0)'
+            },
+            class: params.className ? params.className : '',
+            id: 'GOH5.GRAPHIC.NO.' + num,
+            attr: {},
+            content:  '',
         };
     },
     video: function(index, num, params) {

@@ -9,6 +9,19 @@ var path = require('path');
 var util_file = require('./../libs/files')
 function generatorScript(datas){
     return new Promise(function(resolve,reject){
+        var imgDatas = JSON.stringify(datas).match(/\w+\.(jpg|png|jpeg|gif|webm|bmp)/gi);
+        imgDatas.map(function (item) {
+            try{
+                var stat = fs.statSync(path.join(__dirname+'/../../User/UploadImg',path.basename(item)));
+                if(stat.isFile()){
+                    var readable  = fs.createReadStream(path.join(__dirname+'/../../User/UploadImg',path.basename(item)));
+                    var wirtable = fs.createWriteStream(path.join(__dirname+'/../../','/views/dist/img/',path.basename(item)));
+                    readable.pipe(wirtable);
+                }
+            }catch(e){
+                console.error(e);
+            }
+        });
         fs.writeFile(__dirname+'/../../views/dist/js/data.js', 'var datas = '+JSON.stringify(datas), (err) => {
             if (err) return reject(err);
             return resolve('success');
@@ -61,11 +74,69 @@ module.exports = function(Router){
             });
         })
     });
+    var setConfigDefault = {
+        loop: true,
+        direction: 'vertical',
+        autoBackPrePage: true,
+        effect: 'slide'
+    };
+
+    var mainCodeDefault = {
+        wholeAttr: {
+            background: '#fff',
+            bgmusic: '',
+            bgmusicName: ''
+        },
+        pages: [{
+            main: {
+                background: '#fff',
+                type: '',
+                height: 486,
+            },
+            items: []
+        }]
+    };
+    Router.get('/copy/:id', function(req, res, next) {
+        var id = req.params.id;
+        var Work = global.dbHandel.getModel('work');
+        Work.find({ '_id': id }).exec(function(err, docs) {
+            docs = docs[0];
+            delete docs._id;
+            docs.saveRecord = {};
+            docs = {
+                'user_name': docs.user_name,
+                'title': docs.title+'_副本',
+                'createTime': Date.now(),
+                'lastSaveTime': Date.now(),
+                'about': docs.about,
+                'mainCode': docs.mainCode,
+                'setConfig': docs.setConfig,
+                'saveRecord': {},
+                'status': 0
+            };
+            Work.create(docs, function(err, doc) {
+                if (err) {
+                    console.log('[api.copy] '+err);
+                    res.send(err);
+                } else {
+                    var resData = {
+                        iserro: 0,
+                        msg: '复制成功！',
+                        data: {
+                            _id: doc._id
+                        }
+                    };
+                    res.send(resData);
+                }
+            })
+        })
+    });
     // 前台页面
     Router.get('/h5/:id', function(req, res, next) {
         var id = req.params.id;
         var Work = global.dbHandel.getModel('work');
         Work.find({ '_id': id }).exec(function(err, docs) {
+
             generatorScript(docs[0]).then(function(){
                 return res.render(__dirname + '/../../views/render.html');
             }).catch(function (e) {

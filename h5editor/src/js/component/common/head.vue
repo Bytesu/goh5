@@ -7,7 +7,7 @@
 	.head_con .item.center .create_group{font-size: 0;}
 	.head_con .item.center .create_group li{font-size: 12px;cursor: pointer;transition: all ease 0.2s;-webkit-transition: all ease 0.2s;width: 50px;padding: 0 5px;display: inline-block;vertical-align: middle;}
 	.head_con .item.center .create_group li:hover{background: #484d64;}
-	.head_con .item.center .create_group li span{display: block;text-align: center;line-height: 22px;}
+	.head_con .item.center .create_group li span{display: block;text-align: center;line-height: 15px;}
 	.head_con .item.center .create_group li .icon{background-image: url('/back/dist/img/icon.png');width: 30px;height: 30px;margin: 0 auto;}
 	.head_con .item.center .create_group li .icon1{background-position: 0 0;}
 	.head_con .item.center .create_group li .icon2{background-position: 0 -30px;}
@@ -38,6 +38,7 @@
 				<li @click="addText()"><div class="icon icon1"></div><span>文本</span></li>
 				<li @click="materialLibPic({show:true,msg:'插入图片',type:'pic'})"><div class="icon icon2"></div><span>图片</span></li>
 				<li @click="materialLibPic({show:true,msg:'更改背景',type:'bg'})"><div class="icon icon3"></div><span>背景</span></li>
+				<li @click="materialLibPic({show:true,msg:'图形',type:'GRAPHIC'})"><div class="icon icon3"></div><span>图形</span></li>
 				<!-- <li><div class="icon icon4"></div><span>图集</span></li> -->
 				<!-- <li><div class="icon icon5"></div><span>视频</span></li> -->
 				<li @click="materialLibMusic({show:true,msg:'设置背景音乐',type:'bgMusic'})"><div class="icon icon6"></div><span>音乐</span></li>

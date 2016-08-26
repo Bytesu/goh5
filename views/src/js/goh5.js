@@ -62,7 +62,14 @@ Layout.prototype ={
     },
     initLayout:function () {
         var self = this;
-        self.$container.width(1080/1920 * self.$container.height());
+        if(self.$container.width>1000){
+            self.$container.width(1080);
+            self.$container.height(1920);
+        }else{
+            self.$container.width(360);
+            self.$container.height(640);
+        }
+        // self.$container.width(1080/1920 * self.$container.height());
     }
 };
 

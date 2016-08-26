@@ -8,7 +8,7 @@
 			</div>
 			<div class="dialog_main">
 				<div class="create_con all_center">
-					<input type="text" placeholder="请输入作品标题" v-model="title"/>
+					<input type="text" placeholder="请输入作品标题" v-model="title" autofocus/>
 				</div>
 			</div>
 			<div class="dialog_bottom">
@@ -24,7 +24,8 @@
 
 <style>
 .create_con{}
-.create_con input{width: 330px;height: 36px;font-size: 12px;padding: 0 10px;line-height: 36px;display: block;border-radius: 6px;outline: 0;border: 1px solid #ddd;}
+.create_con input{width: 330px;height: 36px;font-size: 12px;padding:0 5px;margin: 0 20px;line-height: 36px;display: block;border-radius: 1px;outline: 0;border: 1px solid #ddd;}
+.create_con input:focus{border: 1px solid #00BCD4; }
 
 </style>
 
@@ -44,7 +45,7 @@ var Create = Vue.extend({
 			title: '',
 		}
 	},
-	props: ['showCreate'],
+	props: ['showCreate','listType'],
 	methods: {
 		submit: function(){
 			var _this = this;
@@ -52,7 +53,8 @@ var Create = Vue.extend({
 				url: '/api/work/create',
 				type: 'get',
 				data:{
-					title: _this.title
+					title: _this.title,
+					status:_this.listType
 				},
 				success: function(data){
 					var id = data.data._id;

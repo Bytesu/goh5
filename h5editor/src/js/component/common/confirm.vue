@@ -23,7 +23,11 @@
 <style>
 .confirm{position: absolute;left: 50%;transform: translateX(-50%);top: 100px;}
 .dialog_main_con.confirm{width: 480px!important;height: 190px!important;}
-.dialog_main_con.confirm h4{display: block;font-size: 24px;color: #76838f}
+.dialog_main_con.confirm h4{    display: block;
+	font-size: 16px;
+	color: #76838f;
+	margin: 0 20px;
+	font-weight: normal;}
 
 </style>
 

@@ -11,10 +11,10 @@ Vue.directive('dragItem', function() {
     var _this = this;
     var target = this.el;
     var draging = false;
-    // 拖动元素'.j_screen>div .content',
+    // 拖动元素
     $('body').on('mousedown','.j_screen',function(ev) {
         if($(ev.target).hasClass('edit_mode')){
-        // if($('.j_screen>div').eq(store.state.checkedItems[0]).find('.content>div').attr('contenteditable') === 'true'){
+            console.log('return !!!');
             return;
         }else{
             draging = true;

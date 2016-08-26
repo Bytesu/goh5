@@ -10,6 +10,8 @@ mutations.SETSTYLE = function(state, index, params, isIn) {
                     state.currentPageData.items[index].styleObj[pro] = params[pro];
                 }else{
                     state.currentPageData.items[index].style[pro] = params[pro];
+                    params[pro].width && (state.currentPageData.items[index].styleObj[pro].width = params[pro].width);
+                    params[pro].height && (state.currentPageData.items[index].styleObj[pro].height = params[pro].height);
                 }
             }
         // return state.currentPageData.items[index].styleObj;
