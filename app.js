@@ -11,6 +11,7 @@ var fs = require('fs');
 var path = require('path');
 var moment = require('moment');
 var FileStreamRotator = require('file-stream-rotator');
+var log = require('./libs/log');
 
 var app = express();
 var router = express.Router();
@@ -36,7 +37,7 @@ var logDirectory = path.join(__dirname, 'logs')
 
 // ensure log directory exists
 fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
-
+app.use(log.log);
 // create a rotating write stream
 var accessLogStream = FileStreamRotator.getStream({
     date_format: 'YYYY-MM-DD',
@@ -45,7 +46,7 @@ var accessLogStream = FileStreamRotator.getStream({
     verbose: false
 });
 
-app.use(morgan('combined',{stream:accessLogStream}));
+// app.use(morgan('combined',{stream:accessLogStream}));
 
 // 用户上传的图片
 app.use('/img', express.static(pwd + '/User/UploadImg/'));

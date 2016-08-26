@@ -48,12 +48,12 @@ var getMusicList = function(req, res) {
                         musicList: docs,
                         totalItems: allDoc.length
                     }
-                }
+                };
                 res.send(resData);
             })
         }
     })
-}
+};
 
 module.exports = function(Router) {
     Router.post('/audio/:act', multipartMiddleware, function(req, res, next) {

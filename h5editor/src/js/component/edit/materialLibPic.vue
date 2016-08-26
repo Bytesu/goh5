@@ -4,31 +4,17 @@
 	.lib_con .lib_list{width: 200px;display: flex;flex-direction: column;}
 	.lib_con .lib_list .group{flex: 1;margin-top: 0px;}
 	.lib_con .lib_list .group li{border-bottom: 1px solid #ccd5db;background: #fff;width: 100%;padding: 0 0 0 20px;box-sizing: border-box;color: #76838f;font-size: 12px;height: 44px;line-height: 44px;cursor: pointer;}
-	.lib_con  .upload_btn{width: auto;
-		height: 28px;
-		line-height: 28px;
-		font-size: 14px;
-		color: #fff;
-		text-align: center;
-		background: #00BCD4;
-		position: relative;
-		display: inline-block;
-		padding: 0px 10px;
-		float: right;
-		margin: 10px 32px 0 32px;
-		cursor: pointer;}
+	.lib_con  .upload_btn{width: auto;height: 28px;line-height: 28px;font-size: 14px;color: #fff;text-align: center;background: #00BCD4;position: relative;display: inline-block;padding: 0px 10px;float: right;margin: 10px 32px 0 32px;cursor: pointer;}
 	.lib_con .lib_main{flex: 1;background: #fff;margin-top: 0px !important;border-top-left-radius: 6px;padding: 0 15px;overflow: auto;position: relative;}
 	.lib_con .lib_main .lib_main_head{width: 100%;height: 28px !important;border-bottom: 1px solid #ccd5db;display: flex;justify-content: flex-end;}
 	.lib_con .lib_main .lib_main_head .lib_main_head_group{font-size: 0;height: 28px !important;}
 	.lib_con .lib_main .lib_main_head .lib_main_head_group li{display: inline-block;vertical-align: middle;font-size: 12px;line-height: 28px !important;margin: 0 5px;padding: 0 10px;}
 	.lib_con .lib_main .lib_main_head .lib_main_head_group li span{cursor: pointer;transition: all ease 0.2s;-webkit-transition: all ease 0.2s;color: #76838f;}
-	.lib_con .lib_main .lib_main_head .lib_main_head_group li span:hover{color: #01d7b2;}
-	.lib_con .lib_main .lib_main_body{}
+	.lib_con .lib_main .lib_main_head .lib_main_head_group li span:hover{color: #00bcd4;}
 	.lib_con .lib_main .lib_main_body .pics_con{font-size: 0;}
 	.lib_con .lib_main .lib_main_body .pics_con li{border:1px solid #ccc;display: inline-table;vertical-align: top;width: 31%;margin: 10px 1% 0;position: relative;overflow: hidden;padding-bottom: 31%;background: #ddd;cursor: pointer;}
-	.lib_con .lib_main .lib_main_body .pics_con li:hover{    box-shadow: 0 0 8px #999;
-		background-color: #fff;
-		cursor: pointer;}
+	.lib_con .lib_main .lib_main_body .pics_con li:hover{    box-shadow: 0 0 8px #999;background-color: #fff;cursor: pointer;}
+	.lib_con .lib_main .lib_main_body .pics_con.graphic li{margin-bottom: 0;background: none;border: none;padding-bottom: 0;}
 	.lib_con .lib_main .lib_main_body .pics_con li img{display: block;position: absolute;top: 50%;left: 50%;width: 100%;transform: translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);}
 
 </style>
@@ -48,15 +34,7 @@
 				<a href="javascript:void(0)" class="dialog_link close" @click="hideMaterialLibPic()">&times;</a>
 			</div>
 			<div class="dialog_main lib_con">
-				<!--<div class="lib_list">
-					<ul class="group">
-						<li>我的图库</li>
-					</ul>
-					<div class="upload_btn" v-tips="['top','一次上传最多6张']">
-						<span>上传图片</span>
-						<input type="file" multiple  accept="image/gif, image/jpeg, image/png, image/jpg" @change="uploadImg($event)" style="display: block;width: 100%;height: 100%;position: absolute;opacity: 0;left: 0;top: 0;cursor: pointer;"/>
-					</div>
-				</div>-->
+
 				<div class="lib_main ps-pic">
 					<div class="content">
 						<div class="lib_main_head">
@@ -68,13 +46,23 @@
 								<li><span>退出管理</span></li>
 							</ul>
 						</div>
-						<div class="lib_main_body">
-							<ul class="pics_con">
-								<li v-for="item in imgList">
+						<div class="lib_main_body" v-if="materialLibPicObj.type!='GRAPHIC'">
+							<ul class="pics_con" >
+								<li v-for="item in imgList" >
 									<img :src="'/img/'+item.file_name" @click="addPicOrBg('/img/'+item.file_name,materialLibPicObj.type)">
 								</li>
 							</ul>
 							<m-pagination :pagination-conf="paginationConf"></m-pagination>
+						</div>
+						<div class="lib_main_body" v-if="materialLibPicObj.type=='GRAPHIC'">
+							<ul class="pics_con graphic" >
+								<li>
+									<div style="border:2px solid rgb(0, 188, 212);width:100px;height:100px;margin:30px auto;" @click="addDomElement('GRAPHIC.RECT')" ></div>
+								</li>
+								<li>
+									<div style="border:2px solid rgb(0, 188, 212);border-radius:50%;width:100px;height:100px;margin:30px auto;" @click="addDomElement('GRAPHIC.CIRCLE')"></div>
+								</li>
+							</ul>
 						</div>
 					</div>
 
@@ -134,6 +122,7 @@ var MaterialLibPic = Vue.extend({
 	},
 	components:{
 		'm-pagination': Pagination
+
 	},
 	ready:function () {
 		console.log(document.querySelector('.ps-pic'))
@@ -151,6 +140,7 @@ var MaterialLibPic = Vue.extend({
 	methods:{
 		hideMaterialLibPic: actions.hideMaterialLibPic,
 		addPicOrBg: actions.addPicOrBg,
+		addDomElement:actions.addDomElement,
 		uploadImg: function(ev){
 			var files = {};
 			if(ev.target.files.length > 6){

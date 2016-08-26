@@ -22,6 +22,7 @@
             <div class="swiper-slide" style="" v-for="page in mainCode.pages" >
                 <div class="items_con all_center" style="">
     				<div v-for="item in page.items" class="item" type="{{item.type}}"    >
+                        <div v-if="item.type=='GRAPHIC'" :style="item.sty"></div>
                         <p v-if="item.type=='TXT'" :style="item.sty">
                             {{{item.content}}}
                         </p>

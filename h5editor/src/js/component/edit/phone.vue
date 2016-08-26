@@ -12,7 +12,7 @@
         background-repeat: no-repeat;
         width: 380px;
         height: 710px;border: 1px solid #ccc;
-        border-radius: 13px;
+        border-radius: 13px;background: #31364a;    box-shadow: 0 0 6px #999;
     }
 
     .phone_con .phone_title {
@@ -21,7 +21,7 @@
         width: 100%;
         left: 0;
         text-align: center;
-        color: #000;
+        color: #fff;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -40,8 +40,8 @@
         /*border: 1px solid #2e3e4e;*/
         box-shadow:0 0 6px #999;
         /*background-color:#fff;*/
-        cursor:pointer;
-        background: #fff url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="20…rect><rect x="10" y="10" width="10" height="10" fill="#EEE"></rect></svg>') repeat;
+        cursor:auto;
+        background: #fff url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><rect x='0' y='0' width='10' height='10' fill='#EEE'></rect><rect x='10' y='10' width='10' height='10' fill='#EEE'></rect></svg>") repeat;
     }
 
     .phone_con .phone_screen > div {
@@ -151,6 +151,7 @@
         top: 50%;
         margin-top: -6px;
         right: -4px;
+        margin: -4% 0;
     }
 
     .edit_mode_radius_b_r {
@@ -178,7 +179,7 @@
         cursor: e-resize;
         top: 50%;
         margin-top: -6px;
-        left: -4px;
+        left: -4px;margin: -4% 0;
     }
 
 </style>
@@ -191,13 +192,14 @@
             <div class="phone_screen j_screen"
                  :class="{'grid_bg': bgGridStatus}" v-drag-item v-keyboard>
                 <!--<img :src="currentPageMain.background">-->
-                <div v-for="item in currentPageData.items" track-by="$index" :id="item.id" :class="item.class"
+                <div v-for="item in currentPageData.items" track-by="$index" :id="item.id" :class="item.class" class="editor-item"
                      :style="item.style" :title="'ID : '+item.id" :attr="item.attr | json" :type="item.type"
                      :index="$index" @mousedown="selectItemOp($index, $event);" v-change-size v-edit-text-item
                      v-context-menu="'#item_context_menu'">
                     <div class="content" v-if="item.type=='TXT'">
                         <div v-if="item.type=='TXT'" :style="item.styleObj">{{item.content}}</div>
                     </div>
+                    <div v-if="item.type=='GRAPHIC'" :style="item.styleObj"></div>
                     <img class="content" v-if="item.type=='IMG'" :style="item.styleObj" :src="item.content" />
                     <div class="edit_mode_cont" v-show="checkedItems.indexOf($index) != -1">
                         <div class="edit_mode_layer">
@@ -276,7 +278,7 @@
             })
         },
         methods: {
-            selectItemOp: function (index, ev) {console.log('selectItem')
+            selectItemOp: function (index, ev) {
                 // 防止多选移动的时候触发选中元素
                 if (this.checkedItems.length > 1 && !ev.shiftKey && !ev.ctrlKey) {
                     return;

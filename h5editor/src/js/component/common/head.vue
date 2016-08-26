@@ -5,16 +5,21 @@
 	.head_con .item.left{margin-left: 20px;font-size: 22px;}
 	.head_con .item.center{position: absolute;left: 50%;transform: translateX(-50%);-webkit-transform: translateX(-50%);}
 	.head_con .item.center .create_group{font-size: 0;}
-	.head_con .item.center .create_group li{font-size: 12px;cursor: pointer;transition: all ease 0.2s;-webkit-transition: all ease 0.2s;width: 50px;padding: 0 5px;display: inline-block;vertical-align: middle;}
+	.head_con .item.center .create_group li{font-size: 12px;cursor: pointer;transition: all ease 0.2s;-webkit-transition: all ease 0.2s;padding: 5px;display: inline-block;vertical-align: middle;height: 50px;
+		width: 50px;}
 	.head_con .item.center .create_group li:hover{background: #484d64;}
-	.head_con .item.center .create_group li span{display: block;text-align: center;line-height: 15px;}
+	.head_con .item.center .create_group li span{display: block;text-align: center;line-height: 2;}
 	.head_con .item.center .create_group li .icon{background-image: url('/back/dist/img/icon.png');width: 30px;height: 30px;margin: 0 auto;}
 	.head_con .item.center .create_group li .icon1{background-position: 0 0;}
 	.head_con .item.center .create_group li .icon2{background-position: 0 -30px;}
 	.head_con .item.center .create_group li .icon3{background-position: 0 -150px;}
 	.head_con .item.center .create_group li .icon4{background-position: 0 -60px;}
+	.head_con .item.center .create_group li .icon8{background: url("/back/dist/img/graphic.png");}
+	.head_con .item.center .create_group li .icon9{background: url("/back/dist/img/background.png");}
 	.head_con .item.center .create_group li .icon5{background-position: 0 -90px;}
-	.head_con .item.center .create_group li .icon6{background-position: 0 -120px;}
+	.head_con .item.center .create_group li .icon6{background: url("/back/dist/img/music.png");}
+	.head_con .item.center .create_group li .icon7{background: url("/back/dist/img/video.png");}
+	.head_con .item.center .create_group li .icon-plugin{background: url("/back/dist/img/plugin.png");}
 	.head_con .item.right{}
 	.btn_group{margin-right: 10px}
 	.btn_group li{background: #76838e;height: 28px;line-height: 28px;margin: 16px 0px 0;padding: 0 15px;border-radius: 0px;cursor: pointer;transition: all ease 0.3s;-webkit-transition: all ease 0.3s;position: relative;}
@@ -36,12 +41,12 @@
 		<div class="item center" v-show="page == 'edit'">
 			<ul class="create_group">
 				<li @click="addText()"><div class="icon icon1"></div><span>文本</span></li>
-				<li @click="materialLibPic({show:true,msg:'插入图片',type:'pic'})"><div class="icon icon2"></div><span>图片</span></li>
-				<li @click="materialLibPic({show:true,msg:'更改背景',type:'bg'})"><div class="icon icon3"></div><span>背景</span></li>
-				<li @click="materialLibPic({show:true,msg:'图形',type:'GRAPHIC'})"><div class="icon icon3"></div><span>图形</span></li>
-				<!-- <li><div class="icon icon4"></div><span>图集</span></li> -->
-				<!-- <li><div class="icon icon5"></div><span>视频</span></li> -->
-				<li @click="materialLibMusic({show:true,msg:'设置背景音乐',type:'bgMusic'})"><div class="icon icon6"></div><span>音乐</span></li>
+				<li @click="materialLibPic({show:true,msg:'插入图片',type:'PIC'})"><div class="icon icon2"></div><span>图片</span></li>
+				<li @click="materialLibPic({show:true,msg:'背景',type:'BG'})"><div class="icon icon9"></div><span>背景</span></li>
+				<li @click="materialLibPic({show:true,msg:'图形',type:'GRAPHIC'})"><div class="icon icon8"></div><span>图形</span></li>
+				<li @click="materialLibMusic({show:true,msg:'音频',type:'MUSIC'})"><div class="icon icon6"></div><span>音频</span></li>
+				<li @click="materialLibMusic({show:true,msg:'视频',type:'VIDEO'})"><div class="icon icon7"></div><span>视频</span></li>
+				<li @click="materialLibMusic({show:true,msg:'插件',type:'PLUGIN'})"><div class="icon icon-plugin"></div><span>插件</span></li>
 			</ul>
 		</div>
 		<div class="item right">

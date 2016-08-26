@@ -72,7 +72,33 @@ module.exports = {
             content:  params.src
         };
     },
-    graphic: function(index, num, params) {
+    graphic_circle:function (index, num, obj) {
+        return {
+            type: 'GRAPHIC',
+            style: {
+                zIndex:index*10,
+                top:0,
+                left:0,
+                width:'10%',
+                height:'10%',
+                boxSizing:'border-box',
+                position:'absolute',
+                background:'transparent'
+            },
+            styleObj:{
+                width:'100%',
+                height:'100%',
+                boxSizing:'border-box',
+                border:'3px solid #00bcd4',
+                borderRadius:'50%',
+                display:'block',
+                backgroundColor:'rgba(0,0,0,0)',
+                boxShadow:'0px 0px 0px 0px rgba(0,0,0,0)'
+            },
+            id: 'GOH5.GRAPHIC.NO.' + num
+        };
+    },
+    graphic_rect: function(index, num, obj) {
         return {
             type: 'GRAPHIC',
             style: {
@@ -85,18 +111,15 @@ module.exports = {
                 position:'absolute'
             },
             styleObj:{
-                width:'100px',
-                height:'100px',
+                width:'100%',
+                height:'100%',
                 boxSizing:'border-box',
-                border:'1px solid gray',
+                border:'3px solid #00bcd4',
                 display:'block',
                 backgroundColor:'rgba(0,0,0,0)',
                 boxShadow:'0px 0px 0px 0px rgba(0,0,0,0)'
             },
-            class: params.className ? params.className : '',
             id: 'GOH5.GRAPHIC.NO.' + num,
-            attr: {},
-            content:  '',
         };
     },
     video: function(index, num, params) {

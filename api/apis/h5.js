@@ -6,7 +6,8 @@ var _ = require('underscore');
 var fs = require('fs');
 var AdmZip = require('adm-zip');
 var path = require('path');
-var util_file = require('./../libs/files')
+var util_file = require('./../libs/files');
+var logger = require('./../../libs/log').logger;
 function generatorScript(datas){
     return new Promise(function(resolve,reject){
         var imgDatas = JSON.stringify(datas).match(/\w+\.(jpg|png|jpeg|gif|webm|bmp)/gi);
@@ -19,7 +20,7 @@ function generatorScript(datas){
                     readable.pipe(wirtable);
                 }
             }catch(e){
-                console.error(e);
+                logger.error(e);
             }
         });
         fs.writeFile(__dirname+'/../../views/dist/js/data.js', 'var datas = '+JSON.stringify(datas), (err) => {

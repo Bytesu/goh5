@@ -14,7 +14,16 @@ actions.addPicOrBg = function(store, src, type) {
     store.dispatch('ADDPICORBG', src, type);
     store.dispatch('HIDEMATERIALLIBPIC');
 };
-
+/**
+ * add dom element to current page
+ * @param store
+ * @param type 'element type'
+ * @param obj  element options
+ */
+actions.addDomElement = function(store, type,obj) {
+    store.dispatch('ADDDOMELEMENT', type);
+    store.dispatch('HIDEMATERIALLIBPIC');
+};
 actions.delBg = function(store) {
     store.dispatch('DELBG');
 };

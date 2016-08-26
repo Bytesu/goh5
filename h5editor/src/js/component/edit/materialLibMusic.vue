@@ -1,22 +1,18 @@
 <template>
 	<div class="dialog_con" v-show="materialLibMusicObj.show" transition="fade">
 		<div class="dialog_bg" @click="hideMaterialLibMusic()"></div>
-		<div class="dialog_main_con all_center">
+		<div class="dialog_main_con all_center lib_con">
 			<div class="dialog_head">
 				<h2>素材库</h2>
 				<p>{{materialLibMusicObj.msg}}</p>
+				<div class="upload_btn" v-tips="['top','大小不得超过4M（为了更好的体验，请控制音乐大小）']">
+					<span>上传音乐</span>
+					<input type="file" accept="audio/*" @change="uploadMusic($event)" style="display: block;width: 100%;height: 100%;position: absolute;opacity: 0;left: 0;top: 0;cursor: pointer;"/>
+				</div>
 				<a href="javascript:void(0)" class="dialog_link close" @click="hideMaterialLibMusic()">&times;</a>
 			</div>
 			<div class="dialog_main lib_con">
-				<div class="lib_list">
-					<ul class="group">
-						<li>我的乐库</li>
-					</ul>
-					<div class="upload_btn" v-tips="['top','大小不得超过4M（为了更好的体验，请控制音乐大小）']">
-						<span>上传音乐</span>
-						<input type="file" accept="audio/*" @change="uploadMusic($event)" style="display: block;width: 100%;height: 100%;position: absolute;opacity: 0;left: 0;top: 0;cursor: pointer;"/>
-					</div>
-				</div>
+
 				<div class="lib_main">
 					<div class="lib_main_head">
 						<ul class="lib_main_head_group">
@@ -177,7 +173,7 @@ var MaterialLibMusic = Vue.extend({
 					page: page
 				},
 				success: function(data){
-					_this.musicList = data.data.musicList
+					_this.musicList = data.data.musicList;
 					_this.paginationConf.totalItems = data.data.totalItems;
 				}
 			})
@@ -213,7 +209,7 @@ var MaterialLibMusic = Vue.extend({
 			actions.addBgMusic(store,src,name);
 		}
 	}
-})
+});
 
 module.exports = MaterialLibMusic;
 

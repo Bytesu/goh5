@@ -13,8 +13,44 @@ Vue.directive('dragItem', function() {
     var draging = false;
     // 拖动元素
     $('body').on('mousedown','.j_screen',function(ev) {
-        if($(ev.target).hasClass('edit_mode')){
+        console.log($(ev.target));
+        if($(ev.target).hasClass('edit_mode')||($(ev.target).closest('.editor-item').length==0)){
             console.log('return !!!');
+
+            if($(ev.target).find('.editor-item').length&&($(ev.target).closest('.j_screen').length||$(ev.target).hasClass('j_screen'))){
+                var rect = $('<div>');
+                rect.addClass('drag_rect_mouse');
+               $('.j_screen').append(rect);
+                var zero ={
+                    top:(ev.clientY-$('.j_screen').offset().top),
+                    left:(ev.clientX-$('.j_screen').offset().left)
+                };
+                rect.css(zero);
+               $(window).bind('mousemove',function (ev_move) {
+                   var rang_x = (ev_move.clientX-ev.clientX);
+                   var rang_y = (ev_move.clientY-ev.clientY);
+                   var css_obj = {};
+                   if(rang_x>0){
+                       css_obj.width = (rang_x)+'px';
+                   }else{
+                       css_obj.left = (zero.left+rang_x)+'px';
+                       css_obj.width = Math.abs(rang_x)+'px';
+                   }
+                   if(rang_y>0){
+                       css_obj.height = (rang_y)+'px';
+                   }else{
+                       css_obj.top = (zero.top+rang_y)+'px';
+                       css_obj.height = Math.abs(rang_y)+'px';
+                   }
+                   rect.css(css_obj);
+                   $(window).bind('mouseup',function (ev_up) {
+                       $('.drag_rect_mouse').length&&$('.drag_rect_mouse').remove();
+                       $(window).unbind('mousemove');
+                       $(window).unbind('mouseup');
+                   })
+               })
+
+            }
             return;
         }else{
             draging = true;
@@ -52,7 +88,9 @@ Vue.directive('dragItem', function() {
                             actions.alert(store, alertMsg);
                         }
                     }
-                    console.log($('.j_screen').width())
+
+                    console.log('left:'+((x/$('.j_screen').width())*100 + '%'))
+
                     actions.setStyle(store, store.state.checkedItems[i], {
                         left: (x/$('.j_screen').width())*100 + '%',
                         top: (y/$('.j_screen').height())*100 + '%'
@@ -64,6 +102,7 @@ Vue.directive('dragItem', function() {
         });
         $(window).bind('mouseup', function() {
             draging = false;
+            console.log('解绑-----drag--');
             $(window).unbind('mousemove');
             $(window).unbind('mouseup');
         });

@@ -4,51 +4,71 @@ var mutations = {};
 
 var tpl = require('../../template/tpl.js');
 var utils = require('utils');
-
+/**
+ * add text dom element
+ * @param state
+ * @constructor
+ */
 mutations.ADDTEXT = function(state) {
     var index = state.currentPageData.items.length + 1;
     var num = utils.getAllItemsLen() + 1;
     var model = tpl.txt(index, num, {});
-
     state.currentPageData.items.push(model);
     mutations.SELECTITEM(state, index - 1);
 };
 
+/**
+ * change text
+ * @param state
+ * @param html
+ * @param itemIndex
+ * @constructor
+ */
 mutations.CHANGETEXT = function(state, html, itemIndex) {
     // state.currentPageData.items[itemIndex].content = state.currentPageData.items[itemIndex].content.replace(/\>[\s\S]+\</, '>' + html + '<');
     state.currentPageData.items[itemIndex].content = html;
 };
 
-mutations.ADDPICORBG = function(state, src, type) {
-    if (type === 'pic') {
-        state.checkedItems = [];
-        var index = state.currentPageData.items.length + 1;
-        var num = utils.getAllItemsLen() + 1;
-        var model = tpl.pic(index, num, {
-            src: src
-        });
+/**
+ * add dom element to current page
+ * @param store
+ * @param type 'element type'
+ * @param obj  element options
+ */
+mutations.ADDDOMELEMENT = function(state, type, obj) {
+    state.checkedItems = [];
+    var index = state.currentPageData.items.length + 1;
+    var num = utils.getAllItemsLen() + 1;
+    var model = tpl.graphic_circle(index, num, {});
+
+    if(type=='GRAPHIC.CIRCLE'){
         state.currentPageData.items.push(model);
-        mutations.SELECTITEM(state, index - 1);
-    } else if (type === 'bg') {
-        // state.currentPageMain.background = src;
-        state.checkedItems = [];
-        var index = state.currentPageData.items.length + 1;
-        var num = utils.getAllItemsLen() + 1;
-        var model = tpl.pic(0.1, num, {
-            src: src
-        });
-        state.currentPageData.items.push(model);
-        mutations.SELECTITEM(state, index - 1);
-    }else if(type=='GRAPHIC'){
-        state.checkedItems = [];
-        var index = state.currentPageData.items.length + 1;
-        var num = utils.getAllItemsLen() + 1;
-        var model = tpl.graphic(index, num, {
-            src: src
-        });
-        state.currentPageData.items.push(model);
-        mutations.SELECTITEM(state, index - 1);
+    }else if(type=='GRAPHIC.RECT'){
+        var model = tpl.graphic_rect(index, num, obj);
     }
+    mutations.SELECTITEM(state, index - 1);
+};
+
+/**
+ * add pic or bg
+ * @param state
+ * @param src
+ * @param type
+ * @constructor
+ */
+mutations.ADDPICORBG = function(state, src, type) {
+    state.checkedItems = [];
+    var index = state.currentPageData.items.length + 1;
+    var num = utils.getAllItemsLen() + 1;
+    var model = tpl.pic(0.1, num, {
+        src: src
+    });
+    if (type === 'PIC') {
+        state.currentPageData.items.push(model);
+    } else if (type === 'BG') {
+        state.currentPageData.items.push(model);
+    }
+    mutations.SELECTITEM(state, index - 1);
 };
 
 mutations.DELBG = function(state) {

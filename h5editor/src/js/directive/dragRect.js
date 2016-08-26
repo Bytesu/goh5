@@ -1,3 +1,6 @@
+/**
+ * Created by byte2 on 2016-08-26.
+ */
 'use strict';
 var Vue = require('Vue');
 var $ = require('jQuery');
@@ -8,7 +11,7 @@ var actions = require('../store/action/index.js');
 var utils = require('utils');
 
 Vue.directive('changeSize', function() {
-    
+
     var _this = this;
     var target = this.el;
 
@@ -127,7 +130,7 @@ Vue.directive('changeSize', function() {
                         break;
                     case 7:
                         if ((itemWidth - difX) > 0) {
-                        // if ((itemWidth - difX) ) {
+                            // if ((itemWidth - difX) ) {
                             styleParams = {
                                 width: Math.abs(itemWidth - difX) + 'px',
                                 left: (itemLeft + difX) + 'px'

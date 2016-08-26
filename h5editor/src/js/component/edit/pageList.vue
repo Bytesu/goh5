@@ -7,7 +7,7 @@
 	.pages_con .item.pages_list .ps {position: relative;width: 230px;box-sizing: border-box;overflow: auto;flex:1;}
 	.pages_con .item.pages_list ul.content{position: relative;width: 230px;padding: 0 20px;box-sizing: border-box;}
 	.pages_con .item.pages_list ul li{display: block;
-        padding: 20px 0;width: 190px;
+        padding: 20px 0;width: 190px;position: relative;
 		height: 230px;}
 	.pages_con .item.pages_list ul li .page-ctner{position: relative;
         position: relative;
@@ -33,8 +33,8 @@
 		display: block;
 		color: #e48f8f;
 		font-size: 24px;
-		right: 21px;
-		top: -2px;
+		right: 12px;
+		top: 10px;
 		z-index: 9;}
 	.pages_con .item.pages_list .del_page.close{opacity: 0.8;box-shadow: none;text-shadow: none;}
 	.pages_con .item.pages_list .del_page.close:hover{opacity: 1;
@@ -53,15 +53,18 @@
 				<ul class="content">
 					<li v-for="page in pagesData" :class="{'active':currentPage == $index+1}" @click="selectPage($index+1)">
 						<!--<span>第{{$index+1}}页</span>-->
+						<span class="del_page close" v-show="currentPage == $index+1" @click="delPage($index)">&times;</span>
 						<div class="page-ctner">
+
 							<div v-for="item in page.items" track-by="$index" :id="item.id" :class="item.class"
 								 :style="item.style" >
 								<div class="content" v-if="item.type=='TXT'">
 									<div v-if="item.type=='TXT'" :style="item.styleObj">{{item.content}}</div>
 								</div>
+								<div v-if="item.type=='GRAPHIC'" :style="item.styleObj"></div>
 								<img class="content" v-if="item.type=='IMG'" :style="item.styleObj" :src="item.content" />
 							</div>
-							<span class="del_page close" v-show="currentPage == $index+1" @click="delPage($index)">&times;</span>
+
 						</div>
 					</li>
 				</ul>
@@ -109,7 +112,7 @@ var pageList = Vue.extend({
 //
 	},
 	ready:function () {
-		console.log(document.querySelector('.ps'))
+//		console.log(document.querySelector('.ps'));
 		document.querySelector('.ps') && ps.initialize(document.querySelector('.ps'));
 	},
 	methods: {
