@@ -2,50 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1749ae44-62d4-4d64-9776-10a9261bd74d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/audio/1hhIuiddjUroTHA6Q7MfDcps.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/img/2imWD89KCAr-9HHOVE5tF7Wd.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/img/3LYBtvHm6L1BHC-StXe6c12W.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/img/3W4YOKWxvMHjHq9GS56P-Tg9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/img/3g7ZOa2VrCh84qJVPZNp12Rs.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/img/9CC9aLd1LfbjAebx255V0qTJ.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/img/CYm3rjqyYLOQQ0gWG7Xdplhp.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/img/IM5q-ilGc3G6m55wOte7NM_S.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/img/JaFXr1zhhG1QwZKTX7_tG687.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/img/LN3uFS5e7KcNpHBsxFsSbU9J.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/img/LkX90jbX_cprD7J-PxFxXJOx.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/img/MJaU5bjU7_9G_dB1dJnmLFBn.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/img/PHAwT2ofvmFQ4ZJKbr9JwlKB.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/img/WYrzmdwmEDhlwJaZ5EXj_UfE.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/img/YUdqHdrZOlhhZQ0cIIrr12jQ.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/img/Ygk7BCtNwMKE9GoxsPur0yGo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/img/auv65AjpC5bsolzJJ7qc5c6N.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/img/iDdxBf-By2HfoA9VrfcFwdUd.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/img/pw4WMHMynoR-5bELEXy4lp9S.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/img/t3x7miXi7d6FlK1dyORoz5wi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/h5editor/src/img/plugin/viewcarousel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/apis/video.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/h5editor/src/js/component/edit/materialLibPic_bak.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/apis/audio.js" afterPath="$PROJECT_DIR$/api/apis/audio.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/apis/delete.js" afterPath="$PROJECT_DIR$/api/apis/delete.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/apis/img.js" afterPath="$PROJECT_DIR$/api/apis/img.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/apis/index.js" afterPath="$PROJECT_DIR$/api/apis/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/db/dbHandel.js" afterPath="$PROJECT_DIR$/api/db/dbHandel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/db/models.js" afterPath="$PROJECT_DIR$/api/db/models.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/h5editor/dist/js/goh5.min.js" afterPath="$PROJECT_DIR$/h5editor/dist/js/goh5.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/h5editor/dist/js/vendor.min.js" afterPath="$PROJECT_DIR$/h5editor/dist/js/vendor.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/h5editor/gulpfile.js" afterPath="$PROJECT_DIR$/h5editor/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/h5editor/src/js/component/common/head.vue" afterPath="$PROJECT_DIR$/h5editor/src/js/component/common/head.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/h5editor/src/js/component/edit/materialLibMusic.vue" afterPath="$PROJECT_DIR$/h5editor/src/js/component/edit/materialLibMusic.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/h5editor/src/js/component/edit/materialLibPic.vue" afterPath="$PROJECT_DIR$/h5editor/src/js/component/edit/materialLibPic.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/h5editor/src/js/component/edit/phone.vue" afterPath="$PROJECT_DIR$/h5editor/src/js/component/edit/phone.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/h5editor/src/js/store/mutation/item.js" afterPath="$PROJECT_DIR$/h5editor/src/js/store/mutation/item.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/h5editor/src/js/template/tpl.js" afterPath="$PROJECT_DIR$/h5editor/src/js/template/tpl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/dist/js/data.js" afterPath="$PROJECT_DIR$/views/dist/js/data.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/User/UploadImg/.empty" afterPath="$PROJECT_DIR$/datas/img/.empty" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/User/UploadMusic/.empty" afterPath="$PROJECT_DIR$/datas/audio/.empty" />
     </list>
     <ignored path="goh5.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,21 +26,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
+            <state relative-caret-position="157">
+              <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="log.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/log.js">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="17" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="17" />
+            <state relative-caret-position="136">
+              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".empty" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logs/.empty">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -123,16 +91,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
               <caret line="13" column="61" selection-start-line="13" selection-start-column="61" selection-end-line="13" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="video.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/apis/video.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -199,7 +157,6 @@
         <option value="$PROJECT_DIR$/views/index.html" />
         <option value="$PROJECT_DIR$/views/src/js/goh5.js" />
         <option value="$PROJECT_DIR$/h5editor/src/js/component/edit/main.vue" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/logs/access-2016-08-26.log" />
         <option value="$PROJECT_DIR$/h5editor/src/js/component/list/main.vue" />
         <option value="$PROJECT_DIR$/h5editor/src/js/component/list/create.vue" />
@@ -236,6 +193,7 @@
         <option value="$PROJECT_DIR$/h5editor/src/js/component/edit/materialLibMusic.vue" />
         <option value="$PROJECT_DIR$/h5editor/src/js/component/edit/materialLibPic.vue" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -419,12 +377,12 @@
       <workItem from="1472216617972" duration="50000" />
       <workItem from="1472435196375" duration="18334000" />
       <workItem from="1472477978968" duration="769000" />
-      <workItem from="1472519807040" duration="478000" />
+      <workItem from="1472519807040" duration="873000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="273940000" />
+    <option name="totallyTimeSpent" value="274335000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -437,7 +395,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1845238" sideWeight="0.50611246" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -445,7 +403,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.50661623" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.49702382" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.48471615" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.51311475" sideWeight="0.48511904" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39016393" sideWeight="0.48511904" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1845238" sideWeight="0.49388754" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -494,20 +452,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/h5editor/src/js/library/vuex.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6603">
-          <caret line="161" column="25" selection-start-line="161" selection-start-column="25" selection-end-line="161" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5editor/src/js/directive/editTextItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/h5editor/src/js/directive/contextMenu.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -855,8 +799,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
+        <state relative-caret-position="157">
+          <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/.empty">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
           <folding />
         </state>
       </provider>

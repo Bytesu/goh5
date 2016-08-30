@@ -1,6 +1,9 @@
 node_modules/
-/User/UploadImg/*
-/User/UploadMusic/*
-!/User/UploadImg/.empty
-!/User/UploadMusic/.empty
-logs/
+/datas/img/*
+/datas/audio/*
+/datas/video/*
+!/datas/img/.empty
+!/datas/audio/.empty
+!/datas/video/.empty
+logs/*
+!logs/.empty
