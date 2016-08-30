@@ -24,17 +24,15 @@
 		<div class="dialog_main_con all_center">
 			<div class="dialog_head">
 				<h2>素材库</h2>
-				<p>{{materialLibPicObj.msg}}</p>
-
+				<p  >{{materialLibPicObj.msg}}</p>
 				<div class="upload_btn" v-tips="['top','一次上传最多6张']">
-					<span>上传图片</span>
-					<input type="file" multiple  accept="image/gif, image/jpeg, image/png, image/jpg" @change="uploadImg($event)" style="display: block;width: 100%;height: 100%;position: absolute;opacity: 0;left: 0;top: 0;cursor: pointer;"/>
+					<span>上传</span>
+                    <!--image/gif, image/jpeg, image/png, image/jpg-->
+					<input type="file" multiple  accept="" @change="uploader($event)" style="display: block;width: 100%;height: 100%;position: absolute;opacity: 0;left: 0;top: 0;cursor: pointer;"/>
 				</div>
-
 				<a href="javascript:void(0)" class="dialog_link close" @click="hideMaterialLibPic()">&times;</a>
 			</div>
 			<div class="dialog_main lib_con">
-
 				<div class="lib_main ps-pic">
 					<div class="content">
 						<div class="lib_main_head">
@@ -46,9 +44,9 @@
 								<li><span>退出管理</span></li>
 							</ul>
 						</div>
-						<div class="lib_main_body" v-if="materialLibPicObj.type!='GRAPHIC'">
+						<div class="lib_main_body" v-if="materialLibPicObj.type=='PIC'||materialLibPicObj.type=='BG'">
 							<ul class="pics_con" >
-								<li v-for="item in imgList" >
+								<li v-for="item in list" >
 									<img :src="'/img/'+item.file_name" @click="addPicOrBg('/img/'+item.file_name,materialLibPicObj.type)">
 								</li>
 							</ul>
@@ -64,8 +62,35 @@
 								</li>
 							</ul>
 						</div>
+						<div class="lib_main_body" v-if="materialLibPicObj.type=='PLUGIN'">
+							<ul class="pics_con" >
+								<li>
+									<div style="position:relative;"  @click="addDomElement('PLUGIN.CAROUSEL')">
+										<img src="../../../img/plugin/viewcarousel.png" style="left:0;top:0;transform: none;">
+                                        <p>轮播图</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+                        <div class="lib_main_body" v-if="materialLibPicObj.type=='VIDEO'">
+                            <ul class="music_list">
+                                <li v-for="item in list" >
+                                    <p>{{item.file_name}}</p>
+                                    <a href="javascript:void(0)" :res-src="item.file_path"  @click.stop="play($event,'video')">播放</a>
+                                    <span>{{item.file_size | FileSize}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="lib_main_body" v-if="materialLibPicObj.type=='AUDIO'">
+                            <ul class="music_list">
+                                <li v-for="item in list" >
+                                    <p>{{item.file_name}}</p>
+                                    <a href="javascript:void(0)" :res-src="item.file_path"  @click.stop="play($event,'video')">播放</a>
+                                    <span>{{item.file_size | FileSize}}</span>
+                                </li>
+                            </ul>
+                        </div>
 					</div>
-
 				</div>
 			</div>
 			<div class="dialog_bottom">
@@ -77,10 +102,7 @@
 		</div>
 	</div>
 </template>
-
-
 <script>
-	
 var Vue = require('Vue');
 var $ = require('jQuery');
 var utils = require('utils');
@@ -102,14 +124,15 @@ var MaterialLibPic = Vue.extend({
 	name:'MaterialLibPic',
 	data: function(){
 		return {
-			imgList: [],
+		    apiType:'video|img|audio',
+			list: [],
 			paginationConf: {
 				currentPage: 1,
 				totalItems: 0,
 				itemsPerPage: 7,
 				pagesLength: 5,
-				onChange: function(){
-					MaterialLibPicVm.loadImg(MaterialLibPicVm.paginationConf.currentPage);
+				onChange: function(type){
+					MaterialLibPicVm.load(MaterialLibPicVm.paginationConf.currentPage,this.materialLibPicObj.type);
 				}
 			}
 		}
@@ -117,15 +140,21 @@ var MaterialLibPic = Vue.extend({
 	init: function(){
 		MaterialLibPicVm = this;
 	},
+    watch:{
+	    'materialLibPicObj.show':function (val,oldVal) {
+	        console.log(this.materialLibPicObj.type);
+            if(val&&this.$data.apiType.split('|').indexOf(this.materialLibPicObj.type.toLowerCase())>-1){
+                this.load(this.paginationConf.currentPage,this.filterType(this.materialLibPicObj.type))
+            }
+        }
+    },
 	created: function(){
-		this.loadImg(this.paginationConf.currentPage);
+//		this.load(this.paginationConf.currentPage,this.type);
 	},
 	components:{
 		'm-pagination': Pagination
-
 	},
 	ready:function () {
-		console.log(document.querySelector('.ps-pic'))
 		document.querySelector('.ps-pic') && ps.initialize(document.querySelector('.ps-pic'));
 	},
 	props: ['loading'],
@@ -138,17 +167,27 @@ var MaterialLibPic = Vue.extend({
 	  	actions: actions
 	},
 	methods:{
+        filterType:function (type) {
+            switch (type){
+                case 'VIDEO':type = 'video';break;
+                case 'PIC':type = 'img';break;
+                case 'BG':type = 'img';break;
+                case 'AUDIO':type = 'audio';break;
+            }
+            return type;
+        },
 		hideMaterialLibPic: actions.hideMaterialLibPic,
 		addPicOrBg: actions.addPicOrBg,
 		addDomElement:actions.addDomElement,
-		uploadImg: function(ev){
+		uploader: function(ev){
 			var files = {};
+			if(ev.target.files.length==0)return;
 			if(ev.target.files.length > 6){
-				actions.alert(store,{
+				/*actions.alert(store,{
 					show: true,
 					msg: '一次最多上传6张！超出图片本次不会上传',
 					type: 'warning'
-				});
+				});*/
 				for(var i = 0;i < 6;i++){
 					files[i] = ev.target.files[i];
 				}
@@ -159,10 +198,12 @@ var MaterialLibPic = Vue.extend({
 			for(var item in files){
 				formData.append('files', files[item]);
 			}
+			var type = this.filterType(this.materialLibPicObj.type);
+            if(this.apiType.split('|').indexOf(type)==-1)return;
 			var _this = this;
 			_this.loading = true;
 			$.ajax({
-				url: '/api/img/upload',
+				url: '/api/'+type+'/upload',
 				type: 'post',
 				cache: false,
 			    data: formData,
@@ -174,28 +215,36 @@ var MaterialLibPic = Vue.extend({
 						show: true,
 						msg: data.msg,
 						type: 'success'
-					})
+					});
 					_this.paginationConf.currentPage = 1;
-					_this.paginationConf.onChange();
-				}
+					_this.paginationConf.onChange(type);
+				},error:function (e) {
+                    console.log(e);
+                }
 			})
 		},
-		loadImg: function(page){
+        load: function(page,type){
 			var _this = this;
 			$.ajax({
-				url: '/api/img/list',
+				url: '/api/'+(type||_this.type)+'/list',
 				type: 'get',
 				data: {
 					page: page
 				},
 				success: function(data){
-					_this.imgList = data.data.imgList
+					_this.list = data.data.imgList;
 					_this.paginationConf.totalItems = data.data.totalItems;
 				}
 			})
-		}
+		},
+        play:function (ev,type) {
+//            $(ev.target)
+        },
+        stop:function (ev,type) {
+            
+        }
 	}
-})
+});
 
 module.exports = MaterialLibPic;
 

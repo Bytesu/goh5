@@ -13,14 +13,14 @@ module.exports = function(Router) {
                                 iserro: 1,
                                 msg: '错误',
                                 data: err
-                            }
+                            };
                             res.send(resData);
                         } else {
                             var resData = {
                                 iserro: 0,
                                 msg: '删除成功',
                                 data: doc
-                            }
+                            };
                             res.send(resData);
                         }
                     })
@@ -29,7 +29,7 @@ module.exports = function(Router) {
                         iserro: 1,
                         msg: '您没有权限',
                         data: ''
-                    }
+                    };
                     res.send(resData);
                 }
             })
@@ -38,9 +38,9 @@ module.exports = function(Router) {
                 iserro: 1,
                 msg: '您没有权限',
                 data: ''
-            }
+            };
             res.send(resData);
         }
-    })
+    });
     return Router;
 };

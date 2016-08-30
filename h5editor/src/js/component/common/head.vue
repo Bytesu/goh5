@@ -45,8 +45,8 @@
 				<li @click="materialLibPic({show:true,msg:'背景',type:'BG'})"><div class="icon icon9"></div><span>背景</span></li>
 				<li @click="materialLibPic({show:true,msg:'图形',type:'GRAPHIC'})"><div class="icon icon8"></div><span>图形</span></li>
 				<li @click="materialLibMusic({show:true,msg:'音频',type:'MUSIC'})"><div class="icon icon6"></div><span>音频</span></li>
-				<li @click="materialLibMusic({show:true,msg:'视频',type:'VIDEO'})"><div class="icon icon7"></div><span>视频</span></li>
-				<li @click="materialLibMusic({show:true,msg:'插件',type:'PLUGIN'})"><div class="icon icon-plugin"></div><span>插件</span></li>
+				<li @click="materialLibPic({show:true,msg:'视频',type:'VIDEO'})"><div class="icon icon7"></div><span>视频</span></li>
+				<li @click="materialLibPic({show:true,msg:'插件',type:'PLUGIN'})"><div class="icon icon-plugin"></div><span>插件</span></li>
 			</ul>
 		</div>
 		<div class="item right">

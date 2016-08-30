@@ -9,10 +9,10 @@ for (var item in models) {
 
 var _getModel = function(type) {
     return mongoose.model(type);
-}
+};
 
 module.exports = {
     getModel: function(type) {
         return _getModel(type);
     }
-}
+};

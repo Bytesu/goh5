@@ -11,32 +11,33 @@ var upload = function(req, res) {
     var files = req.files.files;
     var readFrom = fs.createReadStream(files.path);
     var fileName = path.basename(files.path);
-    var saveTo = fs.createWriteStream(global.userPath + '/UploadMusic/' + fileName);
+    var saveTo = fs.createWriteStream(global.userPath + '/audio/' + fileName);
     readFrom.pipe(saveTo);
     UploadMusic.create({
         'user_name': req.session.user_name,
         'upload_time': Date.now(),
         'file_path': '/audio/' + fileName,
+        'type':'audio',
         'file_name': req.query.file_name,
         'file_size': req.query.file_size,
-    })
+    });
     saveTo.on('finish', function() {
         fs.unlinkSync(files.path);
         var resData = {
             iserro: 0,
             msg: '上传成功',
             data: ''
-        }
+        };
         res.send(resData);
     });
-}
+};
 
 var getMusicList = function(req, res) {
     var query = req.query;
     var UploadMusic = global.dbHandel.getModel('uploadMusic');
     var limit = Number(query.limit) || 6;
     var page = Number(query.page) || 1;
-    UploadMusic.find({ 'user_name': req.session.user_name }).sort({ 'upload_time': -1 }).limit(limit).skip((page - 1) * limit).exec(function(err, docs) {
+    UploadMusic.find({ 'user_name': req.session.user_name,type:'audio' }).sort({ 'upload_time': -1 }).limit(limit).skip((page - 1) * limit).exec(function(err, docs) {
         if (err) {
             res.send(err);
         } else {
@@ -60,11 +61,11 @@ module.exports = function(Router) {
         if (req.params.act === 'upload') {
             upload(req, res);
         }
-    })
+    });
     Router.get('/audio/:act', function(req, res, next) {
         if (req.params.act == 'list') {
             getMusicList(req, res);
         }
-    })
+    });
     return Router;
 };

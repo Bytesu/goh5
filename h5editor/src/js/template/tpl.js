@@ -122,14 +122,53 @@ module.exports = {
             id: 'GOH5.GRAPHIC.NO.' + num,
         };
     },
+
     video: function(index, num, params) {
         return {
             type: 'VIDEO',
-            style: 'z-index:' + index * 10 + ';width:320px;top:0px;left:0px;box-sizing:border-box;position: absolute;',
-            class: params.className ? params.className : '',
+            style: {
+                zIndex:index*10,
+                top:0,
+                left:0,
+                width:'100px',
+                height:'100px',
+                boxSizing:'border-box',
+                position:'absolute'
+            },
+            styleObj:{
+                width:'100%',
+                height:'100%',
+                boxSizing:'border-box',
+                border:'3px solid #00bcd4',
+                display:'block',
+                backgroundColor:'rgba(0,0,0,0)',
+                boxShadow:'0px 0px 0px 0px rgba(0,0,0,0)'
+            },
             id: 'GOH5.VIDEO.NO.' + num,
-            attr: {},
-            content: '<video style="width:100%;height:100%;box-sizing:border-box;background-color: rgba(0,0,0,0);box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);" data-vid="' + videoid + '" poster="' + pic_url + '" controls="controls" preload="none" src="http://video.proc.sina.cn/video_explore/location.php?video_id=' + videoid + '">您的浏览器不支持video标签。</video>'
         };
-    }
+    },
+    plugin_carousel: function(index, num, obj) {
+        return {
+            type: 'PLUGIN',
+            style: {
+                zIndex:index*10,
+                top:0,
+                left:0,
+                width:'100px',
+                height:'100px',
+                boxSizing:'border-box',
+                position:'absolute'
+            },
+            styleObj:{
+                width:'100%',
+                height:'100%',
+                boxSizing:'border-box',
+                border:'3px solid #00bcd4',
+                display:'block',
+                backgroundColor:'rgba(0,0,0,0)',
+                boxShadow:'0px 0px 0px 0px rgba(0,0,0,0)'
+            },
+            id: 'GOH5.PLUGIN.NO.' + num,
+        };
+    },
 };

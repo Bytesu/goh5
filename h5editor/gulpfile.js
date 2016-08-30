@@ -58,6 +58,10 @@ var webpackConfig = {
             loader: 'vue-loader'
         },
             {
+                test: /\.(jpg|gif|png)$/,
+                loader: "url-loader?limit=10000"
+            },
+            {
                 test: /\.woff(2)?(\?[0-9a-z]+)?$/,
                 loader: "url-loader?limit=10000&minetype=application/font-woff"
             },

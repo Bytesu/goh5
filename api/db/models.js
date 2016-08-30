@@ -26,7 +26,8 @@ module.exports = {
         'file_path': { type: String, required: true },
         'file_name': { type: String, required: true },
         'file_size': { type: String, required: true },
+        'type':{type:String}, ///video,audio
         'upload_time': { type: Number, require: true },
         'file_duration': { type: Number },
     }
-}
+};

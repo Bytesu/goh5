@@ -158,7 +158,7 @@ var MaterialLibMusic = Vue.extend({
 						show: true,
 						msg: data.msg,
 						type: 'success'
-					})
+					});
 					_this.paginationConf.currentPage = 1;
 					_this.paginationConf.onChange();
 				}

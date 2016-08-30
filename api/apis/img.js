@@ -18,7 +18,7 @@ var upload = function(req, res) {
     files.forEach(function(item) {
         var readFrom = fs.createReadStream(item.path);
         var fileName = path.basename(item.path);
-        var saveTo = fs.createWriteStream(global.userPath + '/UploadImg/' + fileName);
+        var saveTo = fs.createWriteStream(global.userPath + '/img/' + fileName);
         readFrom.pipe(saveTo);
         UploadImg.create({
             'user_name': req.session.user_name,
@@ -54,19 +54,19 @@ var getImgList = function(req, res) {
                         imgList: docs,
                         totalItems: allDoc.length
                     }
-                }
+                };
                 res.send(resData);
             })
         }
     })
-}
+};
 
 var uploadThumbnail = function(req, res) {
     var file = req.files.file;
     var id = req.query.id;
     var readFrom = fs.createReadStream(file.path);
     var fileName = path.basename(file.path);
-    var saveTo = fs.createWriteStream(global.userPath + '/UploadImg/' + fileName);
+    var saveTo = fs.createWriteStream(global.userPath + '/img/' + fileName);
     readFrom.pipe(saveTo);
     var Work = global.dbHandel.getModel('work');
     Work.update({
@@ -83,11 +83,11 @@ var uploadThumbnail = function(req, res) {
             data: docs
         };
         res.send(resData);
-    })
+    });
     saveTo.on('finish', function() {
         fs.unlinkSync(file.path);
     });
-}
+};
 
 module.exports = function(Router) {
     Router.post('/img/:act', multipartMiddleware, function(req, res, next) {
@@ -97,11 +97,11 @@ module.exports = function(Router) {
         if (req.params.act == 'uploadThumbnail') {
             uploadThumbnail(req, res);
         }
-    })
+    });
     Router.get('/img/:act', function(req, res, next) {
         if (req.params.act == 'list') {
             getImgList(req, res);
         }
-    })
+    });
     return Router;
 };

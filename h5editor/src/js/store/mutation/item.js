@@ -39,13 +39,17 @@ mutations.ADDDOMELEMENT = function(state, type, obj) {
     state.checkedItems = [];
     var index = state.currentPageData.items.length + 1;
     var num = utils.getAllItemsLen() + 1;
-    var model = tpl.graphic_circle(index, num, {});
-
+    var model = {};
     if(type=='GRAPHIC.CIRCLE'){
-        state.currentPageData.items.push(model);
-    }else if(type=='GRAPHIC.RECT'){
-        var model = tpl.graphic_rect(index, num, obj);
+        model = tpl.graphic_circle(index, num, {});
+    }else if(type=='GRAPHIC.RECT') {
+        model = tpl.graphic_rect(index, num, obj);
+    }else if(type=='PLUGIN.CAROUSEL'){
+        model = tpl.plugin_carousel(index, num, obj);
+    }else if(type=='VIDEO'){
+        model = tpl.video(index, num, obj);
     }
+    state.currentPageData.items.push(model);
     mutations.SELECTITEM(state, index - 1);
 };
 

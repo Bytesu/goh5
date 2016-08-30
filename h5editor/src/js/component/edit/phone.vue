@@ -201,6 +201,12 @@
                     </div>
                     <div v-if="item.type=='GRAPHIC'" :style="item.styleObj"></div>
                     <img class="content" v-if="item.type=='IMG'" :style="item.styleObj" :src="item.content" />
+                    <div v-if="item.type=='PLUGIN'">
+                        插件
+                    </div>
+                    <div v-if="item.type=='VIDEO'">
+                        VIDEO
+                    </div>
                     <div class="edit_mode_cont" v-show="checkedItems.indexOf($index) != -1">
                         <div class="edit_mode_layer">
                             <div class="edit_mode edit_mode_radius_t_l"></div>

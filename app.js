@@ -19,7 +19,7 @@ var port = 3030;
 
 var routers = require('./api/apis/index.js');
 
-global.userPath = './User';
+global.userPath = './datas';
 global.dbHandel = require('./api/db/dbHandel.js');
 global.db = mongoose.connect("mongodb://localhost:27017/goh5");
 
@@ -39,19 +39,20 @@ var logDirectory = path.join(__dirname, 'logs')
 fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
 app.use(log.log);
 // create a rotating write stream
-var accessLogStream = FileStreamRotator.getStream({
+/*var accessLogStream = FileStreamRotator.getStream({
     date_format: 'YYYY-MM-DD',
     filename: path.join(logDirectory, 'access-%DATE%.log'),
     frequency: 'daily',
     verbose: false
-});
+});*/
 
 // app.use(morgan('combined',{stream:accessLogStream}));
 
 // 用户上传的图片
-app.use('/img', express.static(pwd + '/User/UploadImg/'));
+app.use('/img', express.static(pwd + '/datas/img/'));
 // 用户上传的音乐
-app.use('/audio', express.static(pwd + '/User/UploadMusic/'));
+app.use('/audio', express.static(pwd + '/datas/music/'));
+app.use('/video', express.static(pwd + '/datas/video/'));
 // 后台静态资源
 app.use('/back', express.static(pwd + '/h5editor/'));
 // 前台静态资源
