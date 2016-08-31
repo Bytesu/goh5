@@ -13,4 +13,5 @@ node_modules/
 /views/src/video/*
 /views/src/img/*
 logs/*
+.idea/*
 !logs/.empty
