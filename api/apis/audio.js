@@ -2,34 +2,42 @@
 
 var fs = require('fs');
 var path = require('path');
-
+var Q = require('q');
+var logger = require('./../../libs/log').logger;
 var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart();
-
+var create = require('./../../libs/resource').create;
+var creatNewFile = require('./../../libs/resource').creatNewFile;
 var upload = function(req, res) {
-    var UploadMusic = global.dbHandel.getModel('uploadMusic');
     var files = req.files.files;
-    var readFrom = fs.createReadStream(files.path);
     var fileName = path.basename(files.path);
-    var saveTo = fs.createWriteStream(global.userPath + '/audio/' + fileName);
-    readFrom.pipe(saveTo);
-    UploadMusic.create({
+    Q.all([creatNewFile({
+        source:files.path,
+        dest:global.userPath + '/audio/' + fileName
+    }),create({
         'user_name': req.session.user_name,
         'upload_time': Date.now(),
         'file_path': '/audio/' + fileName,
         'type':'audio',
-        'file_name': req.query.file_name,
-        'file_size': req.query.file_size,
-    });
-    saveTo.on('finish', function() {
-        fs.unlinkSync(files.path);
+        'file_name': files.name,
+        'file_size': files.size,
+    })]).then(function (res_arr) {
         var resData = {
             iserro: 0,
             msg: '上传成功',
             data: ''
         };
         res.send(resData);
+    }).catch(function (e) {
+        logger.error(e);
+        var resData = {
+            iserro: 500,
+            msg: e,
+            data: ''
+        };
+        res.send(resData);
     });
+
 };
 
 var getMusicList = function(req, res) {
@@ -46,7 +54,7 @@ var getMusicList = function(req, res) {
                     iserro: 0,
                     msg: '读取成功！',
                     data: {
-                        musicList: docs,
+                        list: docs,
                         totalItems: allDoc.length
                     }
                 };

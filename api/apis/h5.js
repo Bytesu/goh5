@@ -10,13 +10,14 @@ var util_file = require('./../libs/files');
 var logger = require('./../../libs/log').logger;
 function generatorScript(datas){
     return new Promise(function(resolve,reject){
-        var imgDatas = JSON.stringify(datas).match(/\w+\.(jpg|png|jpeg|gif|webm|bmp)/gi);
+        var imgDatas = JSON.stringify(datas).match(/(\/(\w|\-)+)+\.(jpg|png|jpeg|gif|webm|bmp|ogg|mp4)/gi);
+        logger.info(imgDatas);
         imgDatas.map(function (item) {
             try{
-                var stat = fs.statSync(path.join(__dirname+'/../../User/UploadImg',path.basename(item)));
+                var stat = fs.statSync(path.join(__dirname+'/../../datas',(item)));
                 if(stat.isFile()){
-                    var readable  = fs.createReadStream(path.join(__dirname+'/../../User/UploadImg',path.basename(item)));
-                    var wirtable = fs.createWriteStream(path.join(__dirname+'/../../','/views/dist/img/',path.basename(item)));
+                    var readable  = fs.createReadStream(path.join(__dirname+'/../../datas/',(item)));
+                    var wirtable = fs.createWriteStream(path.join(__dirname+'/../../','/views/dist/',(item)));
                     readable.pipe(wirtable);
                 }
             }catch(e){
@@ -24,7 +25,10 @@ function generatorScript(datas){
             }
         });
         fs.writeFile(__dirname+'/../../views/dist/js/data.js', 'var datas = '+JSON.stringify(datas), (err) => {
-            if (err) return reject(err);
+            if (err){
+                logger.error(err);
+                return reject(err);
+            }
             return resolve('success');
         });
     })

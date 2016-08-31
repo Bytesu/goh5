@@ -2,9 +2,9 @@
  * Created by byte2 on 2016-08-26.
  */
 var log4js = require('log4js');
-log4js.configure({
+var config = require('./config');
+var configure = {
     appenders: [
-        { type: 'console' },
         {
             type: 'dateFile',
             filename: 'logs/Error',
@@ -13,10 +13,12 @@ log4js.configure({
             category: 'log4jslog'
         }
     ]
-});
+};
+if(config.isDebug){
+    configure.appenders.push({ type: 'console' })
+}
+log4js.configure(configure);
 var logger = log4js.getLogger('log4jslog');
-
-
 
 module.exports = {
     logger:logger,

@@ -9,8 +9,7 @@ var pwd = __dirname;
 var morgan = require('morgan');
 var fs = require('fs');
 var path = require('path');
-var moment = require('moment');
-var FileStreamRotator = require('file-stream-rotator');
+var config = require('./libs/config');
 var log = require('./libs/log');
 
 var app = express();
@@ -21,45 +20,22 @@ var routers = require('./api/apis/index.js');
 
 global.userPath = './datas';
 global.dbHandel = require('./api/db/dbHandel.js');
-global.db = mongoose.connect("mongodb://localhost:27017/goh5");
+global.db = mongoose.connect(config.mongodb);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(session({
-    secret: 'who am i ?',
-    cookie: { maxAge: 1000 * 60 * 60 * 24 * 7 },
-    saveUninitialized: true,
-    resave: true
-}));
-
-var logDirectory = path.join(__dirname, 'logs')
-
-// ensure log directory exists
-fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
+app.use(session(config.session));
 app.use(log.log);
-// create a rotating write stream
-/*var accessLogStream = FileStreamRotator.getStream({
-    date_format: 'YYYY-MM-DD',
-    filename: path.join(logDirectory, 'access-%DATE%.log'),
-    frequency: 'daily',
-    verbose: false
-});*/
 
-// app.use(morgan('combined',{stream:accessLogStream}));
+var statics ={'img':'/datas/img/','video':'/datas/video/','audio':'/datas/audio/','back':'/h5editor/','front':'/views/'};
+for(var pro in statics){
+    app.use('/'+pro, express.static(pwd + statics[pro]));
+}
 
-// 用户上传的图片
-app.use('/img', express.static(pwd + '/datas/img/'));
-// 用户上传的音乐
-app.use('/audio', express.static(pwd + '/datas/music/'));
-app.use('/video', express.static(pwd + '/datas/video/'));
-// 后台静态资源
-app.use('/back', express.static(pwd + '/h5editor/'));
-// 前台静态资源
-app.use('/front', express.static(pwd + '/views/'));
-
-
-// 后台页面
+/**
+ * backend entry
+ */
 app.get('/', function(req, res, next) {
     if (!req.session.isLogin) {
         res.clearCookie('isLogin');

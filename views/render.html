@@ -27,6 +27,8 @@
                             {{{item.content}}}
                         </p>
                         <img v-if="item.type=='IMG'" :style="item.sty"  :src="'/front/dist'+item.content" alt="">
+                        <video v-if="item.type=='VIDEO'" autoplay loop :style="item.sty"  :src="'/front/dist'+item.content" alt=""></video>
+
     				</div>
                 </div>
             </div>

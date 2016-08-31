@@ -2,12 +2,44 @@
 
 var fs = require('fs');
 var path = require('path');
-
+var logger = require('./../../libs/log').logger;
 var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart();
+var create = require('./../../libs/resource').create;
+var creatNewFile = require('./../../libs/resource').creatNewFile;
+var Q = require('q');
+
 
 var upload = function(req, res) {
-    var UploadImg = global.dbHandel.getModel('uploadImg');
+
+    var files = req.files.files;
+    var fileName = path.basename(files.path);
+    Q.all([creatNewFile({
+        source:files.path,
+        dest:global.userPath + '/img/' + fileName
+    }),create({
+        'user_name': req.session.user_name,
+        'file_name': fileName,
+        'file_path': '/img/'+fileName,
+        'upload_time': Date.now()
+    })]).then(function (res_arr) {
+        var resData = {
+            iserro: 0,
+            msg: '上传成功',
+            data: ''
+        };
+        res.send(resData);
+    }).catch(function (e) {
+        logger.error(e);
+        var resData = {
+            iserro: 500,
+            msg: e,
+            data: ''
+        };
+        res.send(resData);
+    });
+
+    /*var UploadImg = global.dbHandel.getModel('uploadImg');
     var _files = req.files.files;
     var files = [];
     if (_files.constructor === Object) {
@@ -15,26 +47,32 @@ var upload = function(req, res) {
     } else {
         files = _files;
     }
-    files.forEach(function(item) {
-        var readFrom = fs.createReadStream(item.path);
-        var fileName = path.basename(item.path);
-        var saveTo = fs.createWriteStream(global.userPath + '/img/' + fileName);
-        readFrom.pipe(saveTo);
-        UploadImg.create({
-            'user_name': req.session.user_name,
-            'file_name': fileName,
-            'upload_time': Date.now()
+    try{
+        files.forEach(function(item) {
+            var readFrom = fs.createReadStream(item.path);
+            var fileName = path.basename(item.path);
+            var saveTo = fs.createWriteStream(global.userPath + '/img/' + fileName);
+            readFrom.pipe(saveTo);
+            UploadImg.create({
+                'user_name': req.session.user_name,
+                'file_name': fileName,
+                'upload_time': Date.now()
+            });
+            saveTo.on('finish', function() {
+                fs.unlinkSync(item.path);
+            });
         });
-        saveTo.on('finish', function() {
-            fs.unlinkSync(item.path);
-        });
-    });
+
+    }catch (e){
+        logger.error(e);
+    }
+
     var resData = {
         iserro: 0,
         msg: '上传成功',
         data: ''
     };
-    res.send(resData);
+    res.send(resData);*/
 };
 
 var getImgList = function(req, res) {
@@ -51,7 +89,7 @@ var getImgList = function(req, res) {
                     iserro: 0,
                     msg: '读取成功！',
                     data: {
-                        imgList: docs,
+                        list: docs,
                         totalItems: allDoc.length
                     }
                 };

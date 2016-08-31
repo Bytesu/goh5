@@ -5,5 +5,12 @@ node_modules/
 !/datas/img/.empty
 !/datas/audio/.empty
 !/datas/video/.empty
+!/views/dist/audio/empty.png
+!/views/dist/video/empty.png
+!/views/dist/img/empty.png
+
+/views/src/audio/*
+/views/src/video/*
+/views/src/img/*
 logs/*
 !logs/.empty
