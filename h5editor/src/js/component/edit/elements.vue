@@ -17,6 +17,67 @@
 	.lib_con .lib_main .lib_main_body .pics_con.graphic li{margin-bottom: 0;background: none;border: none;padding-bottom: 0;}
 	.lib_con .lib_main .lib_main_body .pics_con li img{display: block;position: absolute;top: 50%;left: 50%;width: 100%;transform: translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);}
 
+
+	.lib_con .lib_main .lib_main_body .audio {    width: 100%;
+		font-size: 0;
+		padding: 10px 0;}
+	.lib_con .lib_main .lib_main_body .audio li{line-height: 32px;background: #fff;position: relative;}
+	.lib_con .lib_main .lib_main_body .audio li audio{display: none;}
+	.lib_con .lib_main .lib_main_body .audio li span{ display: inline-block;
+		vertical-align: middle;
+		font-size: 12px;
+		color: #ccc;
+		float: right;
+		margin-right: 10px; }
+	.lib_con .lib_main .lib_main_body .audio li a{    display: inline-block;
+		vertical-align: middle;
+		font-size: 12px;
+		color: rgba(8,161,239,1);
+		float: right;
+		margin-right: 10px;}
+	.lib_con .lib_main .lib_main_body .audio li p{    display: inline-block;
+		vertical-align: middle;
+		font-size: 12px;
+		color: #76838f;
+		margin-left: 10px;}
+	.lib_con .lib_main .lib_main_body .audio li audio{ opacity: 0;}
+	.lib_con .lib_main .lib_main_body .audio li:hover audio{ width: 85%;
+		position: absolute;
+		top: 0;
+		left: 0;    display: block;
+		right: 0;
+		bottom: 0;
+		z-index: 100000;opacity: 1;transition: all 1s;}
+	.lib_con .lib_main .lib_main_body .audio li .use{display: none;}
+	.lib_con .lib_main .lib_main_body .audio li:hover .use{
+		width: 15%;display: block;
+		background: #00BCD4;
+		float: right;
+		cursor: pointer;
+		color: #FFF !important;
+		text-align: center;
+		position: relative;
+		line-height: 32px;
+		font-size: small;
+	}
+    .lib_con .lib_main .lib_main_body .video li{
+        width: 100%;
+        border-bottom: 1px solid #00BCD4;
+        padding-bottom: 10px;
+        color: #666;    margin-bottom: 10px;
+    }
+    .lib_con .lib_main .lib_main_body .video li video{width: 100%;}
+    .lib_con .lib_main .lib_main_body .video li span{float: right;}
+    .lib_con .lib_main .lib_main_body .video li .use{    display: block;float: right;
+		background: #00BCD4;
+		color: #FFF;
+		padding: 5px 20px;
+		position: relative;
+		top: -5px;
+		height: 24px;
+		line-height: 24px;
+		font-size: 14px;
+		cursor: pointer;}
 </style>
 <template>
 	<div class="dialog_con lib_con" v-show="materialLibPicObj.show" transition="fade">
@@ -44,10 +105,10 @@
 								<li><span>退出管理</span></li>
 							</ul>
 						</div>
-						<div class="lib_main_body" v-if="materialLibPicObj.type=='PIC'||materialLibPicObj.type=='BG'">
+						<div class="lib_main_body" v-if="materialLibPicObj.type=='IMG.PIC'||materialLibPicObj.type=='IMG.BG'">
 							<ul class="pics_con" >
 								<li v-for="item in list" >
-									<img :src="'/img/'+item.file_name" @click="addPicOrBg('/img/'+item.file_name,materialLibPicObj.type)">
+									<img :src="item.file_path" @click="addPicOrBg(item.file_path,materialLibPicObj.type)">
 								</li>
 							</ul>
 							<m-pagination :pagination-conf="paginationConf"></m-pagination>
@@ -73,20 +134,22 @@
 							</ul>
 						</div>
                         <div class="lib_main_body" v-if="materialLibPicObj.type=='VIDEO'">
-                            <ul class="music_list">
+                            <ul class="video">
                                 <li v-for="item in list" >
+                                    <video :src="item.file_path" controls >您的浏览器不支持 video 标签。</video>
                                     <p>{{item.file_name}}</p>
-                                    <a href="javascript:void(0)" :res-src="item.file_path"  @click.stop="play($event,'video')">播放</a>
-                                    <span>{{item.file_size | FileSize}}</span>
+                                    <span @click.stop="addDomElement('VIDEO',{src:item.file_path})" class="use">使用</span>
+                                    <span >{{item.file_size | FileSize}}</span>
                                 </li>
                             </ul>
                         </div>
                         <div class="lib_main_body" v-if="materialLibPicObj.type=='AUDIO'">
-                            <ul class="music_list">
+                            <ul class="audio">
                                 <li v-for="item in list" >
+									<audio :src="item.file_path" controls>Your browser does not support the audio element.</audio>
                                     <p>{{item.file_name}}</p>
-                                    <a href="javascript:void(0)" :res-src="item.file_path"  @click.stop="play($event,'video')">播放</a>
                                     <span>{{item.file_size | FileSize}}</span>
+									<div class="use" @click.stop="addDomElement('AUDIO',{src:item.file_path})">使用</div>
                                 </li>
                             </ul>
                         </div>
@@ -123,6 +186,7 @@ var MaterialLibPicVm = null;
 var MaterialLibPic = Vue.extend({
 	name:'MaterialLibPic',
 	data: function(){
+		var this_ = this;
 		return {
 		    apiType:'video|img|audio',
 			list: [],
@@ -132,7 +196,7 @@ var MaterialLibPic = Vue.extend({
 				itemsPerPage: 7,
 				pagesLength: 5,
 				onChange: function(type){
-					MaterialLibPicVm.load(MaterialLibPicVm.paginationConf.currentPage,this.materialLibPicObj.type);
+					MaterialLibPicVm.load.call(this_,MaterialLibPicVm.paginationConf.currentPage,this_.filterType(this_.materialLibPicObj.type));
 				}
 			}
 		}
@@ -142,8 +206,7 @@ var MaterialLibPic = Vue.extend({
 	},
     watch:{
 	    'materialLibPicObj.show':function (val,oldVal) {
-	        console.log(this.materialLibPicObj.type);
-            if(val&&this.$data.apiType.split('|').indexOf(this.materialLibPicObj.type.toLowerCase())>-1){
+            if(val&&this.$data.apiType.split('|').indexOf(this.materialLibPicObj.type.split('.')[0].toLowerCase())>-1){
                 this.load(this.paginationConf.currentPage,this.filterType(this.materialLibPicObj.type))
             }
         }
@@ -168,10 +231,10 @@ var MaterialLibPic = Vue.extend({
 	},
 	methods:{
         filterType:function (type) {
-            switch (type){
+            switch (type.split('.')[0]){
                 case 'VIDEO':type = 'video';break;
-                case 'PIC':type = 'img';break;
-                case 'BG':type = 'img';break;
+                case 'IMG':type = 'img';break;
+//                case 'BG':type = 'img';break;
                 case 'AUDIO':type = 'audio';break;
             }
             return type;
@@ -232,7 +295,7 @@ var MaterialLibPic = Vue.extend({
 					page: page
 				},
 				success: function(data){
-					_this.list = data.data.imgList;
+					_this.list = data.data.list;
 					_this.paginationConf.totalItems = data.data.totalItems;
 				}
 			})

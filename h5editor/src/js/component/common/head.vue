@@ -5,8 +5,7 @@
 	.head_con .item.left{margin-left: 20px;font-size: 22px;}
 	.head_con .item.center{position: absolute;left: 50%;transform: translateX(-50%);-webkit-transform: translateX(-50%);}
 	.head_con .item.center .create_group{font-size: 0;}
-	.head_con .item.center .create_group li{font-size: 12px;cursor: pointer;transition: all ease 0.2s;-webkit-transition: all ease 0.2s;padding: 5px;display: inline-block;vertical-align: middle;height: 50px;
-		width: 50px;}
+	.head_con .item.center .create_group li{font-size: 12px;cursor: pointer;transition: all ease 0.2s;-webkit-transition: all ease 0.2s;padding: 5px;display: inline-block;vertical-align: middle;height: 50px;  width: 50px;}
 	.head_con .item.center .create_group li:hover{background: #484d64;}
 	.head_con .item.center .create_group li span{display: block;text-align: center;line-height: 2;}
 	.head_con .item.center .create_group li .icon{background-image: url('/back/dist/img/icon.png');width: 30px;height: 30px;margin: 0 auto;}
@@ -41,10 +40,10 @@
 		<div class="item center" v-show="page == 'edit'">
 			<ul class="create_group">
 				<li @click="addText()"><div class="icon icon1"></div><span>文本</span></li>
-				<li @click="materialLibPic({show:true,msg:'插入图片',type:'PIC'})"><div class="icon icon2"></div><span>图片</span></li>
-				<li @click="materialLibPic({show:true,msg:'背景',type:'BG'})"><div class="icon icon9"></div><span>背景</span></li>
+				<li @click="materialLibPic({show:true,msg:'插入图片',type:'IMG.PIC'})"><div class="icon icon2"></div><span>图片</span></li>
+				<li @click="materialLibPic({show:true,msg:'背景',type:'IMG.BG'})"><div class="icon icon9"></div><span>背景</span></li>
 				<li @click="materialLibPic({show:true,msg:'图形',type:'GRAPHIC'})"><div class="icon icon8"></div><span>图形</span></li>
-				<li @click="materialLibMusic({show:true,msg:'音频',type:'MUSIC'})"><div class="icon icon6"></div><span>音频</span></li>
+				<li @click="materialLibPic({show:true,msg:'音频',type:'AUDIO'})"><div class="icon icon6"></div><span>音频</span></li>
 				<li @click="materialLibPic({show:true,msg:'视频',type:'VIDEO'})"><div class="icon icon7"></div><span>视频</span></li>
 				<li @click="materialLibPic({show:true,msg:'插件',type:'PLUGIN'})"><div class="icon icon-plugin"></div><span>插件</span></li>
 			</ul>
@@ -109,7 +108,6 @@ var Head = Vue.extend({
 	methods:{
 		addText: actions.addText,
 		materialLibPic: actions.materialLibPic,
-		materialLibMusic: actions.materialLibMusic,
 		logout: function(){
 			$.ajax({
 				url: '/api/user/logout',
@@ -148,7 +146,7 @@ var Head = Vue.extend({
 			}
 		}
 	}
-})
+});
 
 Vue.component('m-head', Head);
 

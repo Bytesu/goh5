@@ -40,7 +40,11 @@ mutations.ADDDOMELEMENT = function(state, type, obj) {
     var index = state.currentPageData.items.length + 1;
     var num = utils.getAllItemsLen() + 1;
     var model = {};
-    if(type=='GRAPHIC.CIRCLE'){
+    if (type === 'PIC') {
+        model = tpl.pic(0.1, num, obj);
+    } else if (type === 'BG') {
+        model = tpl.pic(0.1, num, obj);
+    }else if(type=='GRAPHIC.CIRCLE'){
         model = tpl.graphic_circle(index, num, {});
     }else if(type=='GRAPHIC.RECT') {
         model = tpl.graphic_rect(index, num, obj);
@@ -48,6 +52,8 @@ mutations.ADDDOMELEMENT = function(state, type, obj) {
         model = tpl.plugin_carousel(index, num, obj);
     }else if(type=='VIDEO'){
         model = tpl.video(index, num, obj);
+    }else if(type=='AUDIO'){
+        model = tpl.audio(index, num, obj);
     }
     state.currentPageData.items.push(model);
     mutations.SELECTITEM(state, index - 1);
@@ -64,14 +70,17 @@ mutations.ADDPICORBG = function(state, src, type) {
     state.checkedItems = [];
     var index = state.currentPageData.items.length + 1;
     var num = utils.getAllItemsLen() + 1;
-    var model = tpl.pic(0.1, num, {
-        src: src
-    });
-    if (type === 'PIC') {
-        state.currentPageData.items.push(model);
-    } else if (type === 'BG') {
-        state.currentPageData.items.push(model);
+    var model = null;
+    if (type === 'IMG.PIC') {
+        model = tpl.pic(num, num, {
+            src: src
+        });
+    } else if (type === 'IMG.BG') {
+        model = tpl.pic(0.1, num, {
+            src: src
+        });
     }
+    state.currentPageData.items.push(model);
     mutations.SELECTITEM(state, index - 1);
 };
 

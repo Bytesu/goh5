@@ -144,11 +144,9 @@ Vue.directive('changeSize', function() {
                 if(styleParams.width){
                     styleParams.width = parseInt(styleParams.width.split('px')[0])/conWidth * 100 +'%';
                 }
-                console.log('---');
                 actions.setStyle(store, store.state.checkedItems[0], styleParams);
             });
             $(window).bind('mouseup', function() {
-                console.log('解绑-----changesize--');
                 $(window).unbind('mousemove');
                 $(window).unbind('mouseup');
             });

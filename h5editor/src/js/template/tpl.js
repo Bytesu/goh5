@@ -120,12 +120,37 @@ module.exports = {
                 boxShadow:'0px 0px 0px 0px rgba(0,0,0,0)'
             },
             id: 'GOH5.GRAPHIC.NO.' + num,
+
         };
     },
 
     video: function(index, num, params) {
         return {
             type: 'VIDEO',
+            style: {
+                zIndex:index*10,
+                top:0,
+                left:0,
+                width:'100%',
+                height:'auto',
+                boxSizing:'border-box',
+                position:'absolute'
+            },
+            styleObj:{
+                width:'100%',
+                height:'100%',
+                boxSizing:'border-box',
+                display:'block',
+                backgroundColor:'rgba(0,0,0,0)',
+                boxShadow:'0px 0px 0px 0px rgba(0,0,0,0)'
+            },
+            id: 'GOH5.VIDEO.NO.' + num,
+            content:params.src
+        };
+    },
+    audio: function(index, num, params) {
+        return {
+            type: 'AUDIO',
             style: {
                 zIndex:index*10,
                 top:0,
@@ -138,13 +163,10 @@ module.exports = {
             styleObj:{
                 width:'100%',
                 height:'100%',
-                boxSizing:'border-box',
-                border:'3px solid #00bcd4',
                 display:'block',
-                backgroundColor:'rgba(0,0,0,0)',
-                boxShadow:'0px 0px 0px 0px rgba(0,0,0,0)'
             },
-            id: 'GOH5.VIDEO.NO.' + num,
+            id: 'GOH5.AUDIO.NO.' + num,
+            content:params.src
         };
     },
     plugin_carousel: function(index, num, obj) {

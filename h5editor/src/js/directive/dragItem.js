@@ -13,9 +13,7 @@ Vue.directive('dragItem', function() {
     var draging = false;
     // 拖动元素
     $('body').on('mousedown','.j_screen',function(ev) {
-        console.log($(ev.target));
         if($(ev.target).hasClass('edit_mode')||($(ev.target).closest('.editor-item').length==0)){
-            console.log('return !!!');
 
             if($(ev.target).find('.editor-item').length&&($(ev.target).closest('.j_screen').length||$(ev.target).hasClass('j_screen'))){
                 var rect = $('<div>');
@@ -89,7 +87,6 @@ Vue.directive('dragItem', function() {
                         }
                     }
 
-                    console.log('left:'+((x/$('.j_screen').width())*100 + '%'))
 
                     actions.setStyle(store, store.state.checkedItems[i], {
                         left: (x/$('.j_screen').width())*100 + '%',
@@ -102,7 +99,6 @@ Vue.directive('dragItem', function() {
         });
         $(window).bind('mouseup', function() {
             draging = false;
-            console.log('解绑-----drag--');
             $(window).unbind('mousemove');
             $(window).unbind('mouseup');
         });

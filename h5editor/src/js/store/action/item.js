@@ -21,7 +21,7 @@ actions.addPicOrBg = function(store, src, type) {
  * @param obj  element options
  */
 actions.addDomElement = function(store, type,obj) {
-    store.dispatch('ADDDOMELEMENT', type);
+    store.dispatch('ADDDOMELEMENT', type,obj);
     store.dispatch('HIDEMATERIALLIBPIC');
 };
 actions.delBg = function(store) {
