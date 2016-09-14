@@ -14,11 +14,13 @@ var configure = {
         }
     ]
 };
+var logger = log4js.getLogger('log4jslog');
+
 if(config.isDebug){
     configure.appenders.push({ type: 'console' })
+    logger.setLevel(log4js.ALL)
 }
 log4js.configure(configure);
-var logger = log4js.getLogger('log4jslog');
 
 module.exports = {
     logger:logger,

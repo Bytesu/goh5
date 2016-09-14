@@ -3,6 +3,7 @@
 module.exports = {
     user: {
         user_name: { type: String, required: true },
+        credentials:{type:String},
         password: { type: String, required: true }
     },
     work: {

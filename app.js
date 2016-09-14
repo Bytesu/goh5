@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(session(config.session));
 app.use(log.log);
-
+// app.use('/', express.static(pwd + 'static'));
 var statics ={'img':'/datas/img/','video':'/datas/video/','audio':'/datas/audio/','back':'/h5editor/','front':'/views/'};
 for(var pro in statics){
     app.use('/'+pro, express.static(pwd + statics[pro]));
@@ -46,8 +46,6 @@ app.get('/', function(req, res, next) {
 
 app.engine('.html', require('ejs').__express);
 app.set('view engine', 'html');
-
-
 
 routers.forEach(function(Router) {
     app.use('/api', Router);

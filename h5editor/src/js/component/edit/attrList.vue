@@ -786,7 +786,6 @@
     var AttrList = Vue.extend({
         name: 'AttrList',
         data: function () {
-            console.log(this.style);
             return {
                 itemType: '',
                 nav_top_btn: 0,

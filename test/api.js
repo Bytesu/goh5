@@ -9,6 +9,22 @@ var request = require('superagent');
 var domain = 'http://localhost:3030';
 var id_ = '57be8b626e1e4a60124eff6a';
 describe('User', function() {
+    describe('#signup()', function() {
+        it('should signup  without error', function(done) {
+            request.get(domain+'/api/user/signup')
+                .send({user_name:'test',credentials:'test'})
+                .end(function(err, res){
+                    if(err){
+                        done(err);
+                    }else{
+                        done();
+                    }
+                });
+        });
+    });
+});
+return;
+describe('User', function() {
     describe('#login()', function() {
         it('should login  without error', function(done) {
             request.get(domain+'/api/user/login')

@@ -50,13 +50,19 @@ var webpackConfig = {
         filename: '[name].min.js'
     },
     module: {
-        loaders: [{
-            test: /.js$/,
-            loader: 'jsx-loader?harmony'
-        }, {
-            test: /.vue$/,
-            loader: 'vue-loader'
-        },
+        loaders: [
+            {
+                test: /.js$/,
+                loader: 'babel'
+            },
+           /* {
+                test: /.js$/,
+                loader: 'jsx-loader?harmony'
+            },*/
+            {
+                test: /.vue$/,
+                loader: 'vue-loader'
+            },
             {
                 test: /\.(jpg|gif|png)$/,
                 loader: "url-loader?limit=10000"

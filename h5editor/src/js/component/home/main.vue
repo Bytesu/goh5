@@ -1,7 +1,7 @@
 <template>
 	<div class="home_bg"></div>
 	<div class="all_center1">
-		<h1 style="color: #fff;">欢迎来到 H5Editor!</h1>
+		<h1 style="color: #fff;">欢迎来到 H5EDITOR!</h1>
 		<div class="home_btn">
 			<a href="javascript:void(0)" @click="showLogin = !showLogin">登录</a>
 			<a href="javascript:void(0)" @click="showSignup = !showSignup">注册</a>
@@ -26,11 +26,11 @@
 	padding:15px;
 	left: auto;
 	top: auto;border-radius: 10px;}
-.home_btn a{display: inline-block;vertical-align: middle;font-size: 12px;color: #fff;padding: 5px 15px;margin: 0 8px 0 0;cursor: pointer;border-radius: 1px;transition: all ease 0.2s;-webkit-transition: all ease 0.2s;}
+.home_btn a{display: inline-block;vertical-align: middle;font-size: 12px;color: #fff;padding: 6px 20px;margin: 0 8px 0 0;cursor: pointer;border-radius: 1px;transition: all ease 0.2s;-webkit-transition: all ease 0.2s;}
 .home_btn a:first-child{background: #00BCD4;}
-.home_btn a:first-child:hover{background: #00BCD4;}
+.home_btn a:first-child:hover{background: #00BCD4;text-decoration: none;}
 .home_btn a:last-child{background: rgba(255,81,81,1);}
-.home_btn a:last-child:hover{background: rgba(255,81,81,0.8);}
+.home_btn a:last-child:hover{background: rgba(255,81,81,0.8);text-decoration: none;}
 </style>
 
 

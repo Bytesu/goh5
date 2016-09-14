@@ -54,7 +54,10 @@ mutations.ADDDOMELEMENT = function(state, type, obj) {
         model = tpl.video(index, num, obj);
     }else if(type=='AUDIO'){
         model = tpl.audio(index, num, obj);
+    }else if(type=='PICS'){
+        model = tpl.pics(index, num, obj);
     }
+
     state.currentPageData.items.push(model);
     mutations.SELECTITEM(state, index - 1);
 };

@@ -17,6 +17,55 @@
 <br>
 <br>
 <input type="range" step="" min="-" max="" ng-model="" range-parser="" class="" >
+<pre>
+    这个实现还是很容易的！
+算了，你还是看着给把！
+document.onmouseup=function(e){
+        content=window.getSelection().toString();
+       if(content!=''){
+		var	len=content.length;
+         var   target=e.target;
+          var  position=target.innerHTML.indexOf(content);
+          var  position2=position+len;
+           var  tempstr1=target.innerHTML.substring(0,position);
+			var tempstr2=target.innerHTML.substring(position2);
+			content="<span style='color:red;'>"+content+"</span>";
+			target.innerHTML=tempstr1+content+tempstr2;
+		  }}
+实现了选中了就变红，自己扩展下把！
+还有这个暂时只在chrome下能用，ie 你自己改把！
+</pre>
+<p>还有这个暂时只在chrome下能用，ie 你自己改把！</p>
+<br>
+<b>dfds</b>
+<p>还有这个暂时只在chrome下能用，ie 你自己改把！</p>
+sdfsdf
 
+<script type="application/javascript">
+    document.onkeyup=function(e){
+        var p = document.getElementsByTagName('p');
+        var content=window.getSelection();
+//        var content=window.getSelection().toString();
+        ///console.log(document.getSelection().removeAllRanges())
+        if(content.rangeCount>0)content.removeAllRanges();
+        for(var i = 0;i<p.length;i++){
+            var range = document.createRange();
+            range.selectNode(p[i]);
+            content.addRange(range)
+        }
+
+
+        return;
+        if(content!=''){
+            var	len=content.length;
+            var   target=e.target;
+            var  position=target.innerHTML.indexOf(content);
+            var  position2=position+len;
+            var  tempstr1=target.innerHTML.substring(0,position);
+            var tempstr2=target.innerHTML.substring(position2);
+            content="<span style='color:red;'>"+content+"</span>";
+            target.innerHTML=tempstr1+content+tempstr2;
+        }}
+</script>
 </body>
 </html>

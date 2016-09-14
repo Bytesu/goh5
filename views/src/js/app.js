@@ -9,5 +9,4 @@ var clientW = document.body.clientWidth;
 
 var load = require('./load.js');
 var music = require('./music.js');
-
 var H5Editor = require('./goh5.js');

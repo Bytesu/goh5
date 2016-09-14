@@ -17,7 +17,7 @@
 
     .phone_con .phone_title {
         position: absolute;
-        top: 20px;
+        top: 0px;
         width: 100%;
         left: 0;
         text-align: center;
@@ -25,8 +25,9 @@
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-        height: 30px;
-        font-size: 18px;
+        height: 49px;
+        font-size: 16px;
+        line-height: 49px;
     }
 
     .phone_con .phone_screen {
@@ -117,8 +118,8 @@
 
     .edit_mode_layer > div {
         position: absolute;;
-        width: 7px;
-        height: 7px;
+        width: 8px;
+        height: 8px;
         background: #fff;
         border: 1px solid #585858;
         z-index: 888;
@@ -135,7 +136,7 @@
     .edit_mode_radius_t_m {
         cursor: n-resize;
         left: 50%;
-        margin-left: -6px;
+        margin-left: -4px;
         top: -4px;
     }
 
@@ -149,9 +150,8 @@
     .edit_mode_radius_m_r {
         cursor: e-resize;
         top: 50%;
-        margin-top: -6px;
+        margin-top: -4px;
         right: -4px;
-        margin: -4% 0;
     }
 
     .edit_mode_radius_b_r {
@@ -164,7 +164,7 @@
     .edit_mode_radius_b_m {
         cursor: s-resize;
         left: 50%;
-        margin-left: -6px;
+        margin-left: -4px;
         bottom: -4px;
     }
 
@@ -178,10 +178,13 @@
     .edit_mode_radius_m_l {
         cursor: e-resize;
         top: 50%;
-        margin-top: -6px;
-        left: -4px;margin: -4% 0;
+        margin-top: -4px;
+        left: -4px;
     }
-
+    .carousel{height: 100%;}
+    .carousel .carousel-inner{height: 100%;}
+    .carousel-inner>.item{height: 100%;}
+    .carousel-inner>.item>img, .carousel-inner>.item>a>img{height: 100%;}
 </style>
 <template>
     <div class="editor-section">
@@ -204,6 +207,13 @@
                     <div v-if="item.type=='PLUGIN'">
                         插件
                     </div>
+                    <div v-if="item.type=='PICS'" :style="item.styleObj">
+                        <carousel indicators=false controls=false  >
+                            <div class="item" v-for="it in item.content" :class="{active:$index==0}">
+                                <img :src="it.url" data-holder-rendered="true ">
+                            </div>
+                        </carousel>
+                    </div>
                     <video v-if="item.type=='VIDEO'" :src="item.content" :style="item.styleObj" ></video>
                     <audio v-if="item.type=='AUDIO'" :src="item.content" :style="item.styleObj" ></audio>
                     <div class="edit_mode_cont" v-show="checkedItems.indexOf($index) != -1">
@@ -223,6 +233,7 @@
         </div>
         <ul id="item_context_menu" class="context_menu" style="display: none;">
             <li @click="delItem()">删除</li>
+            <li @click="openComponent()">打开COMPONENT</li>
         </ul>
     </div>
 </template>
@@ -232,6 +243,9 @@
 
     var Vue = require('Vue');
     var $ = require('jQuery');
+    var carousel = require('vue-strap/src/Carousel.vue');
+
+
     window.jQuery = $
     require('../../library/dropdown');
     require('../../library/tooltip');
@@ -277,10 +291,14 @@
             // 点击其它地方隐藏元素属性
             $(document).bind('click', function (ev) {
                 var obj = $(ev.target);
-                if (obj.parents('.j_screen').length === 0 && obj.parents('.pages_con').length === 0 && obj.parents('.side_con').length === 0 && obj.parents('.tool_bar').length === 0 && obj.parents('.popline').length === 0 && obj.parents('.head_con').length === 0 && obj.parents('.context_menu').length === 0 && obj.parents('li').find('.group_head').length === 0) {
+                if (obj.closest('.dialog_con').length==0&&obj.parents('.j_screen').length === 0 && obj.parents('.pages_con').length === 0 && obj.parents('.side_con').length === 0 && obj.parents('.tool_bar').length === 0 && obj.parents('.popline').length === 0 && obj.parents('.head_con').length === 0 && obj.parents('.context_menu').length === 0 && obj.parents('li').find('.group_head').length === 0) {
+                    console.log('ccc ----hide element attr when click other place')
                     actions.clearCheckedItems(store);
                 }
             })
+        },
+        components:{
+            carousel
         },
         methods: {
             selectItemOp: function (index, ev) {
@@ -294,7 +312,8 @@
                     actions.selectItem(store, index);
                 }
             },
-                delItem: actions.delItem
+            delItem: actions.delItem,
+            openComponent:actions.openComponent
         }
     });
 

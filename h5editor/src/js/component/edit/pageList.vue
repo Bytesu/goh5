@@ -8,7 +8,7 @@
 	.pages_con .item.pages_list ul.content{position: relative;width: 230px;padding: 0 20px;box-sizing: border-box;}
 	.pages_con .item.pages_list ul li{display: block;
         padding: 20px 0;width: 190px;position: relative;
-		height: 230px;}
+		height: 270px;}
 	.pages_con .item.pages_list ul li .page-ctner{position: relative;
         position: relative;
 		overflow: hidden;

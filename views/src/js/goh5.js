@@ -3,10 +3,15 @@
 var Swiper = require('Swiper');
 var utils = require('utils');
 var ani = require('./animate.js');
-
+// import carousel from 'vue-strap/src/Carousel.vue';
+// require('vue-strap/src/vu')
+import carousel from 'vue-strap/src/Carousel.vue';
 new Vue({
     el:'#app',
     data:datas,
+    components:{
+        carousel
+    }
 });
 
 
@@ -75,7 +80,6 @@ Layout.prototype ={
 
 $(function () {
     new Layout();
-
 });
 
 

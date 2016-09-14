@@ -47,7 +47,7 @@ var webpackConfig = {
     module: {
         loaders: [{
             test: /.js$/,
-            loader: 'jsx-loader?harmony'
+            loader: 'babel'
         }, {
             test: /.vue$/,
             loader: 'vue-loader'

@@ -1,5 +1,5 @@
 <template>
-	<div class="dialog_con" v-show="showLogin" transition="fade">
+	<div class="dialog_con" v-show="showLogin" transition="scale">
 		<div class="dialog_bg" @click="this.showLogin = false"></div>
 		<div class="dialog_main_con all_center">
 			<div class="dialog_head">

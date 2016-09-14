@@ -21,6 +21,7 @@ actions.addPicOrBg = function(store, src, type) {
  * @param obj  element options
  */
 actions.addDomElement = function(store, type,obj) {
+
     store.dispatch('ADDDOMELEMENT', type,obj);
     store.dispatch('HIDEMATERIALLIBPIC');
 };
@@ -41,7 +42,7 @@ actions.selectItem = function(store, index, multi) {
 };
 
 actions.clearCheckedItems = function(store) {
-    store.dispatch('ccc');
+    store.dispatch('CLEARCHECKEDITEMS');
 };
 
 actions.delItem = function(store) {

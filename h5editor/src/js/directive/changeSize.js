@@ -14,6 +14,7 @@ Vue.directive('changeSize', function() {
 
     var bindEvent = function(obj, index) {
         obj.bind('mousedown', function(ev) {
+            console.log('change');
             var conWidth = parseFloat($('.j_screen').css('width'));
             var conHeight = parseFloat($('.j_screen').css('height'));
 

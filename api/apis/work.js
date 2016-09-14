@@ -1,5 +1,6 @@
 'use strict';
 var _ = require('underscore');
+var logger = require('./../../libs/log').logger;
 var setConfigDefault = {
     loop: true,
     direction: 'vertical',
@@ -26,6 +27,7 @@ var mainCodeDefault = {
 var create = function(req, res) {
     var obj = req.query;
     var Work = global.dbHandel.getModel('work');
+    logger.info(req.session.user_name);
     Work.create({
         'user_name': req.session.user_name,
         'title': obj.title,

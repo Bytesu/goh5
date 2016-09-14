@@ -32,4 +32,48 @@ actions.hideMaterialLibMusic = function(store){
 	store.dispatch('HIDEMATERIALLIBMUSIC');
 };
 
+/**
+ * close component dispatch
+ * @param store
+ */
+actions.closeComponent = function(store){
+	store.dispatch('CLOSE_COMPONENT');
+};
+
+/**
+ * open component dispatch
+ * @param store
+ */
+actions.openComponent = function(store){
+	store.dispatch('OPEN_COMPONENT');
+};
+
+/**
+ * close custom dialog dispatch
+ * @param store
+ */
+actions.closeDialog = function(store){
+	store.dispatch('CLOSE_DIALOG');
+};
+
+/**
+ * open custom dialog dispatch
+ * @param store
+ */
+actions.openDialog = function(store){
+	store.dispatch('OPEN_DIALOG');
+};
+
+actions.selectPics = function(store){
+	store.dispatch('SELECT_PICS');
+};
+
+
+actions.addSelectedPic = function (store,item) {
+	store.dispatch('ADD_SELECTED_PIC',item);
+};
+
+
+
+
 module.exports = actions;

@@ -1,4 +1,5 @@
 'use strict';
+var $ = require('jQuery');
 
 var mutations = {};
 
@@ -41,5 +42,54 @@ mutations.HIDEMATERIALLIBMUSIC = function(state) {
     state.materialLibMusicObj.show = false;
 };
 
+/**
+ * component section begin !
+ */
+mutations.CLOSE_COMPONENT = function(state) {
+    state.dialog.components.show = false;
+};
 
+mutations.OPEN_COMPONENT = function(state) {
+    state.dialog.components.show = true;
+};
+
+/**
+ * component section end !
+ */
+/**
+ * component section begin !
+ */
+mutations.CLOSE_DIALOG = function(state) {
+    state.dialog.custom.show = false;
+};
+
+mutations.OPEN_DIALOG = function(state) {
+    state.dialog.custom.show = true;
+};
+mutations.ADD_SELECTED_PIC = function(state,item) {
+    if(item.delete){ //type is delete
+        delete state.pics.selected[item.key];
+    }else{
+        state.pics.selected[item.key] = item.value;
+    }
+
+};
+mutations.SELECT_PICS = function(state) {
+    //state.dialog.custom.show = true;
+   /* $.ajax({
+        url: '/api/img/list',
+        type: 'get',
+        data: {
+            page: page
+        },
+        success: function(data){
+            _this.list = data.data.list;
+            _this.paginationConf.totalItems = data.data.totalItems;
+        }
+    })*/
+};
+
+/**
+ * component section end !
+ */
 module.exports = mutations;

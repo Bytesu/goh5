@@ -1,13 +1,16 @@
 'use strict';
 var md5 = require('md5');
-var safeWord = '骆也最帅！'; // 哈哈哈
-
+var safeWord = "H5aUhFmi,$o*D?tItCx|!Js/)vcX0-U;`8NQ{'Exr'bM6Sq2G>t_AWH`H";
+var logger = require('./../../libs/log').logger;
 
 var login = function(req, res) {
     var obj = req.query;
-    console.log(obj);
     var User = global.dbHandel.getModel('user');
-    User.find({ 'user_name': obj.user_name }).exec(function(err, doc) {
+    var conditions = { 'user_name': obj.user_name };
+    if(obj.credentials){
+        conditions.credentials = obj.credentials;
+    }
+    User.find(conditions).exec(function(err, doc) {
         if (doc == '') {
             var resData = {
                 iserro: 1,
@@ -18,7 +21,20 @@ var login = function(req, res) {
             };
             res.send(resData);
         } else {
-            if (doc[0].password == md5(safeWord + obj.password)) {
+            logger.error(obj.credentials);
+            if(obj.credentials){
+                req.session.isLogin = 1;
+                logger.info(obj.user_name);
+                req.session.user_name = obj.user_name;
+                req.session.noneedPassword = 1;
+                res.cookie('isLogin', 1, { expires: new Date(Date.now() + 10000 * 60 * 60 * 24 * 7) });
+                var resData = {
+                    iserro: 0,
+                    msg: '登录成功！',
+                    data: obj,
+                };
+                res.send(resData);
+            }else if (doc[0].password == md5(safeWord + obj.password)) {
                 req.session.isLogin = 1;
                 req.session.user_name = obj.user_name;
                 if (obj.noneedPassword == 'true') {
@@ -46,12 +62,14 @@ var login = function(req, res) {
             }
         }
     })
-}
+};
 
 var signup = function(req, res) {
     var obj = req.query;
     var User = global.dbHandel.getModel('user');
-    User.find({ 'user_name': obj.user_name }).exec(function(err, doc) {
+    var user = { 'user_name': obj.user_name };
+    obj.credentials && (user.credentials=obj.credentials);
+    User.find(user).exec(function(err, doc) {
         if (doc != '') {
             var resData = {
                 iserro: 1,
@@ -62,10 +80,12 @@ var signup = function(req, res) {
             };
             res.send(resData);
         } else {
-            User.create({
-                user_name: obj.user_name,
-                password: md5(safeWord + obj.password)
-            }, function(err, doc) {
+            if(user.credentials){
+                user.password = md5(safeWord + '123456')
+            }else{
+                user.password = md5(safeWord + obj.password)
+            }
+            User.create(user, function(err, doc) {
                 if (err) {
                     var resData = {
                         iserro: 1,

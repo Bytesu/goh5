@@ -41,9 +41,9 @@ module.exports = {
                 padding:'5px',
             },
             class: params.className ? params.className : '',
-            id: 'EDITOR.TEXT.NO.' + num,
+            id: 'EDITOR-TEXT-' + num,
             attr: {},
-            content: '文本文本文本'
+            content: '双击编辑文本'
         };
     },
     pic: function(index, num, params) {
@@ -67,9 +67,35 @@ module.exports = {
                 boxShadow:'0px 0px 0px 0px rgba(0,0,0,0)'
             },
             class: params.className ? params.className : '',
-            id: 'GOH5.IMG.NO.' + num,
+            id: 'EDITOR-IMG-' + num,
             attr: {},
             content:  params.src
+        };
+    },
+    pics: function(index, num, params) {
+        return {
+            type: 'PICS',
+            style: {
+                zIndex:index*10,
+                width:'30%',
+                top:0,
+                left:0,
+                height:'auto',
+                boxSizing:'border-box',
+                position:'absolute'
+            },
+            styleObj:{
+                width:'100%',
+                height:'100%',
+                boxSizing:'border-box',
+                display:'block',
+                backgroundColor:'rgba(0,0,0,0)',
+                boxShadow:'0px 0px 0px 0px rgba(0,0,0,0)'
+            },
+            // class: params.className ? params.className : '',
+            id: 'EDITOR-PICS-' + num,
+            attr: {},
+            content:  params
         };
     },
     graphic_circle:function (index, num, obj) {
@@ -95,7 +121,7 @@ module.exports = {
                 backgroundColor:'rgba(0,0,0,0)',
                 boxShadow:'0px 0px 0px 0px rgba(0,0,0,0)'
             },
-            id: 'GOH5.GRAPHIC.NO.' + num
+            id: 'EDITOR-GRAPHIC-' + num
         };
     },
     graphic_rect: function(index, num, obj) {
@@ -119,7 +145,7 @@ module.exports = {
                 backgroundColor:'rgba(0,0,0,0)',
                 boxShadow:'0px 0px 0px 0px rgba(0,0,0,0)'
             },
-            id: 'GOH5.GRAPHIC.NO.' + num,
+            id: 'EDITOR-GRAPHIC-' + num,
 
         };
     },
@@ -144,7 +170,7 @@ module.exports = {
                 backgroundColor:'rgba(0,0,0,0)',
                 boxShadow:'0px 0px 0px 0px rgba(0,0,0,0)'
             },
-            id: 'GOH5.VIDEO.NO.' + num,
+            id: 'EDITOR-VIDEO-' + num,
             content:params.src
         };
     },
@@ -165,7 +191,7 @@ module.exports = {
                 height:'100%',
                 display:'block',
             },
-            id: 'GOH5.AUDIO.NO.' + num,
+            id: 'EDITOR.AUDIO-' + num,
             content:params.src
         };
     },
@@ -190,7 +216,7 @@ module.exports = {
                 backgroundColor:'rgba(0,0,0,0)',
                 boxShadow:'0px 0px 0px 0px rgba(0,0,0,0)'
             },
-            id: 'GOH5.PLUGIN.NO.' + num,
+            id: 'EDITOR-PLUGIN-' + num,
         };
     },
 };

@@ -10,6 +10,8 @@
     </title>
     <meta name="keywords" content="{{about.keyWords }}">
     <meta name="description" content="{{about.desc }}">
+    <!--<link rel="stylesheet" href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui-append.min.css">-->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/front/dist/css/H5Editor.min.css?ver=1.0.2">
 </head>
 <body >
@@ -28,7 +30,13 @@
                         </p>
                         <img v-if="item.type=='IMG'" :style="item.sty"  :src="'/front/dist'+item.content" alt="">
                         <video v-if="item.type=='VIDEO'" autoplay loop :style="item.sty"  :src="'/front/dist'+item.content" alt=""></video>
-
+                        <div v-if="item.type=='PICS'" :style="item.sty">
+                            <carousel indicators=false controls=false  >
+                                <div class="item" v-for="it in item.content" :class="{active:$index==0}">
+                                    <img :src="it.url" data-holder-rendered="true ">
+                                </div>
+                            </carousel>
+                        </div>
     				</div>
                 </div>
             </div>

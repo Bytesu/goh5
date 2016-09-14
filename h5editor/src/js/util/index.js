@@ -13,7 +13,7 @@ utils.mixin = function(source, target) {
         }
     }
     return source;
-}
+};
 
 var store = require('../store/store.js');
 

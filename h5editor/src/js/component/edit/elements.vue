@@ -4,13 +4,13 @@
 	.lib_con .lib_list{width: 200px;display: flex;flex-direction: column;}
 	.lib_con .lib_list .group{flex: 1;margin-top: 0px;}
 	.lib_con .lib_list .group li{border-bottom: 1px solid #ccd5db;background: #fff;width: 100%;padding: 0 0 0 20px;box-sizing: border-box;color: #76838f;font-size: 12px;height: 44px;line-height: 44px;cursor: pointer;}
-	.lib_con  .upload_btn{width: auto;height: 28px;line-height: 28px;font-size: 14px;color: #fff;text-align: center;background: #00BCD4;position: relative;display: inline-block;padding: 0px 10px;float: right;margin: 10px 32px 0 32px;cursor: pointer;}
+	.lib_con  .upload_btn{width: 80px;height: 28px;line-height: 28px;font-size: 14px;color: #fff;text-align: center;background: #007fff;position: relative;display: inline-block;padding: 0px 10px;float: right;margin: 10px 32px 0 32px;cursor: pointer;}
 	.lib_con .lib_main{flex: 1;background: #fff;margin-top: 0px !important;border-top-left-radius: 6px;padding: 0 15px;overflow: auto;position: relative;}
 	.lib_con .lib_main .lib_main_head{width: 100%;height: 28px !important;border-bottom: 1px solid #ccd5db;display: flex;justify-content: flex-end;}
 	.lib_con .lib_main .lib_main_head .lib_main_head_group{font-size: 0;height: 28px !important;}
 	.lib_con .lib_main .lib_main_head .lib_main_head_group li{display: inline-block;vertical-align: middle;font-size: 12px;line-height: 28px !important;margin: 0 5px;padding: 0 10px;}
 	.lib_con .lib_main .lib_main_head .lib_main_head_group li span{cursor: pointer;transition: all ease 0.2s;-webkit-transition: all ease 0.2s;color: #76838f;}
-	.lib_con .lib_main .lib_main_head .lib_main_head_group li span:hover{color: #00bcd4;}
+	.lib_con .lib_main .lib_main_head .lib_main_head_group li span:hover{color: #007fff;}
 	.lib_con .lib_main .lib_main_body .pics_con{font-size: 0;}
 	.lib_con .lib_main .lib_main_body .pics_con li{border:1px solid #ccc;display: inline-table;vertical-align: top;width: 31%;margin: 10px 1% 0;position: relative;overflow: hidden;padding-bottom: 31%;background: #ddd;cursor: pointer;}
 	.lib_con .lib_main .lib_main_body .pics_con li:hover{    box-shadow: 0 0 8px #999;background-color: #fff;cursor: pointer;}
@@ -80,7 +80,7 @@
 		cursor: pointer;}
 </style>
 <template>
-	<div class="dialog_con lib_con" v-show="materialLibPicObj.show" transition="fade">
+	<div class="dialog_con lib_con" v-show="materialLibPicObj.show" transition="fadmaterialLibPicObje">
 		<div class="dialog_bg" @click="hideMaterialLibPic()"></div>
 		<div class="dialog_main_con all_center">
 			<div class="dialog_head">
@@ -129,6 +129,12 @@
 									<div style="position:relative;"  @click="addDomElement('PLUGIN.CAROUSEL')">
 										<img src="../../../img/plugin/viewcarousel.png" style="left:0;top:0;transform: none;">
                                         <p>轮播图</p>
+									</div>
+								</li>
+								<li>
+									<div style="position:relative;"  @click="openDialog">
+										<img src="../../../img/plugin/viewcarousel.png" style="left:0;top:0;transform: none;">
+										<p>轮播图</p>
 									</div>
 								</li>
 							</ul>
@@ -181,9 +187,10 @@ var actions = require('../../store/action/index.js');
 var tips = require('../../directive/tips.js');
 
 var Pagination = require('../common/pagination.vue');
+import BTN from '../common/meta/button.vue';
 
 var MaterialLibPicVm = null;
-var MaterialLibPic = Vue.extend({
+export  default {
 	name:'MaterialLibPic',
 	data: function(){
 		var this_ = this;
@@ -215,7 +222,8 @@ var MaterialLibPic = Vue.extend({
 //		this.load(this.paginationConf.currentPage,this.type);
 	},
 	components:{
-		'm-pagination': Pagination
+		'm-pagination': Pagination,
+		'm-btn':BTN
 	},
 	ready:function () {
 		document.querySelector('.ps-pic') && ps.initialize(document.querySelector('.ps-pic'));
@@ -227,7 +235,12 @@ var MaterialLibPic = Vue.extend({
 	  			return store.state.materialLibPicObj
 	  		}
 	  	},
-	  	actions: actions
+	  	actions: utils.mixin(actions,{
+	  		openDialogElement:(store)=>{
+				store.dispatch('OPEN_DIALOG');
+				store.dispatch('HIDEMATERIALLIBPIC');
+			}
+		})
 	},
 	methods:{
         filterType:function (type) {
@@ -307,8 +320,8 @@ var MaterialLibPic = Vue.extend({
             
         }
 	}
-});
+};
 
-module.exports = MaterialLibPic;
+//module.exports = MaterialLibPic;
 
 </script>
