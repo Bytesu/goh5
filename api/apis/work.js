@@ -27,7 +27,7 @@ var mainCodeDefault = {
 var create = function(req, res) {
     var obj = req.query;
     var Work = global.dbHandel.getModel('work');
-    logger.info(req.session.user_name);
+    logger.info(req.session);
     Work.create({
         'user_name': req.session.user_name,
         'title': obj.title,
