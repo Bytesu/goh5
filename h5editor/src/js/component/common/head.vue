@@ -317,7 +317,7 @@
                     },
                     success: function (data) {
                         $.ajax({
-                            url: '/api/upload/' + _this.$route.params.id,
+                            url: '/api/upload/' + _this.$route.params.id+'?rd='+Math.random(),
                             success: function (res) {
                                 var userInfo = localStorage.getItem('userInfo');
                                 if (userInfo) {

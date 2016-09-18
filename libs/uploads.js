@@ -50,7 +50,7 @@ Uploader.prototype = {
                 console.error('upload failed:', err);
                 return defer.reject(err);
             }
-                console.log(JSON.stringify(httpResponse));
+            console.log(JSON.stringify(httpResponse));
             console.log('Upload successful!  Server responded with:', body);
             return defer.resolve(body);
         });
