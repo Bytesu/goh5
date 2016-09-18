@@ -216,18 +216,21 @@
                 <li v-show="page == 'edit'">
                     <a target="_blank" :href="'http://'+ host + '/api/h5/' + this.$route.params.id">新标签页预览</a>
                 </li>
-                <li v-show="page == 'edit'" @click="save()">保存</li>
-                <li v-show="page == 'edit'" @click="submit(this.$route.params.id)">提交并跳转</li>
-                <!-- <li v-show="page == 'edit'">记录</li> -->
-                <li v-show="page == 'edit'" @click.stop="preview($event)">
-                    预览
-                    <div class="qrcode hide">
-                        <div class="triangle"></div>
-                        <a v-qrcode="'http://'+ host + '/show/' + this.$route.params.id"
-                           :href="'http://'+ host + '/show/' + this.$route.params.id" target="_blank"></a>
-                        <div class="tips">点击或扫描二维码预览</div>
-                    </div>
+                <!--<li v-show="page == 'edit'" @click="save()">保存</li>-->
+                <li v-show="page == 'edit'" @click="submit(this.$route.params.id)">上传</li>
+                <li v-show="page == 'edit'" >
+                    <a :href="'/api/zip/'+this.$route.params.id">下载</a>
                 </li>
+                <!-- <li v-show="page == 'edit'">记录</li> -->
+                <!--<li v-show="page == 'edit'" @click.stop="preview($event)">-->
+                    <!--预览-->
+                    <!--<div class="qrcode hide">-->
+                        <!--<div class="triangle"></div>-->
+                        <!--<a v-qrcode="'http://'+ host + '/show/' + this.$route.params.id"-->
+                           <!--:href="'http://'+ host + '/show/' + this.$route.params.id" target="_blank"></a>-->
+                        <!--<div class="tips">点击或扫描二维码预览</div>-->
+                    <!--</div>-->
+                <!--</li>-->
                 <li v-show="page == 'edit'" @click="showSet = !showSet">设置</li>
                 <li class="logout" @click="logout()" style="background: #ff5151;">退出</li>
             </ul>

@@ -80,15 +80,16 @@ Layout.prototype ={
 
 $(function () {
     new Layout();
+
+    var H5Editor = new Swiper('.swiper-container', setConfig);
+    H5Editor.on('slideChangeEnd', function(swiper) {
+        if(defaultConfig.autoBackPrePage){
+            utils.setCookie('initialSlide', swiper.activeIndex, 2);
+        }
+    });
 });
 
 
-var H5Editor = new Swiper('.swiper-container', setConfig);
-H5Editor.on('slideChangeEnd', function(swiper) {
-    if(defaultConfig.autoBackPrePage){
-        utils.setCookie('initialSlide', swiper.activeIndex, 2);
-    }
-});
 
 window.H5Editor = H5Editor;
 window.utils = utils;

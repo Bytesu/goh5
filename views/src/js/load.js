@@ -18,7 +18,7 @@ var loadImg = function(src, callback) {
 var imgArr = [];
 utils.$('[data-src]').each(function(index, item) {
     imgArr.push(utils.$(item).attr('data-src'));
-})
+});
 imgArr = utils.unduplicate(imgArr);
 
 var loadedImgLen = 0;
