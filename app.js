@@ -25,8 +25,12 @@ global.db = mongoose.connect(config.mongodb);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(session(config.session));
+// app.use(session(config.session));
 app.use(log.log);
+
+config.redisSession.store = new RedisStore(config.redisSession.host);
+app.use(session(config.redisSession));
+
 // app.use('/', express.static(pwd + 'static'));
 var statics ={'img':'/datas/img/','video':'/datas/video/','audio':'/datas/audio/','back':'/h5editor/','front':'/views/'};
 for(var pro in statics){

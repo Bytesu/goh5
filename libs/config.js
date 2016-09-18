@@ -10,6 +10,17 @@ var config = {
         saveUninitialized: true,
         resave: true
     },
+    redisSession: {
+        resave: false,//添加这行
+        saveUninitialized: true,//添加这行
+        host: {
+            host: "localhost",
+            port: 6379,
+            db: 3
+        },
+        // store: new RedisStore(config.REDIS.host),
+        secret: "H5aUhFmi,$o*D?tItCx|!Js/)vcX0-U;`8NQ{'Exr'b"
+    },
     isDebug: true,
     mongodb: 'mongodb://localhost:27017/goh5',
     amdox: {

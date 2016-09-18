@@ -27,6 +27,7 @@ var login = function(req, res) {
                 logger.info(obj.user_name);
                 req.session.user_name = obj.user_name;
                 req.session.noneedPassword = 1;
+                // req.session.user =
                 res.cookie('isLogin', 1, { expires: new Date(Date.now() + 10000 * 60 * 60 * 24 * 7) });
                 var resData = {
                     iserro: 0,
