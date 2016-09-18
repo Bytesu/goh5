@@ -54,7 +54,8 @@ module.exports = function(Router){
                     console.log('archiver has been finalized and the output file descriptor has closed.');
                     var upload = new Uploader({url:config.amdox.admin.upload,path:tmpfile});
                     upload.upload().then(function (result) {
-                        res.json({code:200,data:JSON.parse(result)})
+                        result = JSON.parse(result);
+                        res.json({code:200,data:result})
                     }).catch(function (error) {
                         logger.error(error)
                         res.json({code:500,data:'服务端处理异常，请稍后再试！'})
