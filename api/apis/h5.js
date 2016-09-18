@@ -46,7 +46,7 @@ module.exports = function(Router){
         Work.find({ '_id': id }).exec(function(err, docs) {
 
             generatorScript(docs[0]).then(function(){
-                var tmpfile = path.join(__dirname + '/../../tmp/'+id+'.zip');
+                var tmpfile = path.join(__dirname + '/../../tmps/'+id+'.zip');
                 var output = fs.createWriteStream(tmpfile);
 
                 output.on('close', function() {
