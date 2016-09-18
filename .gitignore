@@ -15,5 +15,6 @@ node_modules/
 logs/*
 .idea/*
 !logs/.empty
-
+tmp/*
+!tmp/empty
 views/dist/js/data.js
