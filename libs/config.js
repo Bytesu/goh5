@@ -21,7 +21,7 @@ var config = {
         // store: new RedisStore(config.REDIS.host),
         secret: "H5aUhFmi,$o*D?tItCx|!Js/)vcX0-U;`8NQ{'Exr'b"
     },
-    isDebug: true,
+    isDebug: false,
     mongodb: 'mongodb://localhost:27017/goh5',
     amdox: {
         admin: {
@@ -35,7 +35,7 @@ var config = {
 };
 
 
-if (process && process.env && process.env.os != "Windows_NT") { //production
+if (!config.isDebug&&process && process.env && process.env.os != "Windows_NT") { //production
     config.isDebug = false;
     config.amdox.admin.upload = 'http://139.196.242.180/show-info/upload.json'; //节目上传目录;
 }
