@@ -187,11 +187,12 @@ var Head = Vue.extend({
 						success:function (res) {
 							var userInfo = localStorage.getItem('userInfo');
 							if(userInfo){
-								if(res.data.result.data.file){
+								userInfo = JSON.parse(userInfo);
+								if(res.code==200&&res.data.result.data.file){
 									res.data.result.data.file.userid = userInfo.user_name;
 									window.location.href = config.amdox.admin.redirect(res.data.result.data.file);
 								}else{
-									alert(res.data.result.reason);
+									alert(res.data||res.data.result.reason);
 								}
 							}else{
 								alert('您不是从安道云科后台管理系统中进入，不能进行此项操作！');

@@ -54,14 +54,15 @@ module.exports = function(Router){
                     console.log('archiver has been finalized and the output file descriptor has closed.');
                     var upload = new Uploader({url:config.amdox.admin.upload,path:tmpfile});
                     upload.upload().then(function (result) {
-                        res.json({code:0,data:JSON.parse(result)})
+                        res.json({code:200,data:JSON.parse(result)})
                     }).catch(function (error) {
-                        res.json({code:500,data:error})
+                        logger.error(error)
+                        res.json({code:500,data:'服务端处理异常，请稍后再试！'})
                     })
                 });
                 var zip = Zip('zip');
                 zip.on('error',function(err){
-                    res.status(500).send({error: err.message});
+                    res.status(500).send({data: err.message});
                 });
                 zip.on('end', function() {
                     console.log('Archive wrote %d bytes', zip.pointer());
