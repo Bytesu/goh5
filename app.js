@@ -14,7 +14,7 @@ var log = require('./libs/log');
 
 var app = express();
 var router = express.Router();
-var port = 3030;
+var port = config.port;
 
 var routers = require('./api/apis/index.js');
 

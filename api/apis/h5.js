@@ -6,6 +6,7 @@ var _ = require('underscore');
 var fs = require('fs');
 var AdmZip = require('adm-zip');
 var path = require('path');
+var config = require('../../libs/config');
 var util_file = require('./../libs/files');
 var logger = require('./../../libs/log').logger;
 function generatorScript(datas){
@@ -36,43 +37,72 @@ function generatorScript(datas){
 var readDir = util_file.readDir;
 var judgeFileType = util_file.judgeFileType;
 
-
+var Uploader = require('./../../libs/uploads');
 var Zip = require("archiver");
 module.exports = function(Router){
+    Router.get('/upload/:id', function(req, res, next) {
+        var id = req.params.id;
+        var Work = global.dbHandel.getModel('work');
+        Work.find({ '_id': id }).exec(function(err, docs) {
+
+            generatorScript(docs[0]).then(function(){
+                var tmpfile = path.join(__dirname + '/../../tmp/'+id+'.zip');
+                var output = fs.createWriteStream(tmpfile);
+
+                output.on('close', function() {
+                    // console.log(archive.pointer() + ' total bytes');
+                    console.log('archiver has been finalized and the output file descriptor has closed.');
+                    var upload = new Uploader({url:config.amdox.admin.upload,path:tmpfile});
+                    upload.upload().then(function (result) {
+                        res.json({code:0,data:JSON.parse(result)})
+                    }).catch(function (error) {
+                        res.json({code:500,data:error})
+                    })
+                });
+                var zip = Zip('zip');
+                zip.on('error',function(err){
+                    res.status(500).send({error: err.message});
+                });
+                zip.on('end', function() {
+                    console.log('Archive wrote %d bytes', zip.pointer());
+                });
+                // res.attachment(id+'.zip');
+                zip.pipe(output);
+                var directories = [path.join(__dirname,'/../../views')]
+                for(var i in directories) {
+                    zip.directory(directories[i], directories[i].replace(path.join(__dirname, '/../../views'), ''));
+                }
+                zip.finalize();
+
+            }).catch(function (e) {
+                res.json(e);
+            });
+        })
+    });
     Router.get('/zip/:id', function(req, res, next) {
         var id = req.params.id;
         var Work = global.dbHandel.getModel('work');
         Work.find({ '_id': id }).exec(function(err, docs) {
+
             generatorScript(docs[0]).then(function(){
                 var zip = Zip('zip');
                 zip.on('error',function(err){
                     res.status(500).send({error: err.message});
-                })
+                });
                 zip.on('end', function() {
                     console.log('Archive wrote %d bytes', zip.pointer());
                 });
                 res.attachment(id+'.zip');
 
                 zip.pipe(res);
-                /*var files = readDir(__dirname+'/../../views');
-                for(var i in files) {
-                    zip.file(files[i], { name: path.basename(files[i]) });
-                }*/
+
                 var directories = [path.join(__dirname,'/../../views')]
                 for(var i in directories) {
                     zip.directory(directories[i], directories[i].replace(path.join(__dirname, '/../../views'), ''));
                 }
 
                 zip.finalize();
-                /*var files = [];
 
-                zip.finalize();
-                var buf = zip.toBuffer();
-                res.set({
-                    'Content-Type': 'application/x-zip-compressed',
-                    'Content-Encoding': 'gzip'
-                })
-                res.send(buf);*/
 
             }).catch(function (e) {
                 res.json(e);

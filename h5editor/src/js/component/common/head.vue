@@ -84,6 +84,7 @@
 					<a target="_blank" :href="'http://'+ host + '/api/h5/' + this.$route.params.id">新标签页预览</a>
 				</li>
 				<li v-show="page == 'edit'" @click="save()">保存</li>
+				<li v-show="page == 'edit'" @click="submit(this.$route.params.id)">提交并跳转</li>
 				<!-- <li v-show="page == 'edit'">记录</li> -->
 				<li v-show="page == 'edit'" @click.stop="preview($event)">
 					预览
@@ -111,7 +112,7 @@ var router = new Router();
 
 var store = require('../../store/store.js');
 var actions = require('../../store/action/index.js');
-
+var config = require('./../../../../../libs/config');
 var tpl = require('../../template/tpl.js');
 var utils = require('utils');
 
@@ -168,6 +169,44 @@ var Head = Vue.extend({
 						msg: '保存成功',
 						type: 'success'
 					})
+				}
+			})
+		},
+		submit: function(){
+			var _this = this;
+			$.ajax({
+				url: '/api/work/save',
+				type: 'get',
+				data: {
+					_id: _this.$route.params.id,
+					mainCode: JSON.stringify(_this.mainCode)
+				},
+				success: function(data){
+					$.ajax({
+						url:'/api/upload/'+_this.$route.params.id,
+						success:function (res) {
+							var userInfo = localStorage.getItem('userInfo');
+							if(userInfo){
+								if(res.data.result.data.file){
+									res.data.result.data.file.userid = userInfo.user_name;
+									window.location.href = config.amdox.admin.redirect(res.data.result.data.file);
+								}else{
+									alert(res.data.result.reason);
+								}
+							}else{
+								alert('您不是从安道云科后台管理系统中进入，不能进行此项操作！');
+							}
+
+
+						}
+					});
+
+//					localStorage[_this.$route.params.id] = null;
+//					actions.alert(store, {
+//						show: true,
+//						msg: '保存成功',
+//						type: 'success'
+//					})
 				}
 			})
 		},
