@@ -2,6 +2,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var RedisStore = require('connect-redis')(session);
+
 var cookieParser = require('cookie-parser');
 var lactate = require('lactate');
 var mongoose = require('mongoose');
