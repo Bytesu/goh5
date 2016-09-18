@@ -35,7 +35,7 @@ var config = {
 };
 
 
-if (!config.isDebug&&process && process.env && process.env.os != "Windows_NT") { //production
+if (process && process.env && process.env.os != "Windows_NT") { //production
     config.isDebug = false;
     config.amdox.admin.upload = 'http://139.196.242.180/show-info/upload.json'; //节目上传目录;
 }
