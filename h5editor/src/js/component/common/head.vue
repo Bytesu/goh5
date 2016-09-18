@@ -188,9 +188,14 @@ var Head = Vue.extend({
 							var userInfo = localStorage.getItem('userInfo');
 							if(userInfo){
 								userInfo = JSON.parse(userInfo);
-								if(res.code==200&&res.data.result.data.file){
-									res.data.result.data.file.userid = userInfo.user_name;
-									window.location.href = config.amdox.admin.redirect(res.data.result.data.file);
+								if(typeof res.data =='string'){
+									res.data = JSON.parse(res.data).result.data.file
+								}else{
+									res.data = res.data.result.data.file;
+								}
+								if(res.code==200&&res.data){
+									res.data.userid = userInfo.user_name;
+									window.location.href = config.amdox.admin.redirect(res.data);
 								}else{
 									alert(res.data||res.data.result.reason);
 								}

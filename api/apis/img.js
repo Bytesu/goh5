@@ -9,7 +9,6 @@ var create = require('./../../libs/resource').create;
 var creatNewFile = require('./../../libs/resource').creatNewFile;
 var Q = require('q');
 
-
 var upload = function(req, res) {
 
     var files = req.files.files;
