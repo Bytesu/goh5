@@ -26,11 +26,11 @@ var config = {
     mongodb: 'mongodb://localhost:27017/goh5',
     amdox: {
         admin: {
-            upload: 'http://139.196.242.180/show-info/upload.json', //节目上传目录
+            upload: 'http://amdox.software/show-info/upload.json', //节目上传目录
             // upload: 'http://192.168.1.105:8080/show-info/upload.json', //节目上传目录
             redirect: function (obj) {
                 if (!obj.userid || !obj.fileid) throw new Error('invalid arguments !');
-                return "http://192.168.1.105:8080/show-info/create-showfile/" + obj.userid + "&" + obj.fileid;
+                return "http://amdox.software/show-info/create-showfile/" + obj.userid + "&" + obj.fileid;
             },
         }
     }
