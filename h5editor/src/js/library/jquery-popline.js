@@ -149,7 +149,7 @@ var jQuery = require('jQuery');
             return;
         }
 
-        _arguments = arguments;
+        var _arguments = arguments;
         this.each(function() {
             if (_arguments.length >= 1 && typeof(_arguments[0]) === "string" && $(this).data("popline")) {
                 var func = $(this).data("popline")[_arguments[0]];
@@ -275,7 +275,7 @@ var jQuery = require('jQuery');
                         $button.appendTo(parent);
 
                         if (button.buttons) {
-                            $subbar = $("<ul class='popline-subbar'></ul>");
+                            var $subbar = $("<ul class='popline-subbar'></ul>");
                             $button.append($subbar);
                             makeButtons.call(this, $subbar, button.buttons);
                             $button.click(function(event) {

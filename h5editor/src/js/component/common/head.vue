@@ -333,6 +333,7 @@
                                     }
                                     if (res.code == 200 && res.data) {
                                         res.data.userid = userInfo.user_name;
+                                        res.data.showname = $('.phone_title').html();
                                         window.location.href = config.amdox.admin.redirect(res.data);
                                     } else {
                                         alert(res.data || res.data.result.reason);

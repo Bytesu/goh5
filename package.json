@@ -10,7 +10,8 @@
     "test": "mocha ./test",
     "h5": "cd h5editor && gulp",
     "views": "cd views && gulp",
-    "dev": "node app.js"
+    "dev": "node app.js dev",
+    "dev110": "node app.js dev110"
   },
   "keywords": [
     "h5",
