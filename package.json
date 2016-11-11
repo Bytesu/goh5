@@ -4,7 +4,7 @@
   "description": "免费H5可视化编辑器",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start ./app.js -i 8",
+    "start": "pm2 start ecosystem.json --env production",
     "stop": "pm2 delete all",
     "restart": "pm2 restart all",
     "test": "mocha ./test",

@@ -42,7 +42,8 @@
         box-shadow:0 0 6px #999;
         /*background-color:#fff;*/
         cursor:auto;
-        background: #fff url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><rect x='0' y='0' width='10' height='10' fill='#EEE'></rect><rect x='10' y='10' width='10' height='10' fill='#EEE'></rect></svg>") repeat;
+        /*background: #fff url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><rect x='0' y='0' width='10' height='10' fill='#EEE'></rect><rect x='10' y='10' width='10' height='10' fill='#EEE'></rect></svg>") repeat;*/
+        background: #fff;
     }
 
     .phone_con .phone_screen > div {

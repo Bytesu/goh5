@@ -1,0 +1,45 @@
+{
+  // Applications part
+  "apps": [
+    {
+      "name": "GOH5",
+      "script": "app.js",
+      "exec_mode" : "cluster",
+      "instances": 2,
+      "env": {
+        "NODE_ENV": "devlopment"
+
+      },
+      // Environment variables injected when starting with --env production
+      "env_production": {
+        "NODE_ENV": "production"
+      }
+    }
+  ],
+  // Deployment part
+  // Here you describe each environment
+  "deploy": {
+    "production": {
+      "user": "node",
+      // Multi host is possible, just by passing IPs/hostname as an array
+      "host": [
+        "114.55.90.46"
+      ],
+      // Branch
+      "ref": "origin/master",
+      // Git repository to clone
+      "repo": "ssh://git@git.limijiaoyin.com:2222/limijiaoyin/activity-pa.git",
+      // Path of the application on target servers
+      "path": "/home/activitypar",
+      "pre-deploy-local": "echo 'This is a local executed command'",
+      // Commands to be executed on the server after the repo has been cloned
+      "post-deploy": "npm install && pm2 startOrRestart ecosystem.json --env production",
+      // Environment variables that must be injected in all applications on this env
+      "env": {
+        "NODE_ENV": "production",
+
+      }
+    },
+
+  }
+}

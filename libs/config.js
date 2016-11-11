@@ -36,7 +36,7 @@ var config = {
     }
 };
 
-if (process.argv[2]=='dev') { // 开发服务器
+/*if (process.argv[2]=='dev') { // 开发服务器
     config.isDebug = true;
     config.amdox.admin.upload = 'http://192.168.1.106:8080/show-info/upload.json'; //节目上传目录;
     config.amdox.admin.redirect = function (obj) {
@@ -50,6 +50,6 @@ if (process.argv[2]=='dev') { // 开发服务器
         if (!obj.userid || !obj.fileid) throw new Error('invalid arguments !');
         return "http://192.168.1.110/show-info/create-showfile/" + obj.userid + "&" + obj.fileid+'&showname='+obj.showname;
     }
-}
+}*/
 
 module.exports = config;

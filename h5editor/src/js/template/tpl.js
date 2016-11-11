@@ -28,7 +28,7 @@ module.exports = {
                 textDecoration:'none',
                 textAlign:'left',
                 overflow:'hidden',
-                fontSize:'14px',
+                fontSize:'18px',
                 fontFamily:"'Helvetica Neue', Helvetica, STHeiTi, sans-serif",
                 boxSizing:'border-box',
                 textShadow:'none',
